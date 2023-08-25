@@ -15,10 +15,12 @@ export const collectionTypes = [
 // Componenets
 import cta from './components/cta'
 import seo from './components/seo'
+import titleAndDescription from './components/titleAndDescription'
 
 export const components = [
   cta,
   seo,
+  titleAndDescription,
 ]
 
 export const schemaTypes = [
