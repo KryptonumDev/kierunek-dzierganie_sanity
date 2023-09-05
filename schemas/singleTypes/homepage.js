@@ -61,15 +61,15 @@ export default {
       title: 'Lista',
       fieldset: 'info',
     },
-    {
-      name: 'characteristics_List',
-      type: 'array',
-      of: [
-        { type: 'titleAndDescription' }
-      ],
-      title: 'Lista',
-      fieldset: 'characteristics',
-    },
+    // {
+    //   name: 'characteristics_List',
+    //   type: 'array',
+    //   of: [
+    //     { type: 'titleAndDescription' }
+    //   ],
+    //   title: 'Lista',
+    //   fieldset: 'characteristics',
+    // },
     {
       name: 'benefits_Heading',
       type: 'markdown',
