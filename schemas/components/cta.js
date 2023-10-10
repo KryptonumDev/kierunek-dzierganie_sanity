@@ -21,7 +21,6 @@ export default {
       title: 'Tekst',
       name: 'text',
       type: 'string',
-      description: 'Tekst, który będzie widoczny na przycisku',
     },
     {
       title: 'Link',
