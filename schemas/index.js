@@ -24,6 +24,9 @@ import CtaSection from './components/CtaSection'
 import SimpleCtaSection from './components/SimpleCtaSection'
 import HeroBackgroundImg from './components/HeroBackgroundImg'
 import Benefits from './components/Benefits'
+import CourseModules from './components/CourseModules'
+import ImageShowcase from './components/ImageShowcase'
+import Bonuses from './components/Bonuses'
 
 export const schemaTypes = [
   // Single Types
@@ -40,6 +43,9 @@ export const schemaTypes = [
   SimpleCtaSection,
   HeroBackgroundImg,
   Benefits,
+  CourseModules,
+  ImageShowcase,
+  Bonuses,
 
 
   // Restruzturize

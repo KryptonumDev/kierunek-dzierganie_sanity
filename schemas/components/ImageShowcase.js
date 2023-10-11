@@ -1,21 +1,15 @@
 import { removeMarkdown } from "../../utils/functions"
 
 export default {
-  name: "CtaSection",
-  title: "Sekcja CTA",
+  name: "ImageShowcase",
+  title: "Pokaz Zdjęć",
   type: "object",
   fields: [
     {
-      name: 'isReversed',
+      name: 'isGrid',
       type: 'boolean',
-      title: 'Odwrócona sekcja? (zdjęcie po lewej)',
-      initialValue: false,
-    },
-    {
-      name: 'isHighlighted',
-      type: 'boolean',
-      title: 'Wyróżniona? (z subtelnym tłem)',
-      initialValue: false,
+      initialValue: true,
+      title: 'Czy jest zwykła galeria w kolumnach?',
     },
     {
       name: 'heading',
@@ -39,19 +33,25 @@ export default {
     },
     {
       name: 'img',
-      type: 'image',
-      title: 'Zdjęcie',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+        }
+      ],
+      title: 'Zdjęcia',
+      validation: Rule => Rule.min(9).max(9).warning('Jeżeli nie jest zwykła galeria użyj 9 zdjęć')
     },
   ],
   preview: {
     select: {
       title: 'heading',
       subtitle: 'paragraph',
-      media: 'img',
+      media: 'img[0]',
     },
     prepare({ title, subtitle, media }) {
       return {
-        title: `[Sekcja CTA] ${removeMarkdown(title)}`,
+        title: `[Pokaz zdjęć] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
         media,
       }

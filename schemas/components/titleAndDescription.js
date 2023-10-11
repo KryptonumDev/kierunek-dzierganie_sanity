@@ -6,6 +6,12 @@ export default {
   type: "object",
   fields: [
     {
+      name: 'isImg',
+      type: 'boolean',
+      title: 'Czy jest zdjęcie?',
+      initialValue: false,
+    },
+    {
       name: 'title',
       type: 'markdown',
       title: 'Tytuł',
@@ -15,17 +21,25 @@ export default {
       type: 'markdown',
       title: 'Opis',
     },
+    {
+      name: 'img',
+      type: 'image',
+      title: 'Zdjęcie',
+      hidden: ({ parent }) => !parent?.isImg
+    },
   ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'description'
+      subtitle: 'description',
+      media: 'img',
     }
   },
-  prepare({ title, subtitle }){
+  prepare({ title, subtitle, media }){
     return {
       title: removeMarkdown(title),
       subtitle: removeMarkdown(subtitle),
+      media,
     }
   }
 }
