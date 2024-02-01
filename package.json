@@ -1,5 +1,5 @@
 {
-  "name": "kierunek-dzierganie",
+  "name": "kierunek-dzierganie_sanity",
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
@@ -19,7 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "sanity": "^3.15.1",
+    "sanity": "^3.27.0",
     "sanity-plugin-markdown": "^4.1.0",
     "sanity-plugin-media": "^2.2.2",
     "styled-components": "^5.3.9"

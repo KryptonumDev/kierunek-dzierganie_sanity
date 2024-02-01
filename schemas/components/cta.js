@@ -4,20 +4,6 @@ export default {
   type: "object",
   fields: [
     {
-      name: 'theme',
-      type: 'string',
-      title: 'Typ',
-      options: {
-        list: [
-          { title: 'Główny', value: 'primary' },
-          { title: 'Podrzędny', value: 'secondary' }
-        ],
-        layout: 'radio',
-        direction: "horizontal"
-      },
-      initialValue: 'primary',
-    },
-    {
       title: 'Tekst',
       name: 'text',
       type: 'string',
@@ -27,7 +13,7 @@ export default {
       name: 'href',
       type: 'string',
       description: 'Link relatywny lub absolutny (z https://)',
-      validation: Rule =>
+      validation: Rule => 
         Rule.custom(value => {
           if (value && !value.startsWith('/') && !value.startsWith('https://')) {
             return 'Nieprawidłowy adres URL.';

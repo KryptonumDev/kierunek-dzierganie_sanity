@@ -1,6 +1,6 @@
 export default {
   name: 'landingPage',
-  title: 'Landing Page',
+  title: 'Strony lądowania',
   type: 'document',
   icon: () => '🛬',
   fields: [
@@ -16,24 +16,12 @@ export default {
       options: {
         source: 'name'
       },
-      description: 'Bez przedrostka "/landing" - dodawany on się automatycznie.',
+      description: 'Do adresu URL zostanie dodany automatycznie prefix "/landing" - np. "/landing/twoj-slug"',
     },
     {
       name: 'content',
-      type: 'array',
-      title: 'Content',
-      of: [
-        { type: 'HeroBackgroundImg' },
-        { type: 'Benefits' },
-        { type: 'Faq' },
-        { type: 'Opinions' },
-        { type: 'TileList' },
-        { type: 'CtaSection' },
-        { type: 'SimpleCtaSection' },
-        { type: 'CourseModules' },
-        { type: 'ImageShowcase' },
-        { type: 'Bonuses' },
-      ]
+      type: 'content',
+      title: 'Komponenty podstrony',
     },
     {
       name: 'seo',

@@ -6,29 +6,40 @@ export default {
   type: "object",
   fields: [
     {
+      name: 'isReversed',
+      type: 'boolean',
+      title: 'Odwróć kolejność',
+      description: 'Domyślnie tekst znajduję się po prawej stronie. Jeśli zaznaczone tekst będzie po lewej stronie.',
+      initialValue: false,
+    },
+    {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'cta',
       type: 'cta',
       title: 'CTA',
+      validation: Rule => Rule.warning(),
     },
     {
       name: 'cta_Annotation',
       type: 'markdown',
-      title: 'CTA Annotation',
+      title: 'CTA - adnotacja (opcjonalnie)',
     },
     {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {

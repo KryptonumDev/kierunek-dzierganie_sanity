@@ -1,5 +1,5 @@
 // Single Types
-import global, { global_Seo } from './singleTypes/global'
+import global, { global_Seo, nav_Link, nav_Links } from './singleTypes/global'
 import homepage from './singleTypes/homepage'
 
 export const singleTypes = [
@@ -13,7 +13,7 @@ export const collectionTypes = [
   landingPage,
 ]
 
-// Componenets
+// Components
 import cta from './components/cta'
 import seo from './components/seo'
 import titleAndDescription from './components/titleAndDescription'
@@ -27,11 +27,15 @@ import Benefits from './components/Benefits'
 import CourseModules from './components/CourseModules'
 import ImageShowcase from './components/ImageShowcase'
 import Bonuses from './components/Bonuses'
+import TilesGrid, { TilesGrid_Item } from './components/TilesGrid'
+import Content from '../components/Content'
 
 export const schemaTypes = [
   // Single Types
   global,
   global_Seo,
+  nav_Link,
+  nav_Links,
   cta,
   seo,
   titleAndDescription,
@@ -46,9 +50,12 @@ export const schemaTypes = [
   CourseModules,
   ImageShowcase,
   Bonuses,
+  TilesGrid,
+  TilesGrid_Item,
+  Content,
 
 
-  // Restruzturize
+  // Restructuring
   ...singleTypes,
   ...collectionTypes,
 ]
