@@ -29,6 +29,7 @@ import ImageShowcase from './components/ImageShowcase'
 import Bonuses from './components/Bonuses'
 import TilesGrid, { TilesGrid_Item } from './components/TilesGrid'
 import Content from '../components/Content'
+import TilesSticky, { TilesSticky_Item } from './components/TilesSticky'
 
 export const schemaTypes = [
   // Single Types
@@ -52,6 +53,8 @@ export const schemaTypes = [
   Bonuses,
   TilesGrid,
   TilesGrid_Item,
+  TilesSticky,
+  TilesSticky_Item,
   Content,
 
 

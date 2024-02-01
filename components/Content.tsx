@@ -14,5 +14,6 @@ export default {
     { type: 'ImageShowcase' },
     { type: 'Bonuses' },
     { type: 'TilesGrid' },
+    { type: 'TilesSticky' },
   ]
 }
