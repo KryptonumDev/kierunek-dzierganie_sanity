@@ -8,6 +8,7 @@ import { media } from 'sanity-plugin-media'
 
 import { markdownSchema } from 'sanity-plugin-markdown'
 import { CustomMarkdownInput } from './components/Markdown'
+import { ExternalLinks } from './components/ExternalLinks'
 
 const singletonTypes = new Set(singleTypes.map(type => type.name))
 const singletonActions = new Set(["publish", "discardChanges", "restore"])
@@ -56,6 +57,10 @@ export default defineConfig({
     templates: (templates) =>
       templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
   },
+
+  tools: [
+    ExternalLinks()
+  ],
 
   document: {
     actions: (input, context) =>
