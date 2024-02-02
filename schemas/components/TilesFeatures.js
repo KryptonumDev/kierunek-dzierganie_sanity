@@ -1,8 +1,8 @@
 import { removeMarkdown } from "../../utils/functions"
 
 export default {
-  name: "TilesSticky",
-  title: "Sekcja z kafelkami z przyczepionym nagłówkiem",
+  name: "TilesFeatures",
+  title: "Wyróżniki kafelki",
   type: "object",
   fields: [
     {
@@ -15,18 +15,12 @@ export default {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'cta',
-      type: 'cta',
-      title: 'Wezwanie do działania',
     },
     {
       name: 'list',
       type: 'array',
       of: [
-        { type: 'TilesSticky_Item' }
+        { type: 'TilesFeatures_Item' }
       ],
       title: 'Lista',
       validation: Rule => Rule.required(),
@@ -34,25 +28,32 @@ export default {
   ],
   preview: {
     select: {
-      title: 'heading',
-      paragraph: 'paragraph',
+      heading: 'heading',
       list: 'list',
     },
-    prepare({ title, paragraph, list }) {
+    prepare({ heading, list }) {
+      console.log(list);
       return {
-        title: `[Sekcja z kafelkami z przyczepionym nagłówkiem] ${removeMarkdown(title)}`,
-        subtitle: removeMarkdown(paragraph),
+        title: `[Wyróżniki kafelki] ${removeMarkdown(heading)}`,
+        subtitle: `${list.length} wyróżników`,
         media: list[0].img,
       }
     }
   }
 }
 
-export const TilesSticky_Item = {
-  name: "TilesSticky_Item",
+
+export const TilesFeatures_Item = {
+  name: "TilesFeatures_Item",
   title: "Element",
   type: "object",
   fields: [
+    {
+      name: 'img',
+      type: 'image',
+      title: 'Zdjęcie',
+      validation: Rule => Rule.required(),
+    },
     {
       name: 'heading',
       type: 'markdown',
@@ -70,11 +71,13 @@ export const TilesSticky_Item = {
     select: {
       heading: 'heading',
       paragraph: 'paragraph',
+      media: 'img'
     },
-    prepare({ heading, paragraph }) {
+    prepare({ heading, paragraph, media }) {
       return {
         title: `${removeMarkdown(heading)}`,
         subtitle: `${removeMarkdown(paragraph)}`,
+        media,
       }
     }
   }

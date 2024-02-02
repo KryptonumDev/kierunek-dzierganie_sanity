@@ -30,6 +30,7 @@ import Bonuses from './components/Bonuses'
 import TilesGrid, { TilesGrid_Item } from './components/TilesGrid'
 import Content from '../components/Content'
 import TilesSticky, { TilesSticky_Item } from './components/TilesSticky'
+import TilesFeatures, { TilesFeatures_Item } from './components/TilesFeatures'
 
 export const schemaTypes = [
   // Single Types
@@ -55,6 +56,8 @@ export const schemaTypes = [
   TilesGrid_Item,
   TilesSticky,
   TilesSticky_Item,
+  TilesFeatures,
+  TilesFeatures_Item,
   Content,
 
 

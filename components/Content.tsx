@@ -15,5 +15,6 @@ export default {
     { type: 'Bonuses' },
     { type: 'TilesGrid' },
     { type: 'TilesSticky' },
+    { type: 'TilesFeatures' },
   ]
 }
