@@ -8,9 +8,11 @@ export const singleTypes = [
 
 // Collection Types
 import landingPage from './collectionTypes/landingPage'
+import ReviewCollection from './collectionTypes/ReviewCollection'
 
 export const collectionTypes = [
   landingPage,
+  ReviewCollection,
 ]
 
 // Components
@@ -31,9 +33,12 @@ import TilesGrid, { TilesGrid_Item } from './components/TilesGrid'
 import Content from '../components/Content'
 import TilesSticky, { TilesSticky_Item } from './components/TilesSticky'
 import TilesFeatures, { TilesFeatures_Item } from './components/TilesFeatures'
+import Community from './components/Community'
 
 export const schemaTypes = [
-  // Single Types
+  ...singleTypes,
+  ...collectionTypes,
+
   global,
   global_Seo,
   nav_Link,
@@ -58,10 +63,6 @@ export const schemaTypes = [
   TilesSticky_Item,
   TilesFeatures,
   TilesFeatures_Item,
+  Community,
   Content,
-
-
-  // Restructuring
-  ...singleTypes,
-  ...collectionTypes,
 ]

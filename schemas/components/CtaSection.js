@@ -21,11 +21,13 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'cta',
@@ -41,6 +43,7 @@ export default {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {

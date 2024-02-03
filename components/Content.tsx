@@ -16,5 +16,6 @@ export default {
     { type: 'TilesGrid' },
     { type: 'TilesSticky' },
     { type: 'TilesFeatures' },
+    { type: 'Community' },
   ]
 }

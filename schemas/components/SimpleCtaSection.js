@@ -9,6 +9,7 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
