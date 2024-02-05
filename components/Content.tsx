@@ -18,5 +18,6 @@ export default {
     { type: 'TilesFeatures' },
     { type: 'Community' },
     { type: 'Reviews' },
+    { type: 'Introduction' },
   ]
 }

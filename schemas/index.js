@@ -35,6 +35,7 @@ import TilesSticky, { TilesSticky_Item } from './components/TilesSticky'
 import TilesFeatures, { TilesFeatures_Item } from './components/TilesFeatures'
 import Community from './components/Community'
 import Reviews from './components/Reviews'
+import Introduction from './components/Introduction'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -67,4 +68,5 @@ export const schemaTypes = [
   Community,
   Content,
   Reviews,
+  Introduction,
 ]
