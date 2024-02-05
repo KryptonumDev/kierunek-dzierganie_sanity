@@ -17,5 +17,6 @@ export default {
     { type: 'TilesSticky' },
     { type: 'TilesFeatures' },
     { type: 'Community' },
+    { type: 'Reviews' },
   ]
 }

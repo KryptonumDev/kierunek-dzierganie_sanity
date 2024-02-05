@@ -48,7 +48,7 @@ export default {
       return {
         title: `${name} ocenił/-a kurs na ${rating} / 5`,
         subtitle: subtitle,
-        media: media[0],
+        media: media && media[0],
       }
     }
   },

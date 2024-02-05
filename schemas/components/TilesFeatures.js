@@ -32,7 +32,6 @@ export default {
       list: 'list',
     },
     prepare({ heading, list }) {
-      console.log(list);
       return {
         title: `[Wyróżniki kafelki] ${removeMarkdown(heading)}`,
         subtitle: `${list.length} wyróżników`,
