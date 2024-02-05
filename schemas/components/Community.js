@@ -9,6 +9,8 @@ export default {
       name: 'isHighlighted',
       type: 'boolean',
       title: 'Czy sekcja ma być wyróżniona (subtelne tło)?',
+      initialValue: false,
+      validation: Rule => Rule.required(),
     },
     {
       name: 'heading',
