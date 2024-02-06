@@ -12,10 +12,20 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'paragraph',
+      type: 'markdown',
+      title: 'Paragraf (opcjonalnie)',
+    },
+    {
       name: 'list',
       type: 'array',
       of: [
-        { type: 'titleAndDescription' }
+        {
+          type: 'reference',
+          to: [{
+            type: 'FaqCollection'
+          }],
+        },
       ],
       title: 'Lista',
     },
@@ -28,7 +38,7 @@ export default {
     prepare({ title, list }){
       return {
         title: `[FAQ] ${removeMarkdown(title)}`,
-        subtitle: `${list.length} items`,
+        subtitle: `${list.length} przypiętych elementów FAQ`,
       }
     }
   }

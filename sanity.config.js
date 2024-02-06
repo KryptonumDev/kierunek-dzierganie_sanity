@@ -47,8 +47,10 @@ export default defineConfig({
                     S.divider(),
                     createDocumentTypeListItem(S, 'landingPage'),
                     S.divider(),
-                    createDocumentTypeListItem(S, 'ReviewCollection')
-                  ])
+                    createDocumentTypeListItem(S, 'ReviewCollection'),
+                    S.divider(),
+                    createDocumentTypeListItem(S, 'FaqCollection'),
+                  ]),
               ),
           ]),
     }),

@@ -13,10 +13,12 @@ export const singleTypes = [
 // Collection Types
 import landingPage from './collectionTypes/landingPage'
 import ReviewCollection from './collectionTypes/ReviewCollection'
+import FaqCollection from './collectionTypes/FaqCollection'
 
 export const collectionTypes = [
   landingPage,
   ReviewCollection,
+  FaqCollection,
 ]
 
 // Components
