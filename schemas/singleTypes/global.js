@@ -22,6 +22,17 @@ export default {
       fieldset: 'nav',
     },
     {
+      name: 'email',
+      type: 'string',
+      title: 'Adres e-mail',
+      validation: Rule => Rule.required().email(),
+    },
+    {
+      name: 'tel',
+      type: 'string',
+      title: 'Numer telefonu',
+    },
+    {
       name: 'facebook',
       type: 'string',
       title: 'Facebook',
@@ -40,6 +51,12 @@ export default {
       type: 'string',
       title: 'YouTube',
       validation: Rule => Rule.required(),
+      fieldset: 'social',
+    },
+    {
+      name: 'messenger',
+      type: 'string',
+      title: 'Messenger',
       fieldset: 'social',
     },
     {
