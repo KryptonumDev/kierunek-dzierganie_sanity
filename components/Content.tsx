@@ -19,5 +19,6 @@ export default {
     { type: 'Community' },
     { type: 'Reviews' },
     { type: 'Introduction' },
+    { type: 'ContactForm' },
   ]
 }

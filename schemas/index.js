@@ -42,6 +42,7 @@ import TilesFeatures, { TilesFeatures_Item } from './components/TilesFeatures'
 import Community from './components/Community'
 import Reviews from './components/Reviews'
 import Introduction from './components/Introduction'
+import ContactForm from './components/ContactForm'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -75,4 +76,5 @@ export const schemaTypes = [
   Content,
   Reviews,
   Introduction,
+  ContactForm,
 ]

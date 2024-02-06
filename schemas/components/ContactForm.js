@@ -1,8 +1,8 @@
 import { removeMarkdown } from "../../utils/functions"
 
 export default {
-  name: "CourseModules",
-  title: "Moduły kursu",
+  name: "ContactForm",
+  title: "Formularz kontaktowy",
   type: "object",
   fields: [
     {
@@ -10,34 +10,24 @@ export default {
       type: 'markdown',
       title: 'Nagłówek',
       validation: Rule => Rule.required(),
+      initialValue: 'Skontaktuj się z nami i **rozpocznij współpracę**'
     },
     {
       name: 'paragraph',
       type: 'markdown',
-      title: 'Paragraf',
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'list',
-      type: 'array',
-      of: [
-        { type: 'titleAndDescription' }
-      ],
-      title: 'Lista',
-      validation: Rule => Rule.required(),
+      title: 'Paragraf (opcjonalnie)',
+      initialValue: 'Chcesz razem z nami szerzyć pasję do rękodzieła? Odezwij się do nas – odpowiemy natychmiast!'
     },
   ],
   preview: {
     select: {
       title: 'heading',
       subtitle: 'paragraph',
-      img: 'list[0].img',
     },
-    prepare({ title, subtitle, img }) {
+    prepare({ title, subtitle }) {
       return {
-        title: `[Moduły kursu] ${removeMarkdown(title)}`,
+        title: `[Formularz kontaktowy] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
-        media: img,
       }
     }
   }
