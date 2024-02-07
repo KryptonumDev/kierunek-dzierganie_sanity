@@ -43,6 +43,7 @@ import Community from './components/Community'
 import Reviews from './components/Reviews'
 import Introduction from './components/Introduction'
 import ContactForm from './components/ContactForm'
+import TabSection, { TabSection_Item } from './components/TabSection'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -77,4 +78,6 @@ export const schemaTypes = [
   Reviews,
   Introduction,
   ContactForm,
+  TabSection,
+  TabSection_Item,
 ]

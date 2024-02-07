@@ -20,5 +20,6 @@ export default {
     { type: 'Reviews' },
     { type: 'Introduction' },
     { type: 'ContactForm' },
+    { type: 'TabSection' },
   ]
 }

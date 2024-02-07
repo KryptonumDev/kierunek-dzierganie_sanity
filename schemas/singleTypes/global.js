@@ -14,9 +14,9 @@ export default {
     {
       name: 'nav_Links',
       type: 'array',
-      of: [
-        { type: 'nav_Links' }
-      ],
+      of: [{
+        type: 'nav_Links'
+      }],
       title: 'Linki w nawigacji',
       validation: Rule => Rule.required().max(5),
       fieldset: 'nav',
@@ -34,29 +34,30 @@ export default {
     },
     {
       name: 'facebook',
-      type: 'string',
+      type: 'url',
       title: 'Facebook',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
       name: 'instagram',
-      type: 'string',
+      type: 'url',
       title: 'Instagram',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
       name: 'youtube',
-      type: 'string',
+      type: 'url',
       title: 'YouTube',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
       name: 'messenger',
-      type: 'string',
+      type: 'url',
       title: 'Messenger',
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
@@ -74,7 +75,7 @@ export default {
   fieldsets: [
     {
       name: 'nav',
-      title: 'Nwigacja',
+      title: 'Nawigacja',
       options: {
         collapsible: true
       }
