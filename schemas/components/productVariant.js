@@ -68,6 +68,11 @@ export default {
       ],
     },
     {
+      name: 'description',
+      type: 'markdown',
+      title: 'Dodatkowy opis wariantu',
+    },
+    {
       name: 'featuredImage',
       type: 'image',
       title: 'Obrazek wyróżniający',
