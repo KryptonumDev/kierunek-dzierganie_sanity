@@ -9,7 +9,7 @@ import {CustomMarkdownInput} from './components/Markdown'
 import {ExternalLinks} from './components/ExternalLinks'
 
 const createListItem = (S, typeName) => {
-  const { title, name, icon } = schemaTypes.find((item) => item.name === typeName);
+  const {title, name, icon} = schemaTypes.find((item) => item.name === typeName)
   return S.listItem()
     .title(title)
     .id(name)
@@ -19,7 +19,8 @@ const createListItem = (S, typeName) => {
 
 const singletonTypes = new Set(singleTypes.map((type) => type.name))
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
-const createDocumentTypeListItem = (S, name) => S.documentTypeListItem(collectionTypes.find(type => type.name === name).name);
+const createDocumentTypeListItem = (S, name) =>
+  S.documentTypeListItem(collectionTypes.find((type) => type.name === name).name)
 
 export default defineConfig({
   name: 'default',
@@ -48,9 +49,24 @@ export default defineConfig({
                     createDocumentTypeListItem(S, 'landingPage'),
                     S.divider(),
                     createDocumentTypeListItem(S, 'ReviewCollection'),
-                    S.divider(),
                     createDocumentTypeListItem(S, 'FaqCollection'),
-                  ]),
+                  ])
+              ),
+            S.divider(),
+            S.listItem()
+              .title('Sklep')
+              .icon(() => '🛒')
+              .child(
+                S.list()
+                  .title('Elementy')
+                  .items([
+                    createDocumentTypeListItem(S, 'product'),
+                    S.divider(),
+                    createDocumentTypeListItem(S, 'course'),
+                    createDocumentTypeListItem(S, 'lesson'),
+                    S.divider(),
+                    createDocumentTypeListItem(S, 'productCategory'),
+                  ])
               ),
           ]),
     }),

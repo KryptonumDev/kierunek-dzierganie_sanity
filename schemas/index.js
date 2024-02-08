@@ -3,8 +3,9 @@ import global, {global_Seo, nav_Link, nav_Links} from './singleTypes/global'
 import homepage from './singleTypes/homepage'
 import AboutMe_Page from './singleTypes/AboutMe_Page'
 import Contact_Page from './singleTypes/Contact_Page'
+import Knitting_Page from './singleTypes/Knitting_Page'
 
-export const singleTypes = [homepage, AboutMe_Page, Contact_Page]
+export const singleTypes = [homepage, AboutMe_Page, Contact_Page, Knitting_Page]
 
 // Collection Types
 import landingPage from './collectionTypes/landingPage'
@@ -13,6 +14,7 @@ import FaqCollection from './collectionTypes/FaqCollection'
 import product from './collectionTypes/product'
 import lesson from './collectionTypes/lesson'
 import course from './collectionTypes/course'
+import productCategory from './collectionTypes/ProductCategories'
 
 export const collectionTypes = [
   landingPage,
@@ -21,6 +23,7 @@ export const collectionTypes = [
   course,
   ReviewCollection,
   FaqCollection,
+  productCategory
 ]
 
 // Components
@@ -40,6 +43,15 @@ import Bonuses from './components/Bonuses'
 import TilesGrid, {TilesGrid_Item} from './components/TilesGrid'
 import Content from '../components/Content'
 import TilesSticky, {TilesSticky_Item} from './components/TilesSticky'
+import TilesFeatures, {TilesFeatures_Item} from './components/TilesFeatures'
+import Community from './components/Community'
+import ChapterList from './components/ChaptersList'
+import Reviews from './components/Reviews'
+import Introduction from './components/Introduction'
+import ContactForm from './components/ContactForm'
+import TabSection, {TabSection_Item} from './components/TabSection'
+import productVariant from './components/productVariant'
+import productParameters from './components/productParameters'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -77,4 +89,6 @@ export const schemaTypes = [
   ContactForm,
   TabSection,
   TabSection_Item,
+  productVariant,
+  productParameters
 ]

@@ -1,8 +1,8 @@
 export default {
   name: 'course',
-  title: 'Course Entry',
+  title: 'Kursy',
   type: 'document',
-  icon: () => '📂',
+  icon: () => '',
   fields: [
     {
       name: 'name',
@@ -20,17 +20,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
 
-    // {
-    //   name: 'price',
-    //   type: 'number',
-    //   title: 'Cena w groszach',
-    //   validation: (Rule) => Rule.required(),
-    // },
-    // {
-    //   name: 'discount',
-    //   type: 'number',
-    //   title: 'Cena w groszach po rabacie',
-    // },
     // {
     //   name: 'image',
     //   type: 'image',
