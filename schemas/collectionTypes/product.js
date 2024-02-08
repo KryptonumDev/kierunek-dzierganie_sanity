@@ -147,12 +147,6 @@ export default {
       type: 'array',
       title: 'Parametry',
       of: [{type: 'productParameters'}],
-      validation: (Rule) =>
-        Rule.custom((currentValue, {document}) => {
-          if ((document.type === 'physical' || document.type === 'variable') && currentValue === undefined)
-            return 'To pole jest wymagane'
-          return true
-        }),
       hidden: ({document}) => (document.type === 'bundle' || document.type === 'digital'),
     },
     {
