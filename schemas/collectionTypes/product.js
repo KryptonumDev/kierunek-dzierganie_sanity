@@ -75,6 +75,7 @@ export default {
       name: 'countInStock',
       type: 'number',
       title: 'Ilość w magazynie',
+      hidden: ({document}) => document.type === 'variable',
       validation: (Rule) =>
         Rule.min(0).custom((currentValue, {document}) => {
           if (document.type === 'physical' && currentValue === undefined)
