@@ -1,24 +1,23 @@
 // Single Types
-import global, { global_Seo, nav_Link, nav_Links } from './singleTypes/global'
+import global, {global_Seo, nav_Link, nav_Links} from './singleTypes/global'
 import homepage from './singleTypes/homepage'
 
-export const singleTypes = [
-  homepage,
-]
+export const singleTypes = [homepage]
 
 // Collection Types
 import landingPage from './collectionTypes/landingPage'
+import product from './collectionTypes/product'
+import lesson from './collectionTypes/lesson'
+import course from './collectionTypes/course'
 
-export const collectionTypes = [
-  landingPage,
-]
+export const collectionTypes = [landingPage, product, lesson, course]
 
 // Components
 import cta from './components/cta'
 import seo from './components/seo'
 import titleAndDescription from './components/titleAndDescription'
 import Faq from './components/Faq'
-import Opinions, { Opinions_List } from './components/Opinions'
+import Opinions, {Opinions_List} from './components/Opinions'
 import TileList from './components/TileList'
 import CtaSection from './components/CtaSection'
 import SimpleCtaSection from './components/SimpleCtaSection'
@@ -27,9 +26,10 @@ import Benefits from './components/Benefits'
 import CourseModules from './components/CourseModules'
 import ImageShowcase from './components/ImageShowcase'
 import Bonuses from './components/Bonuses'
-import TilesGrid, { TilesGrid_Item } from './components/TilesGrid'
+import TilesGrid, {TilesGrid_Item} from './components/TilesGrid'
 import Content from '../components/Content'
-import TilesSticky, { TilesSticky_Item } from './components/TilesSticky'
+import TilesSticky, {TilesSticky_Item} from './components/TilesSticky'
+import ChapterList from './components/ChaptersList'
 
 export const schemaTypes = [
   // Single Types
@@ -56,7 +56,7 @@ export const schemaTypes = [
   TilesSticky,
   TilesSticky_Item,
   Content,
-
+  ChapterList,
 
   // Restructuring
   ...singleTypes,
