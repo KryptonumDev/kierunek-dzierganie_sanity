@@ -1,8 +1,8 @@
 import { removeMarkdown } from "../../utils/functions"
 
 export default {
-  name: "Faq",
-  title: "FAQ",
+  name: "Reviews",
+  title: "Opinie kursantów",
   type: "object",
   fields: [
     {
@@ -12,19 +12,17 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'paragraph',
-      type: 'markdown',
-      title: 'Paragraf (opcjonalnie)',
-    },
-    {
       name: 'list',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{
-            type: 'FaqCollection'
-          }],
+          to: [
+            { type: 'ReviewCollection' }
+          ],
+          options: {
+            disableNew: true,
+          },
         },
       ],
       title: 'Lista',
@@ -35,10 +33,10 @@ export default {
       title: 'heading',
       list: 'list',
     },
-    prepare({ title, list }){
+    prepare({ title, list }) {
       return {
-        title: `[FAQ] ${removeMarkdown(title)}`,
-        subtitle: `${list.length} przypiętych elementów FAQ`,
+        title: `[Opinie kursantów] ${removeMarkdown(title)}`,
+        subtitle: `${list.length} opinii`,
       }
     }
   }

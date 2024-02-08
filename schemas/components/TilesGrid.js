@@ -67,7 +67,7 @@ export const TilesGrid_Item = {
     },
     prepare({ img, cta }) {
       return {
-        title: `'${cta.text}' linked to '${cta.href}'`,
+        title: `'${cta.text}' kierujący do '${cta.href}'`,
         media: img,
       }
     }

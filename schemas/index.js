@@ -1,16 +1,27 @@
 // Single Types
 import global, {global_Seo, nav_Link, nav_Links} from './singleTypes/global'
 import homepage from './singleTypes/homepage'
+import AboutMe_Page from './singleTypes/AboutMe_Page'
+import Contact_Page from './singleTypes/Contact_Page'
 
-export const singleTypes = [homepage]
+export const singleTypes = [homepage, AboutMe_Page, Contact_Page]
 
 // Collection Types
 import landingPage from './collectionTypes/landingPage'
+import ReviewCollection from './collectionTypes/ReviewCollection'
+import FaqCollection from './collectionTypes/FaqCollection'
 import product from './collectionTypes/product'
 import lesson from './collectionTypes/lesson'
 import course from './collectionTypes/course'
 
-export const collectionTypes = [landingPage, product, lesson, course]
+export const collectionTypes = [
+  landingPage,
+  product,
+  lesson,
+  course,
+  ReviewCollection,
+  FaqCollection,
+]
 
 // Components
 import cta from './components/cta'
@@ -29,10 +40,11 @@ import Bonuses from './components/Bonuses'
 import TilesGrid, {TilesGrid_Item} from './components/TilesGrid'
 import Content from '../components/Content'
 import TilesSticky, {TilesSticky_Item} from './components/TilesSticky'
-import ChapterList from './components/ChaptersList'
 
 export const schemaTypes = [
-  // Single Types
+  ...singleTypes,
+  ...collectionTypes,
+
   global,
   global_Seo,
   nav_Link,
@@ -55,10 +67,14 @@ export const schemaTypes = [
   TilesGrid_Item,
   TilesSticky,
   TilesSticky_Item,
+  TilesFeatures,
+  TilesFeatures_Item,
+  Community,
   Content,
   ChapterList,
-
-  // Restructuring
-  ...singleTypes,
-  ...collectionTypes,
+  Reviews,
+  Introduction,
+  ContactForm,
+  TabSection,
+  TabSection_Item,
 ]

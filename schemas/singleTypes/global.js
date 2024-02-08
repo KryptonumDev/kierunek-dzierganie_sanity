@@ -14,32 +14,50 @@ export default {
     {
       name: 'nav_Links',
       type: 'array',
-      of: [
-        { type: 'nav_Links' }
-      ],
+      of: [{
+        type: 'nav_Links'
+      }],
       title: 'Linki w nawigacji',
       validation: Rule => Rule.required().max(5),
       fieldset: 'nav',
     },
     {
-      name: 'facebook',
+      name: 'email',
       type: 'string',
+      title: 'Adres e-mail',
+      validation: Rule => Rule.required().email(),
+    },
+    {
+      name: 'tel',
+      type: 'string',
+      title: 'Numer telefonu',
+    },
+    {
+      name: 'facebook',
+      type: 'url',
       title: 'Facebook',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
       name: 'instagram',
-      type: 'string',
+      type: 'url',
       title: 'Instagram',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
       name: 'youtube',
-      type: 'string',
+      type: 'url',
       title: 'YouTube',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
+      fieldset: 'social',
+    },
+    {
+      name: 'messenger',
+      type: 'url',
+      title: 'Messenger',
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
@@ -57,7 +75,7 @@ export default {
   fieldsets: [
     {
       name: 'nav',
-      title: 'Nwigacja',
+      title: 'Nawigacja',
       options: {
         collapsible: true
       }

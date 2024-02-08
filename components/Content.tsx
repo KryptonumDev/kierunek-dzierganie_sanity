@@ -15,5 +15,11 @@ export default {
     { type: 'Bonuses' },
     { type: 'TilesGrid' },
     { type: 'TilesSticky' },
+    { type: 'TilesFeatures' },
+    { type: 'Community' },
+    { type: 'Reviews' },
+    { type: 'Introduction' },
+    { type: 'ContactForm' },
+    { type: 'TabSection' },
   ]
 }

@@ -1,8 +1,8 @@
 import { removeMarkdown } from "../../utils/functions"
 
 export default {
-  name: "SimpleCtaSection",
-  title: "Prosta Sekcja CTA",
+  name: "ContactForm",
+  title: "Formularz kontaktowy",
   type: "object",
   fields: [
     {
@@ -10,21 +10,13 @@ export default {
       type: 'markdown',
       title: 'Nagłówek',
       validation: Rule => Rule.required(),
+      initialValue: 'Skontaktuj się z nami i **rozpocznij współpracę**'
     },
     {
       name: 'paragraph',
       type: 'markdown',
-      title: 'Paragraf',
-    },
-    {
-      name: 'cta',
-      type: 'cta',
-      title: 'CTA',
-    },
-    {
-      name: 'cta_Annotation',
-      type: 'markdown',
-      title: 'CTA Annotation',
+      title: 'Paragraf (opcjonalnie)',
+      initialValue: 'Chcesz razem z nami szerzyć pasję do rękodzieła? Odezwij się do nas – odpowiemy natychmiast!'
     },
   ],
   preview: {
@@ -34,7 +26,7 @@ export default {
     },
     prepare({ title, subtitle }) {
       return {
-        title: `[Prosta Sekcja CTA] ${removeMarkdown(title)}`,
+        title: `[Formularz kontaktowy] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
       }
     }

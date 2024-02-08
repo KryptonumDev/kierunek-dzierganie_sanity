@@ -1,21 +1,17 @@
 import { removeMarkdown } from "../../utils/functions"
 
 export default {
-  name: "CtaSection",
-  title: "Sekcja CTA",
+  name: "Introduction",
+  title: "Przedstawienie osoby",
   type: "object",
   fields: [
     {
       name: 'isReversed',
       type: 'boolean',
-      title: 'Odwrócona sekcja? (zdjęcie po lewej)',
+      title: 'Czy sekcja ma zostać odwrócona?',
       initialValue: false,
-    },
-    {
-      name: 'isHighlighted',
-      type: 'boolean',
-      title: 'Wyróżniona? (z subtelnym tłem)',
-      initialValue: false,
+      description: 'Jeśli zaznaczone, zdjęcie będzie po lewej stronie, a tekst po prawej. Domyślnie zdjęcie jest po prawej wysunięte do góry, a tekst po lewej.',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'heading',
@@ -32,12 +28,7 @@ export default {
     {
       name: 'cta',
       type: 'cta',
-      title: 'CTA',
-    },
-    {
-      name: 'cta_Annotation',
-      type: 'markdown',
-      title: 'CTA Annotation',
+      title: 'Wezwanie do działania (opcjonalnie)',
     },
     {
       name: 'img',
@@ -54,9 +45,9 @@ export default {
     },
     prepare({ title, subtitle, media }) {
       return {
-        title: `[Sekcja CTA] ${removeMarkdown(title)}`,
+        title: `[Przedstawienie osoby] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
-        media,
+        media
       }
     }
   }

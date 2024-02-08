@@ -9,11 +9,13 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'list',
@@ -22,6 +24,7 @@ export default {
         { type: 'titleAndDescription' }
       ],
       title: 'Lista',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
