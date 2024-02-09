@@ -13,6 +13,7 @@ export default {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
+      group: 'seo',
     },
   ],
   fieldsets: [
@@ -21,5 +22,11 @@ export default {
       title: 'Zawartość podstrony',
       options: { collapsible: true }
     },
-  ]
+  ],
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO',
+    },
+  ],
 }

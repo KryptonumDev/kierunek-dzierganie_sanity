@@ -1,5 +1,5 @@
 export default {
-  name: 'knitting',
+  name: 'knitting_Page',
   title: 'Strona dzierganie na drutach',
   type: 'document',
   icon: () => '',
@@ -29,7 +29,7 @@ export default {
     {
       name: 'content',
       title: 'Zawartość podstrony',
-      options: {collapsible: true},
+      options: { collapsible: true },
     },
   ],
 }

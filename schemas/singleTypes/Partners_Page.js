@@ -1,8 +1,8 @@
 export default {
-  name: 'Contact_Page',
-	title: 'Kontakt',
+  name: 'Partners_Page',
+	title: 'Partnerzy',
   type: 'document',
-  icon: () => '💌',
+  icon: () => '🤝',
   fields: [
     {
       name: 'content',
