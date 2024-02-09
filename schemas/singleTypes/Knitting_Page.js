@@ -29,7 +29,7 @@ export default {
     {
       name: 'content',
       title: 'Zawartość podstrony',
-      options: {collapsible: true},
+      options: { collapsible: true },
     },
   ],
 }
