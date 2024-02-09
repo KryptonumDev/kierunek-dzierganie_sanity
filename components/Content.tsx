@@ -21,5 +21,6 @@ export default {
     { type: 'Introduction' },
     { type: 'ContactForm' },
     { type: 'TabSection' },
+    { type: 'TilesIndicated' },
   ]
 }

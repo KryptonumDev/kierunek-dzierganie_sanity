@@ -3,11 +3,13 @@ import global, { global_Seo, nav_Link, nav_Links } from './singleTypes/global'
 import homepage from './singleTypes/homepage'
 import AboutMe_Page from './singleTypes/AboutMe_Page'
 import Contact_Page from './singleTypes/Contact_Page'
+import Partners_Page from './singleTypes/Partners_Page'
 
 export const singleTypes = [
   homepage,
   AboutMe_Page,
   Contact_Page,
+  Partners_Page,
 ]
 
 // Collection Types
@@ -44,6 +46,7 @@ import Reviews from './components/Reviews'
 import Introduction from './components/Introduction'
 import ContactForm from './components/ContactForm'
 import TabSection, { TabSection_Item } from './components/TabSection'
+import TilesIndicated, { TilesIndicated_Item } from './components/TilesIndicated'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -80,4 +83,6 @@ export const schemaTypes = [
   ContactForm,
   TabSection,
   TabSection_Item,
+  TilesIndicated,
+  TilesIndicated_Item,
 ]
