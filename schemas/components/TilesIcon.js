@@ -1,8 +1,8 @@
 import { removeMarkdown } from "../../utils/functions"
 
 export default {
-  name: "TilesGrid",
-  title: "Sekcja z kolumną kafelków",
+  name: "TilesIcon",
+  title: "Sekcja z kolumną kafelków z ikoną",
   type: "object",
   fields: [
     {
@@ -21,7 +21,7 @@ export default {
       name: 'list',
       type: 'array',
       of: [
-        { type: 'TilesGrid_Item' }
+        { type: 'TilesIcon_Item' }
       ],
       title: 'Lista',
       validation: Rule => Rule.required(),
@@ -35,7 +35,7 @@ export default {
     },
     prepare({ title, paragraph, list }) {
       return {
-        title: `[Sekcja z kolumną kafelków] ${removeMarkdown(title)}`,
+        title: `[Sekcja z kolumną kafelków z ikoną] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(paragraph),
         media: list[0].img,
       }
@@ -43,8 +43,9 @@ export default {
   }
 }
 
-export const TilesGrid_Item = {
-  name: "TilesGrid_Item",
+
+export const TilesIcon_Item = {
+  name: "TilesIcon_Item",
   title: "Element",
   type: "object",
   fields: [
@@ -55,19 +56,28 @@ export const TilesGrid_Item = {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'cta',
-      type: 'cta',
-      title: 'Wezwanie do działania',
+      name: 'title',
+      type: 'markdown',
+      title: 'Tytuł',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'description',
+      type: 'markdown',
+      title: 'Opis',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       img: 'img',
-      cta: 'cta',
+      title: 'title',
+      description: 'description',
     },
-    prepare({ img, cta }) {
+    prepare({ img, title, description }) {
       return {
-        title: `'${cta.text}' kierujący do '${cta.href}'`,
+        title: removeMarkdown(title),
+        description: removeMarkdown(description),
         media: img,
       }
     }

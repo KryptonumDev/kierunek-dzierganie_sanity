@@ -22,5 +22,6 @@ export default {
     { type: 'ContactForm' },
     { type: 'TabSection' },
     { type: 'TilesIndicated' },
+    { type: 'TilesIcon' },
   ]
 }

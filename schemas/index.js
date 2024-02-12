@@ -62,6 +62,7 @@ import TabSection, { TabSection_Item } from './components/TabSection'
 import TilesIndicated, { TilesIndicated_Item } from './components/TilesIndicated'
 import productVariant from './components/productVariant'
 import productParameters from './components/productParameters'
+import TilesIcon, { TilesIcon_Item } from './components/TilesIcon'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -103,4 +104,6 @@ export const schemaTypes = [
   TilesIndicated_Item,
   productVariant,
   productParameters,
+  TilesIcon,
+  TilesIcon_Item,
 ]
