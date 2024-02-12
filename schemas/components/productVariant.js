@@ -73,12 +73,6 @@ export default {
       title: 'Dodatkowy opis wariantu',
     },
     {
-      name: 'featuredImage',
-      type: 'image',
-      title: 'Obrazek wyróżniający',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'featuredVideo',
       type: 'string',
       title: 'Link do filmu wyróżniającego',
