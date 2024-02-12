@@ -23,5 +23,6 @@ export default {
     { type: 'TabSection' },
     { type: 'TilesIndicated' },
     { type: 'TilesIcon' },
+    { type: 'Divider' },
   ]
 }

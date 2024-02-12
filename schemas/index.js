@@ -65,6 +65,7 @@ import TilesIndicated, { TilesIndicated_Item } from './components/TilesIndicated
 import productVariant from './components/productVariant'
 import productParameters from './components/productParameters'
 import TilesIcon, { TilesIcon_Item } from './components/TilesIcon'
+import Divider from './components/Divider'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -108,4 +109,5 @@ export const schemaTypes = [
   productParameters,
   TilesIcon,
   TilesIcon_Item,
+  Divider,
 ]
