@@ -4,6 +4,7 @@ export default {
   name: "Faq",
   title: "FAQ",
   type: "object",
+  icon: () => '❓',
   fields: [
     {
       name: 'heading',

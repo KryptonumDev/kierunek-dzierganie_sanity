@@ -78,7 +78,7 @@ export const TilesIcon_Item = {
     prepare({ icon, title, description }) {
       return {
         title: removeMarkdown(title),
-        description: removeMarkdown(description),
+        subtitle: removeMarkdown(description),
         media: icon,
       }
     }
