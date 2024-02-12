@@ -4,6 +4,7 @@ export default {
   name: "ContactForm",
   title: "Formularz kontaktowy",
   type: "object",
+  icon: () => '📧',
   fields: [
     {
       name: 'heading',
