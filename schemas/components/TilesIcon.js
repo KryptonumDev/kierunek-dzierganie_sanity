@@ -37,7 +37,7 @@ export default {
       return {
         title: `[Sekcja z kolumną kafelków z ikoną] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(paragraph),
-        media: list[0].img,
+        media: list[0].icon,
       }
     }
   }
@@ -50,9 +50,10 @@ export const TilesIcon_Item = {
   type: "object",
   fields: [
     {
-      name: 'img',
+      name: 'icon',
       type: 'image',
-      title: 'Zdjęcie',
+      title: 'Ikona',
+      description: 'Ikona w formacie SVG.',
       validation: Rule => Rule.required(),
     },
     {
@@ -70,15 +71,15 @@ export const TilesIcon_Item = {
   ],
   preview: {
     select: {
-      img: 'img',
       title: 'title',
       description: 'description',
+      icon: 'icon',
     },
-    prepare({ img, title, description }) {
+    prepare({ icon, title, description }) {
       return {
         title: removeMarkdown(title),
         description: removeMarkdown(description),
-        media: img,
+        media: icon,
       }
     }
   }
