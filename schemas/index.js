@@ -66,6 +66,7 @@ import productVariant from './components/productVariant'
 import productParameters from './components/productParameters'
 import TilesIcon, { TilesIcon_Item } from './components/TilesIcon'
 import Divider from './components/Divider'
+import StepsList, { StepList_Item } from './components/StepList'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -110,4 +111,6 @@ export const schemaTypes = [
   TilesIcon,
   TilesIcon_Item,
   Divider,
+  StepsList,
+  StepList_Item,
 ]

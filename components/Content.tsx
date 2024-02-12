@@ -24,5 +24,6 @@ export default {
     { type: 'TilesIndicated' },
     { type: 'TilesIcon' },
     { type: 'Divider' },
+    { type: 'StepList' },
   ]
 }
