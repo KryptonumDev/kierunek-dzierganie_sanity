@@ -75,10 +75,13 @@ export default {
       name: 'countInStock',
       type: 'number',
       title: 'Ilość w magazynie',
+      hidden: ({document}) => document.type !== 'physical',
       validation: (Rule) =>
-        Rule.min(0).custom((currentValue, {document}) => {
+        Rule.custom((currentValue, {document}) => {
           if (document.type === 'physical' && currentValue === undefined)
             return 'To pole jest wymagane'
+          else if (document.type === 'physical' && currentValue < 0)
+            return 'Wartość nie może być ujemna'
           return true
         }),
     },
@@ -146,12 +149,6 @@ export default {
       type: 'array',
       title: 'Parametry',
       of: [{type: 'productParameters'}],
-      validation: (Rule) =>
-        Rule.custom((currentValue, {document}) => {
-          if ((document.type === 'physical' || document.type === 'variable') && currentValue === undefined)
-            return 'To pole jest wymagane'
-          return true
-        }),
       hidden: ({document}) => (document.type === 'bundle' || document.type === 'digital'),
     },
     {
