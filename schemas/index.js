@@ -5,6 +5,7 @@ import AboutMe_Page from './singleTypes/AboutMe_Page'
 import Contact_Page from './singleTypes/Contact_Page'
 import Partners_Page from './singleTypes/Partners_Page'
 import Cooperation_Page from './singleTypes/Cooperation_Page'
+import Affiliate_Page from './singleTypes/Affiliate_Page'
 import Knitting_Page from './singleTypes/Knitting_Page'
 
 export const singleTypes = [
@@ -13,6 +14,7 @@ export const singleTypes = [
   Contact_Page,
   Partners_Page,
   Cooperation_Page,
+  Affiliate_Page,
   Knitting_Page,
 ]
 

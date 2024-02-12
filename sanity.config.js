@@ -42,7 +42,7 @@ export default defineConfig({
               .icon(() => '📄')
               .child(
                 S.list()
-                  .title('Elementy')
+                  .title('Podstrony')
                   .items([
                     ...singleTypes.map((item) => createListItem(S, item.name)),
                     S.divider(),
