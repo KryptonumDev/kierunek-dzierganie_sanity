@@ -93,18 +93,6 @@ export default {
       hidden: ({document}) => document.type !== 'variable',
     },
     {
-      name: 'featuredImage',
-      type: 'image',
-      title: 'Obrazek wyróżniający',
-      validation: (Rule) =>
-        Rule.custom((currentValue, {document}) => {
-          if (document.type !== 'variable' && currentValue === undefined)
-            return 'To pole jest wymagane'
-          return true
-        }),
-      hidden: ({document}) => document.type === 'variable',
-    },
-    {
       name: 'featuredVideo',
       type: 'string',
       title: 'Link do filmu wyróżniającego',
