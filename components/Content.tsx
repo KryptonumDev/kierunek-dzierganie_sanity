@@ -26,5 +26,6 @@ export default {
     { type: 'TilesIcon' },
     { type: 'Divider' },
     { type: 'StepList' },
+    { type: 'Newsletter' },
   ]
 }

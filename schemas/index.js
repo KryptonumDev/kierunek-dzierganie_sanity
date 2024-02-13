@@ -70,6 +70,7 @@ import TilesIcon, { TilesIcon_Item } from './components/TilesIcon'
 import Divider from './components/Divider'
 import StepsList, { StepList_Item } from './components/StepList'
 import HeroColumn from './components/HeroColumn'
+import Newsletter from './components/Newsletter'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -117,4 +118,5 @@ export const schemaTypes = [
   StepsList,
   StepList_Item,
   HeroColumn,
+  Newsletter,
 ]
