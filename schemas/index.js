@@ -67,6 +67,7 @@ import productParameters from './components/productParameters'
 import TilesIcon, { TilesIcon_Item } from './components/TilesIcon'
 import Divider from './components/Divider'
 import StepsList, { StepList_Item } from './components/StepList'
+import HeroColumn from './components/HeroColumn'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -113,4 +114,5 @@ export const schemaTypes = [
   Divider,
   StepsList,
   StepList_Item,
+  HeroColumn,
 ]
