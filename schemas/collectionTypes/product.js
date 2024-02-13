@@ -41,7 +41,8 @@ export default {
             value: 'knitting',
           },
         ],
-      }
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'type',
