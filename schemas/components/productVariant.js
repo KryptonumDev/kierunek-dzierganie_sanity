@@ -68,11 +68,6 @@ export default {
       ],
     },
     {
-      name: 'description',
-      type: 'markdown',
-      title: 'Dodatkowy opis wariantu',
-    },
-    {
       name: 'featuredVideo',
       type: 'string',
       title: 'Link do filmu wyróżniającego',

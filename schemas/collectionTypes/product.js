@@ -132,6 +132,7 @@ export default {
         }),
       hidden: ({document}) => document.type !== 'bundle',
     },
+    // TODO: Add product description
     {
       name: 'parameters',
       type: 'array',
