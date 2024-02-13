@@ -5,6 +5,8 @@ import AboutMe_Page from './singleTypes/AboutMe_Page'
 import Contact_Page from './singleTypes/Contact_Page'
 import Partners_Page from './singleTypes/Partners_Page'
 import Cooperation_Page from './singleTypes/Cooperation_Page'
+import Affiliate_Page from './singleTypes/Affiliate_Page'
+import Newsletter_Page from './singleTypes/Newsletter_Page'
 import Knitting_Page from './singleTypes/Knitting_Page'
 
 export const singleTypes = [
@@ -13,6 +15,8 @@ export const singleTypes = [
   Contact_Page,
   Partners_Page,
   Cooperation_Page,
+  Affiliate_Page,
+  Newsletter_Page,
   Knitting_Page,
 ]
 
@@ -63,6 +67,9 @@ import TilesIndicated, { TilesIndicated_Item } from './components/TilesIndicated
 import productVariant from './components/productVariant'
 import productParameters from './components/productParameters'
 import TilesIcon, { TilesIcon_Item } from './components/TilesIcon'
+import Divider from './components/Divider'
+import StepsList, { StepList_Item } from './components/StepList'
+import HeroColumn from './components/HeroColumn'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -106,4 +113,8 @@ export const schemaTypes = [
   productParameters,
   TilesIcon,
   TilesIcon_Item,
+  Divider,
+  StepsList,
+  StepList_Item,
+  HeroColumn,
 ]

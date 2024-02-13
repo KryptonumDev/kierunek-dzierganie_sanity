@@ -4,6 +4,7 @@ export default {
   title: 'Komponenty podstrony',
   of: [
     { type: 'HeroBackgroundImg' },
+    { type: 'HeroColumn' },
     { type: 'Benefits' },
     { type: 'Faq' },
     { type: 'Opinions' },
@@ -23,5 +24,7 @@ export default {
     { type: 'TabSection' },
     { type: 'TilesIndicated' },
     { type: 'TilesIcon' },
+    { type: 'Divider' },
+    { type: 'StepList' },
   ]
 }
