@@ -50,6 +50,7 @@ export default defineConfig({
                     S.divider(),
                     createDocumentTypeListItem(S, 'ReviewCollection'),
                     createDocumentTypeListItem(S, 'FaqCollection'),
+                    createDocumentTypeListItem(S, 'CustomerCaseStudy_Collection'),
                   ])
               ),
             S.divider(),
