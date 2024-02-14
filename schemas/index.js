@@ -76,6 +76,7 @@ import StepsList, { StepList_Item } from './components/StepList'
 import HeroColumn from './components/HeroColumn'
 import Newsletter from './components/Newsletter'
 import CustomerCaseStudy from './components/CustomerCaseStudy'
+import WordsCollection from './components/WordsCollection'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -125,4 +126,5 @@ export const schemaTypes = [
   HeroColumn,
   Newsletter,
   CustomerCaseStudy,
+  WordsCollection,
 ]
