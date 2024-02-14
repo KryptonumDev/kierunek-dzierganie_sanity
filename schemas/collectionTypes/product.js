@@ -27,6 +27,24 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'basis',
+      type: 'string',
+      title: 'Podstawa',
+      options: {
+        list: [
+          {
+            title: 'Szydełkowanie',
+            value: 'crocheting',
+          },
+          {
+            title: 'Dzierganie na drutach',
+            value: 'knitting',
+          },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'type',
       type: 'string',
       title: 'Typ produktu',
