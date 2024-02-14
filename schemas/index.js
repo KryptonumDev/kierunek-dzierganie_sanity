@@ -73,6 +73,7 @@ import Divider from './components/Divider'
 import StepsList, { StepList_Item } from './components/StepList'
 import HeroColumn from './components/HeroColumn'
 import Newsletter from './components/Newsletter'
+import CustomerCaseStudy from './components/CustomerCaseStudy'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -121,4 +122,5 @@ export const schemaTypes = [
   StepList_Item,
   HeroColumn,
   Newsletter,
+  CustomerCaseStudy,
 ]

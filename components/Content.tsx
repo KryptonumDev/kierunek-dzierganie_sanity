@@ -27,5 +27,6 @@ export default {
     { type: 'Divider' },
     { type: 'StepList' },
     { type: 'Newsletter' },
+    { type: 'CustomerCaseStudy' },
   ]
 }
