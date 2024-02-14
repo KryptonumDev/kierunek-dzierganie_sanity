@@ -2,8 +2,9 @@ import { removeMarkdown } from "../../utils/functions"
 
 export default {
   name: "TilesGrid",
-  title: "Sekcja z kolumną kafelków",
+  title: "Sekcja z kolumną kafelków z CTA",
   type: "object",
+  icon: () => '| CTA |',
   fields: [
     {
       name: 'heading',
@@ -35,7 +36,7 @@ export default {
     },
     prepare({ title, paragraph, list }) {
       return {
-        title: `[Sekcja z kolumną kafelków] ${removeMarkdown(title)}`,
+        title: `[Sekcja z kolumną kafelków z CTA] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(paragraph),
         media: list[0].img,
       }
