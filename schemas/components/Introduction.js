@@ -4,6 +4,7 @@ export default {
   name: "Introduction",
   title: "Przedstawienie osoby",
   type: "object",
+  icon: () => '🙋‍♀️',
   fields: [
     {
       name: 'isReversed',
