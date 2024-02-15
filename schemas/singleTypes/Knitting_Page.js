@@ -2,7 +2,7 @@ export default {
   name: 'knitting_Page',
   title: 'Strona dzierganie na drutach',
   type: 'document',
-  icon: () => '',
+  icon: () => '🪡',
   fields: [
     {
       name: 'content',

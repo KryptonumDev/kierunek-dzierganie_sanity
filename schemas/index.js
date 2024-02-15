@@ -9,6 +9,7 @@ import Affiliate_Page from './singleTypes/Affiliate_Page'
 import Newsletter_Page from './singleTypes/Newsletter_Page'
 import WhyBrand_Page from './singleTypes/WhyBrand_Page'
 import Knitting_Page from './singleTypes/Knitting_Page'
+import NotFound_Page from './singleTypes/NotFound_Page'
 
 export const singleTypes = [
   homepage,
@@ -20,6 +21,7 @@ export const singleTypes = [
   Newsletter_Page,
   WhyBrand_Page,
   Knitting_Page,
+  NotFound_Page,
 ]
 
 // Collection Types
