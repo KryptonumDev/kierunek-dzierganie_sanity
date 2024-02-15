@@ -31,6 +31,7 @@ export default {
         },
       ],
       title: 'Lista',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
@@ -41,7 +42,7 @@ export default {
     prepare({ title, list }) {
       return {
         title: `[FAQ] ${removeMarkdown(title)}`,
-        subtitle: `${list.length} przypiętych elementów FAQ`,
+        subtitle: `${list?.length || 0} przypiętych elementów FAQ`,
       }
     }
   }
