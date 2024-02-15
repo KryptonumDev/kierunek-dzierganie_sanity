@@ -8,5 +8,6 @@
   "jsxSingleQuote": true,
   "bracketSameLine": false,
   "arrowParens": "always",
-  "braceStyle": "stroustrup"
+  "braceStyle": "stroustrup",
+  "bracketSpacing": false
 }

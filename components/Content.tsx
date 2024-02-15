@@ -29,5 +29,6 @@ export default {
     {type: 'Newsletter'},
     {type: 'CustomerCaseStudy'},
     {type: 'WordsCollection'},
+    {type: 'Partners'},
   ],
 }
