@@ -31,6 +31,7 @@ import lesson from './collectionTypes/lesson'
 import course from './collectionTypes/course'
 import productCategory from './collectionTypes/ProductCategories'
 import CustomerCaseStudy_Collection from './collectionTypes/CustomerCaseStudy_Collection'
+import Partner_Collection from './collectionTypes/Partner_Collection'
 
 export const collectionTypes = [
   landingPage,
@@ -41,6 +42,7 @@ export const collectionTypes = [
   FaqCollection,
   productCategory,
   CustomerCaseStudy_Collection,
+  Partner_Collection,
 ]
 
 // Components
