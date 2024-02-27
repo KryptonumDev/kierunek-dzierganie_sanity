@@ -11,6 +11,7 @@ import WhyBrand_Page from './singleTypes/WhyBrand_Page'
 import Knitting_Page from './singleTypes/Knitting_Page'
 import NotFound_Page from './singleTypes/NotFound_Page'
 import Statute_page from './singleTypes/Statute_Page'
+import PrivacyPolicy_Page from './singleTypes/PrivacyPolicy_Page'
 
 export const singleTypes = [
   homepage,
@@ -24,6 +25,7 @@ export const singleTypes = [
   Knitting_Page,
   NotFound_Page,
   Statute_page,
+  PrivacyPolicy_Page
 ]
 
 // Collection Types
@@ -85,6 +87,7 @@ import CustomerCaseStudy from './components/CustomerCaseStudy'
 import WordsCollection from './components/WordsCollection'
 import Partners from './components/Partners'
 import Statute_Page_Content from './components/Statute_Page_Content'
+import Privacy_Policy_Page_Content from './components/Privacy_Policy_Page_Content'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -136,5 +139,6 @@ export const schemaTypes = [
   CustomerCaseStudy,
   WordsCollection,
   Partners,
-  Statute_Page_Content
+  Statute_Page_Content,
+  Privacy_Policy_Page_Content
 ]
