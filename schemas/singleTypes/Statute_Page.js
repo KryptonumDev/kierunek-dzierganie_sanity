@@ -5,12 +5,12 @@ export default {
   icon: () => '📜',
   fields: [
     {
-      name: 'Header_Heading',
+      name: 'header_Heading',
       type: 'markdown',
       title: 'Nagłówek',
     },
     {
-      name: 'Header_Description',
+      name: 'header_Description',
       type: 'markdown',
       title: 'Opis',
     },
