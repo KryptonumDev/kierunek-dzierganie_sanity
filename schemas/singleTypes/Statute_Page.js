@@ -15,18 +15,18 @@ export default {
       title: 'Opis',
     },
     {
-      name: 'Content',
+      name: 'content',
       type: 'array',
-      of: [{type: 'titleAndDescription'}],
+      of: [{type: 'Statute_Page_Content'}],
       title: 'Zawartość',
-      fieldset: 'Content',
+      fieldset: 'content',
     },
     {
-      name: 'Files',
+      name: 'files',
       type: 'array',
       of: [{type: 'file'}],
       title: 'Lista plików',
-      fieldset: 'Files'
+      fieldset: 'files'
     },
     {
       name: 'seo',
@@ -37,12 +37,12 @@ export default {
   ],
   fieldsets: [
     {
-      name: 'Content',
+      name: 'content',
       title: 'Zawartość podstrony',
       options: {collapsible: true, collapsed: true},
     },
     {
-      name: 'Files',
+      name: 'files',
       title: 'Pliki',
       options: {collapsible: true, collapsed: true},
     }

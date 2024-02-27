@@ -84,6 +84,7 @@ import Newsletter from './components/Newsletter'
 import CustomerCaseStudy from './components/CustomerCaseStudy'
 import WordsCollection from './components/WordsCollection'
 import Partners from './components/Partners'
+import Statute_Page_Content from './components/Statute_Page_Content'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -135,4 +136,5 @@ export const schemaTypes = [
   CustomerCaseStudy,
   WordsCollection,
   Partners,
+  Statute_Page_Content
 ]
