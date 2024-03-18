@@ -30,5 +30,6 @@ export default {
     {type: 'CustomerCaseStudy'},
     {type: 'WordsCollection'},
     {type: 'Partners'},
+    {type: 'MostPopularCourses'},
   ],
-}
+};
