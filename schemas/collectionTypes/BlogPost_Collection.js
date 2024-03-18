@@ -1,4 +1,5 @@
-import {removeMarkdown} from '../../utils/functions';
+import { removeMarkdown } from '../../utils/functions';
+import { slugify } from '../../utils/slugify';
 
 const title = 'Zbiór blogów';
 const icon = () => '✒️';
@@ -26,21 +27,29 @@ export default {
     {
       name: 'hero_Author',
       type: 'reference',
-      to: [{type: 'Author_Collection'}],
+      to: [{ type: 'Author_Collection' }],
       title: 'Autor',
-      options: {disableNew: true},
+      options: { disableNew: true },
       fieldset: 'hero',
       validation: Rule => Rule.required(),
     },
     {
       name: 'slug',
       type: 'slug',
-      title: 'Link do postu',
-      description: 'Unikalna nazwa postu, która będzie wykorzystywana w adresie URL',
+      title: 'Slug',
+      description:
+        'Slug, to unikalny ciąg znaków, który znajdziemy zazwyczaj po ukośniku w adresie URL podstrony. Dzięki niemu jego forma jest zrozumiała dla użytkowników.',
       options: {
-        source: 'hero_Heading',
+        source: 'name',
+        slugify: input => `${slugify(input)}`,
       },
-      validation: Rule => Rule.required(),
+      validation: Rule =>
+        Rule.custom(({ current: slug }) => {
+          if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+            return 'Slug może zawierać tylko małe litery, cyfry oraz łączniki. Upewnij się, że nie zawiera on znaków specjalnych ani wielkich liter.';
+          }
+          return true;
+        }).required(),
     },
   ],
   fieldsets: [
@@ -54,7 +63,7 @@ export default {
       title: 'hero_Heading',
       subtitle: 'hero_Paragraph',
     },
-    prepare: ({title, subtitle}) => {
+    prepare: ({ title, subtitle }) => {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),

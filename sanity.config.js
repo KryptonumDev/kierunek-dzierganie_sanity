@@ -54,8 +54,8 @@ export default defineConfig({
                     createDocumentTypeListItem(S, 'Partner_Collection'),
                     S.divider(),
                     createDocumentTypeListItem(S, 'BlogCategory_Collection'),
-                    createDocumentTypeListItem(S, 'Author_Collection'),
                     createDocumentTypeListItem(S, 'BlogPost_Collection'),
+                    createDocumentTypeListItem(S, 'Author_Collection'),
                   ])
               ),
             S.divider(),
