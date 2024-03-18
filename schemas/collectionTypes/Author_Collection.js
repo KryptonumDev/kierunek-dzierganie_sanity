@@ -1,30 +1,31 @@
 import { removeMarkdown } from '../../utils/functions';
 
+const title = 'Zbiór autorów';
+const icon = () => '👤';
+
 export default {
-  name: 'SimpleCtaSection',
-  title: 'Prosta Sekcja CTA',
-  type: 'object',
+  name: 'Author_Collection',
+  type: 'document',
+  title,
+  icon,
   fields: [
     {
       name: 'heading',
       type: 'markdown',
-      title: 'Nagłówek',
+      title: 'Nagłówek widoczny przy prezentacji autora',
       validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
-      title: 'Paragraf',
+      title: 'Paragraf widoczny przy prezentacji autora',
+      validation: Rule => Rule.required(),
     },
     {
-      name: 'cta',
-      type: 'cta',
-      title: 'CTA',
-    },
-    {
-      name: 'cta_Annotation',
-      type: 'markdown',
-      title: 'CTA Annotation',
+      name: 'img',
+      type: 'image',
+      title: 'Zdjęcie autora',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
@@ -34,7 +35,7 @@ export default {
     },
     prepare({ title, subtitle }) {
       return {
-        title: `[Prosta Sekcja CTA] ${removeMarkdown(title)}`,
+        title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),
       };
     },

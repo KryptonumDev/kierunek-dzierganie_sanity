@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "CourseModules",
-  title: "Moduły kursu",
-  type: "object",
+  name: 'CourseModules',
+  title: 'Moduły kursu',
+  type: 'object',
   fields: [
     {
       name: 'heading',
@@ -20,9 +20,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [
-        { type: 'titleAndDescription' }
-      ],
+      of: [{ type: 'titleAndDescription' }],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
@@ -38,7 +36,7 @@ export default {
         title: `[Moduły kursu] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
         media: img,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

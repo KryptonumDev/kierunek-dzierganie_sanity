@@ -1,26 +1,26 @@
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {singleTypes, collectionTypes, schemaTypes} from './schemas'
-import {media} from 'sanity-plugin-media'
+import { defineConfig } from 'sanity';
+import { deskTool } from 'sanity/desk';
+import { visionTool } from '@sanity/vision';
+import { singleTypes, collectionTypes, schemaTypes } from './schemas';
+import { media } from 'sanity-plugin-media';
 
-import {markdownSchema} from 'sanity-plugin-markdown'
-import {CustomMarkdownInput} from './components/Markdown'
-import {ExternalLinks} from './components/ExternalLinks'
+import { markdownSchema } from 'sanity-plugin-markdown';
+import { CustomMarkdownInput } from './components/Markdown';
+import { ExternalLinks } from './components/ExternalLinks';
 
 const createListItem = (S, typeName) => {
-  const {title, name, icon} = schemaTypes.find((item) => item.name === typeName)
+  const { title, name, icon } = schemaTypes.find(item => item.name === typeName);
   return S.listItem()
     .title(title)
     .id(name)
     .icon(icon)
-    .child(S.document().schemaType(name).title(title).documentId(name))
-}
+    .child(S.document().schemaType(name).title(title).documentId(name));
+};
 
-const singletonTypes = new Set(singleTypes.map((type) => type.name))
-const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
+const singletonTypes = new Set(singleTypes.map(type => type.name));
+const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 const createDocumentTypeListItem = (S, name) =>
-  S.documentTypeListItem(collectionTypes.find((type) => type.name === name).name)
+  S.documentTypeListItem(collectionTypes.find(type => type.name === name).name);
 
 export default defineConfig({
   name: 'default',
@@ -31,7 +31,7 @@ export default defineConfig({
 
   plugins: [
     deskTool({
-      structure: (S) =>
+      structure: S =>
         S.list()
           .title('Struktura')
           .items([
@@ -44,7 +44,7 @@ export default defineConfig({
                 S.list()
                   .title('Podstrony')
                   .items([
-                    ...singleTypes.map((item) => createListItem(S, item.name)),
+                    ...singleTypes.map(item => createListItem(S, item.name)),
                     S.divider(),
                     createDocumentTypeListItem(S, 'landingPage'),
                     S.divider(),
@@ -52,6 +52,10 @@ export default defineConfig({
                     createDocumentTypeListItem(S, 'FaqCollection'),
                     createDocumentTypeListItem(S, 'CustomerCaseStudy_Collection'),
                     createDocumentTypeListItem(S, 'Partner_Collection'),
+                    S.divider(),
+                    createDocumentTypeListItem(S, 'BlogCategory_Collection'),
+                    createDocumentTypeListItem(S, 'BlogPost_Collection'),
+                    createDocumentTypeListItem(S, 'Author_Collection'),
                   ])
               ),
             S.divider(),
@@ -73,21 +77,21 @@ export default defineConfig({
           ]),
     }),
     visionTool(),
-    markdownSchema({input: CustomMarkdownInput}),
+    markdownSchema({ input: CustomMarkdownInput }),
     media(),
   ],
 
   schema: {
     types: schemaTypes,
-    templates: (templates) => templates.filter(({schemaType}) => !singletonTypes.has(schemaType)),
+    templates: templates => templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
   },
 
   document: {
     actions: (input, context) =>
       singletonTypes.has(context.schemaType)
-        ? input.filter(({action}) => action && singletonActions.has(action))
+        ? input.filter(({ action }) => action && singletonActions.has(action))
         : input,
   },
 
   tools: [ExternalLinks()],
-})
+});

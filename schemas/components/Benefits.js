@@ -1,16 +1,14 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "Benefits",
-  title: "Benefity",
-  type: "object",
+  name: 'Benefits',
+  title: 'Benefity',
+  type: 'object',
   fields: [
     {
       name: 'list',
       type: 'array',
-      of: [
-        { type: 'markdown' }
-      ],
+      of: [{ type: 'markdown' }],
       title: 'Lista',
     },
     {
@@ -38,7 +36,7 @@ export default {
       return {
         title: `[Benefity] ${removeMarkdown(claim)}`,
         subtitle: `${list.length} benefitów`,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

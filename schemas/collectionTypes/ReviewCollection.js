@@ -31,7 +31,7 @@ export default {
           type: 'image',
           title: 'Zdjęcie',
           validation: Rule => Rule.required(),
-        }
+        },
       ],
       title: 'Zdjęcia (opcjonalnie)',
       validation: Rule => Rule.max(2),
@@ -42,14 +42,14 @@ export default {
       rating: 'rating',
       name: 'name',
       subtitle: 'review',
-      media: 'images'
+      media: 'images',
     },
-    prepare({ rating, name, subtitle, media }){
+    prepare({ rating, name, subtitle, media }) {
       return {
         title: `${name} ocenił/-a kurs na ${rating} / 5`,
         subtitle: subtitle,
         media: media && media[0],
-      }
-    }
+      };
+    },
   },
-}
+};

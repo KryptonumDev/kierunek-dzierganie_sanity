@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "WordsCollection",
-  title: "Sekcja z kolekcją słów",
-  type: "object",
+  name: 'WordsCollection',
+  title: 'Sekcja z kolekcją słów',
+  type: 'object',
   icon: () => '☁️',
   fields: [
     {
@@ -15,9 +15,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [
-        { type: 'string' }
-      ],
+      of: [{ type: 'string' }],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
@@ -37,7 +35,7 @@ export default {
       return {
         title: `[Sekcja z kolekcją słów${cta ? ' - wraz z CTA' : ''}] ${removeMarkdown(title)}`,
         subtitle: list.join(', '),
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};
