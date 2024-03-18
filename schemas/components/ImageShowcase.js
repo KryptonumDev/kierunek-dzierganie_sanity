@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "ImageShowcase",
-  title: "Pokaz Zdjęć",
-  type: "object",
+  name: 'ImageShowcase',
+  title: 'Pokaz Zdjęć',
+  type: 'object',
   fields: [
     {
       name: 'isGrid',
@@ -37,10 +37,10 @@ export default {
       of: [
         {
           type: 'image',
-        }
+        },
       ],
       title: 'Zdjęcia',
-      validation: Rule => Rule.min(9).max(9).warning('Jeżeli nie jest zwykła galeria użyj 9 zdjęć')
+      validation: Rule => Rule.min(9).max(9).warning('Jeżeli nie jest zwykła galeria użyj 9 zdjęć'),
     },
   ],
   preview: {
@@ -54,7 +54,7 @@ export default {
         title: `[Pokaz zdjęć] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
         media,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

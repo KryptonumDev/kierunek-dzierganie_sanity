@@ -8,28 +8,28 @@ export default {
       name: 'name',
       type: 'string',
       title: 'Nazwa',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'slug',
       type: 'slug',
       options: {
-        source: 'name'
+        source: 'name',
       },
       title: 'Slug',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'video',
       type: 'string',
       title: 'Link do filmiku',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'lengthInMinutes',
       type: 'number',
       title: 'Długość w minutach',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     // {
     //   name: 'description',
@@ -50,7 +50,7 @@ export default {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
-      group: 'seo'
+      group: 'seo',
     },
   ],
   groups: [
@@ -58,5 +58,5 @@ export default {
       title: 'SEO',
       name: 'seo',
     },
-  ]
-}
+  ],
+};

@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "SimpleCtaSection",
-  title: "Prosta Sekcja CTA",
-  type: "object",
+  name: 'SimpleCtaSection',
+  title: 'Prosta Sekcja CTA',
+  type: 'object',
   fields: [
     {
       name: 'heading',
@@ -36,7 +36,7 @@ export default {
       return {
         title: `[Prosta Sekcja CTA] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

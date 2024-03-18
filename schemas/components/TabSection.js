@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "TabSection",
-  title: "Sekcja z zakładkami do wyboru",
-  type: "object",
+  name: 'TabSection',
+  title: 'Sekcja z zakładkami do wyboru',
+  type: 'object',
   fields: [
     {
       name: 'heading',
@@ -19,9 +19,11 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{
-        type: 'TabSection_Item'
-      }],
+      of: [
+        {
+          type: 'TabSection_Item',
+        },
+      ],
       title: 'Lista',
       validation: Rule => Rule.required().min(2).max(5),
     },
@@ -41,15 +43,15 @@ export default {
       return {
         title: `[Sekcja z zakładkami do wyboru] ${removeMarkdown(title)}`,
         subtitle: `${removeMarkdown(subtitle)}${cta && ` | '${cta.text}' kierujący do '${cta.href}'`}`,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};
 
 export const TabSection_Item = {
-  name: "TabSection_Item",
-  title: "Element",
-  type: "object",
+  name: 'TabSection_Item',
+  title: 'Element',
+  type: 'object',
   fields: [
     {
       name: 'title',
@@ -73,7 +75,7 @@ export const TabSection_Item = {
       return {
         title,
         subtitle: `${removeMarkdown(subtitle)}`,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

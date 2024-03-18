@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "TileList",
-  title: "Lista Kafelek",
-  type: "object",
+  name: 'TileList',
+  title: 'Lista Kafelek',
+  type: 'object',
   fields: [
     {
       name: 'heading',
@@ -13,9 +13,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [
-        { type: 'titleAndDescription' }
-      ],
+      of: [{ type: 'titleAndDescription' }],
       title: 'Lista',
     },
     {
@@ -43,7 +41,7 @@ export default {
       return {
         title: `[Lista Kafelek] ${removeMarkdown(title)}`,
         subtitle: `${list.length} items`,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

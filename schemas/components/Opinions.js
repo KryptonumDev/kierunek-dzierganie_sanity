@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "Opinions",
-  title: "Opinie",
-  type: "object",
+  name: 'Opinions',
+  title: 'Opinie',
+  type: 'object',
   fields: [
     {
       name: 'heading',
@@ -13,9 +13,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [
-        { type: 'Opinions_List' }
-      ],
+      of: [{ type: 'Opinions_List' }],
       title: 'Lista',
     },
     {
@@ -43,15 +41,15 @@ export default {
       return {
         title: `[Opinie] ${removeMarkdown(title)}`,
         subtitle: `${list.length} items`,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};
 
 export const Opinions_List = {
-  name: "Opinions_List",
-  title: "Opinie Lista",
-  type: "object",
+  name: 'Opinions_List',
+  title: 'Opinie Lista',
+  type: 'object',
   fields: [
     {
       name: 'author',
@@ -68,9 +66,7 @@ export const Opinions_List = {
     {
       name: 'gallery',
       type: 'array',
-      of: [
-        { type: 'image' },
-      ],
+      of: [{ type: 'image' }],
       validation: Rule => Rule.max(2),
       title: 'Galeria',
     },
@@ -84,7 +80,7 @@ export const Opinions_List = {
       return {
         title: `${author} wystawił/-a opinię`,
         subtitle: removeMarkdown(description),
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

@@ -19,7 +19,8 @@ export default {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
-      description: 'Slug, to unikalny ciąg znaków, który znajdziemy zazwyczaj po ukośniku w adresie URL podstrony. Dzięki niemu jego forma jest zrozumiała dla użytkowników.',
+      description:
+        'Slug, to unikalny ciąg znaków, który znajdziemy zazwyczaj po ukośniku w adresie URL podstrony. Dzięki niemu jego forma jest zrozumiała dla użytkowników.',
       options: {
         source: 'name',
         slugify: input => `${slugify(input)}`,

@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "Faq",
-  title: "FAQ",
-  type: "object",
+  name: 'Faq',
+  title: 'FAQ',
+  type: 'object',
   icon: () => '❓',
   fields: [
     {
@@ -25,9 +25,11 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{
-            type: 'FaqCollection'
-          }],
+          to: [
+            {
+              type: 'FaqCollection',
+            },
+          ],
         },
       ],
       title: 'Lista',
@@ -43,7 +45,7 @@ export default {
       return {
         title: `[FAQ] ${removeMarkdown(title)}`,
         subtitle: `${list?.length || 0} przypiętych elementów FAQ`,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

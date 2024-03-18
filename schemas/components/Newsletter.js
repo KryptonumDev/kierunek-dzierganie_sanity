@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "Newsletter",
-  title: "Newsletter",
-  type: "object",
+  name: 'Newsletter',
+  title: 'Newsletter',
+  type: 'object',
   icon: () => '📬',
   fields: [
     {
@@ -11,7 +11,7 @@ export default {
       type: 'markdown',
       title: 'Nagłówek',
       validation: Rule => Rule.required(),
-      initialValue: '**Zapisz się**'
+      initialValue: '**Zapisz się**',
     },
     {
       name: 'img',
@@ -29,8 +29,8 @@ export default {
     prepare({ title, media }) {
       return {
         title: `[Newsletter] ${removeMarkdown(title)}`,
-        media
-      }
-    }
-  }
-}
+        media,
+      };
+    },
+  },
+};

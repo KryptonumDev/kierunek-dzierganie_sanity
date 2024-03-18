@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "TilesFeatures",
-  title: "Wyróżniki kafelki",
-  type: "object",
+  name: 'TilesFeatures',
+  title: 'Wyróżniki kafelki',
+  type: 'object',
   fields: [
     {
       name: 'heading',
@@ -19,9 +19,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [
-        { type: 'TilesFeatures_Item' }
-      ],
+      of: [{ type: 'TilesFeatures_Item' }],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
@@ -36,16 +34,15 @@ export default {
         title: `[Wyróżniki kafelki] ${removeMarkdown(heading)}`,
         subtitle: `${list.length} wyróżników`,
         media: list[0].img,
-      }
-    }
-  }
-}
-
+      };
+    },
+  },
+};
 
 export const TilesFeatures_Item = {
-  name: "TilesFeatures_Item",
-  title: "Element",
-  type: "object",
+  name: 'TilesFeatures_Item',
+  title: 'Element',
+  type: 'object',
   fields: [
     {
       name: 'img',
@@ -70,14 +67,14 @@ export const TilesFeatures_Item = {
     select: {
       heading: 'heading',
       paragraph: 'paragraph',
-      media: 'img'
+      media: 'img',
     },
     prepare({ heading, paragraph, media }) {
       return {
         title: `${removeMarkdown(heading)}`,
         subtitle: `${removeMarkdown(paragraph)}`,
         media,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

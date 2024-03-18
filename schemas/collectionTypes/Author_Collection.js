@@ -1,4 +1,4 @@
-import {removeMarkdown} from '../../utils/functions';
+import { removeMarkdown } from '../../utils/functions';
 
 const title = 'Zbiór autorów';
 const icon = () => '👤';
@@ -33,7 +33,7 @@ export default {
       title: 'heading',
       subtitle: 'paragraph',
     },
-    prepare({title, subtitle}) {
+    prepare({ title, subtitle }) {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),

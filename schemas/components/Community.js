@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "Community",
-  title: "Społeczność Kierunek Dzierganie",
-  type: "object",
+  name: 'Community',
+  title: 'Społeczność Kierunek Dzierganie',
+  type: 'object',
   fields: [
     {
       name: 'isHighlighted',
@@ -17,14 +17,15 @@ export default {
       type: 'markdown',
       title: 'Nagłówek',
       validation: Rule => Rule.required(),
-      initialValue: 'Dołącz do Naszej **Twórczej Społeczności**'
+      initialValue: 'Dołącz do Naszej **Twórczej Społeczności**',
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
       validation: Rule => Rule.required(),
-      initialValue: 'To miejsce, gdzie znajdziesz przede wszystkim wsparcie cudownych kreatywnych dziewczyn oraz możesz też pochwalić się swoimi pracami wykonanymi w ramach kursów.'
+      initialValue:
+        'To miejsce, gdzie znajdziesz przede wszystkim wsparcie cudownych kreatywnych dziewczyn oraz możesz też pochwalić się swoimi pracami wykonanymi w ramach kursów.',
     },
     {
       name: 'cta',
@@ -41,8 +42,8 @@ export default {
       return {
         title: `[Sekcja społeczność] ${removeMarkdown(heading)}`,
         subtitle: `${removeMarkdown(paragraph)}`,
-        icon: () => '👥'
-      }
-    }
-  }
-}
+        icon: () => '👥',
+      };
+    },
+  },
+};
