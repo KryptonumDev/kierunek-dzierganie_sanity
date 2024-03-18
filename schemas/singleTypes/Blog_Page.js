@@ -52,7 +52,7 @@ export default {
     {
       name: 'blog_highlightedPost',
       type: 'reference',
-      to: [{type: 'BlogPost_Collection'}],
+      to: [{ type: 'BlogPost_Collection' }],
       title: 'Wyróżniony post',
       validation: Rule => Rule.required(),
       fieldset: 'blog',
@@ -61,23 +61,35 @@ export default {
       name: 'content',
       type: 'content',
       title: 'Komponenty strony',
-    }
+    },
+    {
+      name: 'seo',
+      type: 'seo',
+      title: 'SEO',
+      group: 'seo',
+    },
   ],
   fieldsets: [
     {
       name: 'hero',
       title: 'Sekcja wstępna',
-      options: {collapsible: true, collapsed: false},
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: 'categories',
       title: 'Sekcja z kategoriami bloga',
-      options: {collapsible: true, collapsed: true},
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: 'blog',
       title: 'Sekcja z postami bloga',
-      options: {collapsible: true, collapsed: true},
+      options: { collapsible: true, collapsed: true },
+    },
+  ],
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO',
     },
   ],
 };
