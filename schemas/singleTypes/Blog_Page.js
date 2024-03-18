@@ -50,7 +50,7 @@ export default {
       fieldset: 'blog',
     },
     {
-      name: 'blog_highlightedPost',
+      name: 'blog_HighlightedPost',
       type: 'reference',
       to: [{ type: 'BlogPost_Collection' }],
       title: 'Wyróżniony post',
