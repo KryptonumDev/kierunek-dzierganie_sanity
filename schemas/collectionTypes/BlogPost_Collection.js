@@ -34,6 +34,13 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'category',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'BlogCategory_Collection' }] }],
+      title: 'Kategoria',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
