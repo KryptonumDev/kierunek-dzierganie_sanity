@@ -44,23 +44,12 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
-
-    // {
-    //   name: 'category',
-    //   type: 'reference',
-    //   to: [{type: 'courseCategory'}],
-    //   options: {disableNew: true},
-    //   title: 'Category',
-    //   validation: (Rule) => Rule.required(),
-    // },
-    // {
-    //   name: 'author',
-    //   type: 'reference',
-    //   to: [{type: 'author'}],
-    //   options: {disableNew: true},
-    //   title: 'Author',
-    //   validation: (Rule) => Rule.required(),
-    // },
+    {
+      name: 'materials_link',
+      name: 'Dodatkowe materiały',
+      type: 'reference',
+      to: [{type: 'product'}],
+    },
     {
       name: 'chapters',
       type: 'array',
