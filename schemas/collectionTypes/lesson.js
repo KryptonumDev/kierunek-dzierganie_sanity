@@ -26,20 +26,31 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'video_alter',
+      type: 'string',
+      title: 'Link do filmiku dla leworęcznych',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'lengthInMinutes',
       type: 'number',
       title: 'Długość w minutach',
       validation: (Rule) => Rule.required(),
     },
-    // {
-    //   name: 'description',
-    //   type: 'markdown',
-    //   title: 'Description',
-    // },
+    {
+      name: 'description',
+      type: 'markdown',
+      title: 'Opis lekcji',
+    },
+    {
+      name: 'description_image',
+      type: 'image',
+      title: 'Obrazek obok opisu lekcji',
+    },
     {
       name: 'files',
       type: 'array',
-      title: 'Files',
+      title: 'Pliki do pobrania',
       of: [
         {
           type: 'file',

@@ -6,13 +6,25 @@ export default {
     {
       name: 'chapterName',
       type: 'string',
-      title: 'Chapter Name',
+      title: 'Nazwa rozdziału',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'chapterDescription',
+      type: 'string',
+      title: 'Opis rozdziału',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'chapterImage',
+      type: 'image',
+      title: 'Obrazek rozdziału',
       validation: Rule => Rule.required(),
     },
     {
       name: 'lessons',
       type: 'array',
-      title: 'Lessons',
+      title: 'Lekcje w rozdziale',
       validation: Rule => Rule.required(),
       of: [
         {
