@@ -54,7 +54,7 @@ export default {
       type: 'reference',
       to: [{ type: 'BlogPost_Collection' }],
       title: 'Wyróżniony post',
-      validation: Rule => Rule.required(),
+      description: 'Gdy nie zostanie wybrany żaden blog, zostanie wyświetlony ostatni dodany post.',
       fieldset: 'blog',
     },
     {

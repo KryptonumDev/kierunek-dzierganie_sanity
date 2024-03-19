@@ -11,6 +11,13 @@ export default {
   icon,
   fields: [
     {
+      name: 'hero_Img',
+      type: 'image',
+      title: 'Zdjęcie',
+      fieldset: 'hero',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'hero_Heading',
       type: 'markdown',
       title: 'Nagłówek',
