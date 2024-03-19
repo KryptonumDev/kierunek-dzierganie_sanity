@@ -40,7 +40,7 @@ export default {
       description:
         'Slug, to unikalny ciąg znaków, który znajdziemy zazwyczaj po ukośniku w adresie URL podstrony. Dzięki niemu jego forma jest zrozumiała dla użytkowników.',
       options: {
-        source: 'name',
+        source: 'hero_Heading',
         slugify: input => `${slugify(input)}`,
       },
       validation: Rule =>
