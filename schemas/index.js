@@ -1,5 +1,5 @@
 // Single Types
-import global, { global_Seo, nav_Link, nav_Links } from './singleTypes/global';
+import global, { global_OrganizationSchema, global_Seo, nav_Link, nav_Links } from './singleTypes/global';
 import homepage from './singleTypes/homepage';
 import AboutMe_Page from './singleTypes/AboutMe_Page';
 import Contact_Page from './singleTypes/Contact_Page';
@@ -147,4 +147,5 @@ export const schemaTypes = [
   Partners,
   Statute_Page_Content,
   MostPopularCourses,
+  global_OrganizationSchema,
 ];
