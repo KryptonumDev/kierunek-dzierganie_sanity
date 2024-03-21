@@ -1,5 +1,5 @@
 export default {
-  name: 'knitting_Page',
+  name: 'Knitting_Page',
   title: 'Strona dzierganie na drutach',
   type: 'document',
   icon: () => '🪡',
