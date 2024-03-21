@@ -11,6 +11,13 @@ export default {
   icon,
   fields: [
     {
+      name: 'hero_Img',
+      type: 'image',
+      title: 'Zdjęcie',
+      fieldset: 'hero',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'hero_Heading',
       type: 'markdown',
       title: 'Nagłówek',
@@ -34,13 +41,20 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'category',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'BlogCategory_Collection' }] }],
+      title: 'Kategoria',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
       description:
         'Slug, to unikalny ciąg znaków, który znajdziemy zazwyczaj po ukośniku w adresie URL podstrony. Dzięki niemu jego forma jest zrozumiała dla użytkowników.',
       options: {
-        source: 'name',
+        source: 'hero_Heading',
         slugify: input => `${slugify(input)}`,
       },
       validation: Rule =>
