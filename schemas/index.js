@@ -94,7 +94,9 @@ import WordsCollection from './components/WordsCollection';
 import Partners from './components/Partners';
 import Statute_Page_Content from './components/Statute_Page_Content';
 import MostPopularCourses from './components/MostPopularCourses';
-
+import PortableText from '../components/PortableText';
+import ProcessComponent, { ProcessComponent_List } from './components/BlogPosts/ProcessComponent';
+import HighlightedImage from './components/BlogPosts/HighlightedImage';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -147,4 +149,8 @@ export const schemaTypes = [
   Partners,
   Statute_Page_Content,
   MostPopularCourses,
+  PortableText,
+  ProcessComponent,
+  ProcessComponent_List,
+  HighlightedImage,
 ];
