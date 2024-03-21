@@ -11,6 +11,7 @@ import WhyBrand_Page from './singleTypes/WhyBrand_Page';
 import Knitting_Page from './singleTypes/Knitting_Page';
 import NotFound_Page from './singleTypes/NotFound_Page';
 import Statute_page from './singleTypes/Statute_Page';
+import PrivacyPolicy_Page from './singleTypes/PrivacyPolicy_Page'
 import Blog_Page from './singleTypes/Blog_Page';
 
 export const singleTypes = [
@@ -25,6 +26,7 @@ export const singleTypes = [
   Knitting_Page,
   NotFound_Page,
   Statute_page,
+  PrivacyPolicy_Page
   Blog_Page,
 ];
 
@@ -93,6 +95,7 @@ import CustomerCaseStudy from './components/CustomerCaseStudy';
 import WordsCollection from './components/WordsCollection';
 import Partners from './components/Partners';
 import Statute_Page_Content from './components/Statute_Page_Content';
+import Privacy_Policy_Page_Content from './components/Privacy_Policy_Page_Content'
 import MostPopularCourses from './components/MostPopularCourses';
 
 export const schemaTypes = [
@@ -146,6 +149,7 @@ export const schemaTypes = [
   WordsCollection,
   Partners,
   Statute_Page_Content,
+  Privacy_Policy_Page_Content
   MostPopularCourses,
   global_OrganizationSchema,
 ];
