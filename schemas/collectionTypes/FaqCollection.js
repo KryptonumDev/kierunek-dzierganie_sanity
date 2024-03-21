@@ -4,7 +4,7 @@ export default {
   name: 'FaqCollection',
   title: 'Zbiór elementów FAQ',
   type: 'document',
-  icon: () => '🤨',
+  icon: () => '❓',
   fields: [
     {
       name: 'question',

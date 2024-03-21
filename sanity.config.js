@@ -46,8 +46,6 @@ export default defineConfig({
                   .items([
                     ...singleTypes.map(item => createListItem(S, item.name)),
                     S.divider(),
-                    createDocumentTypeListItem(S, 'landingPage'),
-                    S.divider(),
                     createDocumentTypeListItem(S, 'ReviewCollection'),
                     createDocumentTypeListItem(S, 'FaqCollection'),
                     createDocumentTypeListItem(S, 'CustomerCaseStudy_Collection'),
@@ -58,6 +56,8 @@ export default defineConfig({
                     createDocumentTypeListItem(S, 'Author_Collection'),
                   ])
               ),
+            S.divider(),
+            createDocumentTypeListItem(S, 'landingPage'),
             S.divider(),
             S.listItem()
               .title('Sklep')
