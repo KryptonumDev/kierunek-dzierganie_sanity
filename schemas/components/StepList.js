@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "StepList",
-  title: "Sekcja z listą elementów",
-  type: "object",
+  name: 'StepList',
+  title: 'Sekcja z listą elementów',
+  type: 'object',
   icon: () => '✅',
   fields: [
     {
@@ -21,9 +21,11 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{
-        type: 'StepList_Item'
-      }],
+      of: [
+        {
+          type: 'StepList_Item',
+        },
+      ],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
@@ -39,15 +41,15 @@ export default {
         title: `[Sekcja z listą elementów] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
         media: () => list?.length || '',
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};
 
 export const StepList_Item = {
-  name: "StepList_Item",
-  title: "Element",
-  type: "object",
+  name: 'StepList_Item',
+  title: 'Element',
+  type: 'object',
   fields: [
     {
       name: 'title',
@@ -71,7 +73,7 @@ export const StepList_Item = {
       return {
         title,
         subtitle: removeMarkdown(subtitle),
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

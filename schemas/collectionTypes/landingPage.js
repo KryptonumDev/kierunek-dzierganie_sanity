@@ -7,14 +7,14 @@ export default {
     {
       name: 'name',
       type: 'string',
-      title: 'Name'
+      title: 'Name',
     },
     {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
       options: {
-        source: 'name'
+        source: 'name',
       },
       description: 'Do adresu URL zostanie dodany automatycznie prefix "/landing" - np. "/landing/twoj-slug"',
     },
@@ -33,13 +33,13 @@ export default {
   preview: {
     select: {
       title: 'name',
-      subtitle: 'slug.current'
-    }
+      subtitle: 'slug.current',
+    },
   },
   groups: [
     {
       name: 'seo',
-      title: 'SEO'
+      title: 'SEO',
     },
-  ]
-}
+  ],
+};

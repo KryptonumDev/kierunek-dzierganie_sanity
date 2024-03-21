@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "titleAndDescription",
-  title: "Tytuł i Opis",
-  type: "object",
+  name: 'titleAndDescription',
+  title: 'Tytuł i Opis',
+  type: 'object',
   fields: [
     {
       name: 'isImg',
@@ -25,7 +25,7 @@ export default {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie',
-      hidden: ({ parent }) => !parent?.isImg
+      hidden: ({ parent }) => !parent?.isImg,
     },
   ],
   preview: {
@@ -33,13 +33,13 @@ export default {
       title: 'title',
       subtitle: 'description',
       media: 'img',
-    }
+    },
   },
-  prepare({ title, subtitle, media }){
+  prepare({ title, subtitle, media }) {
     return {
       title: removeMarkdown(title),
       subtitle: removeMarkdown(subtitle),
       media,
-    }
-  }
-}
+    };
+  },
+};

@@ -1,9 +1,13 @@
 import { removeMarkdown } from '../../utils/functions';
 
+const title = 'Najpopularniejsze kursy';
+const icon = () => '🔥';
+
 export default {
-  name: 'SimpleCtaSection',
-  title: 'Prosta Sekcja CTA',
+  name: 'MostPopularCourses',
   type: 'object',
+  title,
+  icon,
   fields: [
     {
       name: 'heading',
@@ -15,16 +19,14 @@ export default {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
+      validation: Rule => Rule.required(),
     },
     {
-      name: 'cta',
-      type: 'cta',
-      title: 'CTA',
-    },
-    {
-      name: 'cta_Annotation',
-      type: 'markdown',
-      title: 'CTA Annotation',
+      name: 'courses',
+      type: 'reference',
+      to: [{ type: 'course' }],
+      title: 'Kursy',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
@@ -32,9 +34,9 @@ export default {
       title: 'heading',
       subtitle: 'paragraph',
     },
-    prepare({ title, subtitle }) {
+    prepare: ({ title, subtitle }) => {
       return {
-        title: `[Prosta Sekcja CTA] ${removeMarkdown(title)}`,
+        title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),
       };
     },

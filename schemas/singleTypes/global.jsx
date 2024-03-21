@@ -1,6 +1,6 @@
 export default {
   name: 'global',
-	title: 'Globalne',
+  title: 'Globalne',
   type: 'document',
   icon: () => '🌍',
   fields: [
@@ -14,9 +14,11 @@ export default {
     {
       name: 'nav_Links',
       type: 'array',
-      of: [{
-        type: 'nav_Links'
-      }],
+      of: [
+        {
+          type: 'nav_Links',
+        },
+      ],
       title: 'Linki w nawigacji',
       validation: Rule => Rule.required().max(5),
       fieldset: 'nav',
@@ -69,7 +71,22 @@ export default {
       name: 'robotsIndex',
       type: 'boolean',
       title: 'Indeksowanie przez roboty SEO',
-      description: 'Po włączeniu roboty SEO (takie jak Google) będą mogły indeksować witrynę w wyszukiwarkach.'
+      description: 'Po włączeniu roboty SEO (takie jak Google) będą mogły indeksować witrynę w wyszukiwarkach.',
+    },
+    {
+      type: 'global_OrganizationSchema',
+      name: 'OrganizationSchema',
+      title: 'Uporządkowane dane organizacji',
+      description: (
+        <a
+          href='https://developers.google.com/search/docs/appearance/structured-data/organization?hl=pl'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Więcej informacji o Schema
+        </a>
+      ),
+      options: { collapsible: true, collapsed: true },
     },
   ],
   fieldsets: [
@@ -77,8 +94,8 @@ export default {
       name: 'nav',
       title: 'Nawigacja',
       options: {
-        collapsible: true
-      }
+        collapsible: true,
+      },
     },
     {
       name: 'social',
@@ -86,29 +103,49 @@ export default {
       options: {
         collapsible: true,
         collapsed: true,
-      }
-    }
-  ]
-}
+      },
+    },
+  ],
+};
 
 export const global_Seo = {
-  name: "global_Seo",
-  title: "Global SEO",
-  type: "object",
+  name: 'global_Seo',
+  title: 'Global SEO',
+  type: 'object',
   fields: [
     {
       name: 'og_Img',
       type: 'image',
       title: 'OG Image',
-      description: 'Zdjęcie, które jest widoczne przy udostępnianiu strony w mediach społecznościowych. Wymiary zdjęcia powinny mieć 1200x630px'
+      description:
+        'Zdjęcie, które jest widoczne przy udostępnianiu strony w mediach społecznościowych. Wymiary zdjęcia powinny mieć 1200x630px',
     },
-  ]
-}
+  ],
+};
+
+export const global_OrganizationSchema = {
+  name: 'global_OrganizationSchema',
+  title: 'Global SEO',
+  type: 'object',
+  fields: [
+    {
+      name: 'name',
+      type: 'string',
+      title: 'Nazwa Twojej organizacji',
+    },
+    {
+      name: 'description',
+      type: 'text',
+      rows: 3,
+      title: 'Szczegółowy opis Twojej organizacji',
+    },
+  ],
+};
 
 export const nav_Links = {
-  name: "nav_Links",
-  title: "Linki w nawigacji",
-  type: "object",
+  name: 'nav_Links',
+  title: 'Linki w nawigacji',
+  type: 'object',
   fields: [
     {
       name: 'name',
@@ -138,15 +175,15 @@ export const nav_Links = {
           type: 'nav_Link',
         },
       ],
-      hidden: ({ parent: { href }}) => href !== undefined,
+      hidden: ({ parent: { href } }) => href !== undefined,
     },
-  ]
-}
+  ],
+};
 
 export const nav_Link = {
-  name: "nav_Link",
-  title: "Linki w nawigacji",
-  type: "object",
+  name: 'nav_Link',
+  title: 'Linki w nawigacji',
+  type: 'object',
   fields: [
     {
       name: 'img',
@@ -171,5 +208,5 @@ export const nav_Link = {
           return true;
         }).required(),
     },
-  ]
-}
+  ],
+};

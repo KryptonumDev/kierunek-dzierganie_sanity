@@ -7,19 +7,19 @@ export default {
       title: 'Tekst',
       name: 'text',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       title: 'Link',
       name: 'href',
       type: 'string',
       description: 'Link relatywny lub absolutny (z https://)',
-      validation: (Rule) =>
-        Rule.custom((value) => {
+      validation: Rule =>
+        Rule.custom(value => {
           if (value && !value.startsWith('/') && !value.startsWith('https://')) {
-            return 'Nieprawidłowy adres URL.'
+            return 'Nieprawidłowy adres URL.';
           }
-          return true
+          return true;
         }).required(),
     },
   ],
@@ -29,4 +29,4 @@ export default {
       subtitle: 'href',
     },
   },
-}
+};

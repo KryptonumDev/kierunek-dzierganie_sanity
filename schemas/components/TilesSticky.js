@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "TilesSticky",
-  title: "Sekcja z kafelkami z przyczepionym nagłówkiem",
-  type: "object",
+  name: 'TilesSticky',
+  title: 'Sekcja z kafelkami z przyczepionym nagłówkiem',
+  type: 'object',
   fields: [
     {
       name: 'heading',
@@ -25,9 +25,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [
-        { type: 'TilesSticky_Item' }
-      ],
+      of: [{ type: 'TilesSticky_Item' }],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
@@ -43,15 +41,15 @@ export default {
         title: `[Sekcja z kafelkami z przyczepionym nagłówkiem] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(paragraph),
         media: list[0].img,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};
 
 export const TilesSticky_Item = {
-  name: "TilesSticky_Item",
-  title: "Element",
-  type: "object",
+  name: 'TilesSticky_Item',
+  title: 'Element',
+  type: 'object',
   fields: [
     {
       name: 'heading',
@@ -75,7 +73,7 @@ export const TilesSticky_Item = {
       return {
         title: `${removeMarkdown(heading)}`,
         subtitle: `${removeMarkdown(paragraph)}`,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

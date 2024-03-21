@@ -1,15 +1,18 @@
 import { slugify } from '../../utils/slugify';
 
+const title = 'Zbiór kategorii bloga';
+const icon = () => '📝';
+
 export default {
-  name: 'CustomerCaseStudy_Collection',
-  title: 'Zbiór historii kursantów',
+  name: 'BlogCategory_Collection',
   type: 'document',
-  icon: () => '🙋‍♀️',
+  title,
+  icon,
   fields: [
     {
       name: 'name',
       type: 'string',
-      title: 'Imię',
+      title: 'Nazwa kategorii',
       validation: Rule => Rule.required(),
     },
     {
@@ -20,7 +23,7 @@ export default {
         'Slug, to unikalny ciąg znaków, który znajdziemy zazwyczaj po ukośniku w adresie URL podstrony. Dzięki niemu jego forma jest zrozumiała dla użytkowników.',
       options: {
         source: 'name',
-        slugify: input => `historia-${slugify(input)}`,
+        slugify: input => `${slugify(input)}`,
       },
       validation: Rule =>
         Rule.custom(({ current: slug }) => {
@@ -30,32 +33,11 @@ export default {
           return true;
         }).required(),
     },
-    {
-      name: 'img',
-      type: 'image',
-      title: 'Zdjęcie',
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'excerpt',
-      type: 'text',
-      rows: 3,
-      title: 'Zajawka',
-      validation: Rule => Rule.required(),
-    },
   ],
   preview: {
     select: {
       title: 'name',
-      subtitle: 'excerpt',
-      media: 'img',
-    },
-    prepare({ title, subtitle, media }) {
-      return {
-        title,
-        subtitle,
-        media,
-      };
+      subtitle: 'slug.current',
     },
   },
 };

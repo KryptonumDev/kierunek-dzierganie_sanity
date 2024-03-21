@@ -1,6 +1,6 @@
 export default {
   name: 'AboutMe_Page',
-	title: 'O mnie',
+  title: 'O mnie',
   type: 'document',
   icon: () => '🙋‍♀️',
   fields: [
@@ -20,7 +20,7 @@ export default {
     {
       name: 'content',
       title: 'Zawartość podstrony',
-      options: { collapsible: true }
+      options: { collapsible: true },
     },
   ],
   groups: [
@@ -29,4 +29,4 @@ export default {
       title: 'SEO',
     },
   ],
-}
+};

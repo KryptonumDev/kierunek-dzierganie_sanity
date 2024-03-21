@@ -17,16 +17,16 @@ export default {
     {
       name: 'content',
       type: 'array',
-      of: [{type: 'Statute_Page_Content'}],
+      of: [{ type: 'Statute_Page_Content' }],
       title: 'Zawartość',
       fieldset: 'content',
     },
     {
       name: 'files',
       type: 'array',
-      of: [{type: 'file'}],
+      of: [{ type: 'file' }],
       title: 'Lista plików',
-      fieldset: 'files'
+      fieldset: 'files',
     },
     {
       name: 'seo',
@@ -39,13 +39,13 @@ export default {
     {
       name: 'content',
       title: 'Zawartość podstrony',
-      options: {collapsible: true, collapsed: true},
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: 'files',
       title: 'Pliki',
-      options: {collapsible: true, collapsed: true},
-    }
+      options: { collapsible: true, collapsed: true },
+    },
   ],
   groups: [
     {
@@ -53,4 +53,4 @@ export default {
       title: 'SEO',
     },
   ],
-}
+};

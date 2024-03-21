@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "Reviews",
-  title: "Opinie kursantów",
-  type: "object",
+  name: 'Reviews',
+  title: 'Opinie kursantów',
+  type: 'object',
   fields: [
     {
       name: 'heading',
@@ -17,9 +17,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [
-            { type: 'ReviewCollection' }
-          ],
+          to: [{ type: 'ReviewCollection' }],
           options: {
             disableNew: true,
           },
@@ -37,7 +35,7 @@ export default {
       return {
         title: `[Opinie kursantów] ${removeMarkdown(title)}`,
         subtitle: `${list.length} opinii`,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

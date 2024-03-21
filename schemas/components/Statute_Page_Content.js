@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "Statute_Page_Content",
-  title: "Zawartość",
-  type: "object",
+  name: 'Statute_Page_Content',
+  title: 'Zawartość',
+  type: 'object',
   fields: [
     {
       name: 'title',
@@ -19,13 +19,13 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'description'
-    }
+      subtitle: 'description',
+    },
   },
-  prepare({ title, subtitle}) {
+  prepare({ title, subtitle }) {
     return {
       title: removeMarkdown(title),
       subtitle: removeMarkdown(subtitle),
-    }
-  }
-}
+    };
+  },
+};

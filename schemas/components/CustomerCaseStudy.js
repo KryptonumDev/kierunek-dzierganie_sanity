@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "CustomerCaseStudy",
-  title: "Historie kursantów",
-  type: "object",
+  name: 'CustomerCaseStudy',
+  title: 'Historie kursantów',
+  type: 'object',
   icon: () => '🙋‍♀️',
   fields: [
     {
@@ -21,15 +21,19 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{
-        type: 'reference',
-        to: [{
-          type: 'CustomerCaseStudy_Collection',
-        }],
-        options: {
-          disableNew: true,
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {
+              type: 'CustomerCaseStudy_Collection',
+            },
+          ],
+          options: {
+            disableNew: true,
+          },
         },
-      }],
+      ],
       title: 'Lista',
       validation: Rule => Rule.required().min(3),
     },
@@ -45,7 +49,7 @@ export default {
         title: `[Historie kursantów] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
         media: media[0].img,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

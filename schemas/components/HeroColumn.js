@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "HeroColumn",
-  title: "Sekcja Hero z kolumną (zdjęcie, nagłówek oraz paragraf)",
-  type: "object",
+  name: 'HeroColumn',
+  title: 'Sekcja Hero z kolumną (zdjęcie, nagłówek oraz paragraf)',
+  type: 'object',
   fields: [
     {
       name: 'heading',
@@ -35,7 +35,7 @@ export default {
         title: `[Sekcja Hero z kolumną (zdjęcie, nagłówek oraz paragraf)] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
         media,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};
