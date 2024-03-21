@@ -43,7 +43,12 @@ export default {
     {
       name: 'category',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'BlogCategory_Collection' }] }],
+      of: [{
+        type: 'reference',
+        to: [{
+          type: 'BlogCategory_Collection'
+        }]
+      }],
       title: 'Kategoria',
       validation: Rule => Rule.required(),
     },

@@ -26,7 +26,7 @@ export const singleTypes = [
   Knitting_Page,
   NotFound_Page,
   Statute_page,
-  PrivacyPolicy_Page
+  PrivacyPolicy_Page,
   Blog_Page,
 ];
 
@@ -149,7 +149,7 @@ export const schemaTypes = [
   WordsCollection,
   Partners,
   Statute_Page_Content,
-  Privacy_Policy_Page_Content
+  Privacy_Policy_Page_Content,
   MostPopularCourses,
   global_OrganizationSchema,
 ];
