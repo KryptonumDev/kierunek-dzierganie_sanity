@@ -10,14 +10,16 @@ export default {
       title: 'Komponenty podstrony nad listingiem',
     },
     {
-      name: 'listingTitle',
+      name: 'listing_Heading',
       type: 'markdown',
-      title: 'Tytuł listingu produktów',
+      title: 'Nagłówek',
+      fieldset: 'listing',
     },
     {
-      name: 'listingText',
+      name: 'listing_Paragraph',
       type: 'markdown',
-      title: 'Tekst listingu produktów',
+      title: 'Paragraf',
+      fieldset: 'listing',
     },
     {
       name: 'seo',
@@ -29,6 +31,11 @@ export default {
     {
       name: 'content',
       title: 'Zawartość podstrony',
+      options: { collapsible: true },
+    },
+    {
+      name: 'listing',
+      title: 'Lista wszystkich kursów',
       options: { collapsible: true },
     },
   ],
