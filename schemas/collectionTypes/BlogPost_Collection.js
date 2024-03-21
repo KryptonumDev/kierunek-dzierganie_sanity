@@ -65,6 +65,11 @@ export default {
           return true;
         }).required(),
     },
+    {
+      name: 'content',
+      type: 'PortableText',
+      title: 'Zawartość bloga',
+    },
   ],
   fieldsets: [
     {
