@@ -2,7 +2,7 @@ export default {
   name: 'WhyBrand_Page',
   title: 'Dlaczego powstała marka?',
   type: 'document',
-  icon: () => '🧶',
+  icon: () => '💼',
   fields: [
     {
       name: 'content',
