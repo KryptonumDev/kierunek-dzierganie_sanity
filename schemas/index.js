@@ -98,6 +98,7 @@ import PortableText from '../components/PortableText';
 import ProcessComponent, { ProcessComponent_List } from './components/BlogPosts/ProcessComponent';
 import HighlightedImage from './components/BlogPosts/HighlightedImage';
 import ArticleGreetings from './components/BlogPosts/ArticleGreetings';
+import Standout from './components/BlogPosts/Standout';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -155,4 +156,5 @@ export const schemaTypes = [
   ProcessComponent_List,
   HighlightedImage,
   ArticleGreetings,
+  Standout,
 ];

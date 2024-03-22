@@ -55,5 +55,6 @@ export default {
     { type: 'HighlightedImage' },
     { type: 'ProcessComponent' },
     { type: 'ArticleGreetings' },
+    { type: 'Standout'},
   ],
 };
