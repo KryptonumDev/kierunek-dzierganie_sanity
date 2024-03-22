@@ -32,11 +32,13 @@ export default {
     select: {
       title: 'heading',
       subtitle: 'paragraph',
+      media: 'img',
     },
-    prepare({ title, subtitle }) {
+    prepare({ title, subtitle, media }) {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),
+        media,
       };
     },
   },

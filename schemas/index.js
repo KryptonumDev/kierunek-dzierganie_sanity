@@ -97,6 +97,7 @@ import MostPopularCourses from './components/MostPopularCourses';
 import PortableText from '../components/PortableText';
 import ProcessComponent, { ProcessComponent_List } from './components/BlogPosts/ProcessComponent';
 import HighlightedImage from './components/BlogPosts/HighlightedImage';
+import ArticleGreetings from './components/BlogPosts/ArticleGreetings';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -153,4 +154,5 @@ export const schemaTypes = [
   ProcessComponent,
   ProcessComponent_List,
   HighlightedImage,
+  ArticleGreetings,
 ];
