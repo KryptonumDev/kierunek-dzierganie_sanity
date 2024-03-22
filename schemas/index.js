@@ -100,6 +100,7 @@ import Statute_Page_Content from './components/Statute_Page_Content';
 import Privacy_Policy_Page_Content from './components/Privacy_Policy_Page_Content'
 import MostPopularCourses from './components/MostPopularCourses';
 import StepsGrid, { StepGrid_Item } from './components/StepsGrid';
+import ImageAndText from './components/FlexImageAndText'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -152,6 +153,7 @@ export const schemaTypes = [
   WordsCollection,
   Partners,
   Statute_Page_Content,
+  ImageAndText,
   Privacy_Policy_Page_Content,
   MostPopularCourses,
   global_OrganizationSchema,

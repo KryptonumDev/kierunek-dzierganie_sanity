@@ -19,43 +19,37 @@ export default {
       title: 'Slug',
       validation: Rule => Rule.required(),
     },
-
-    // {
-    //   name: 'image',
-    //   type: 'image',
-    //   title: 'Obrazek wyróżniający',
-    //   validation: (Rule) => Rule.required(),
-    // },
-
-    // {
-    //   name: 'complexity',
-    //   type: 'string',
-    //   title: 'Complexity',
-    //   options: {
-    //     list: [
-    //       {title: 'Easy', value: '1'},
-    //       {title: 'Medium', value: '2'},
-    //       {title: 'Hard', value: '3'},
-    //     ],
-    //   },
-    //   validation: (Rule) => Rule.required(),
-    // },
-    // {
-    //   name: 'category',
-    //   type: 'reference',
-    //   to: [{type: 'courseCategory'}],
-    //   options: {disableNew: true},
-    //   title: 'Category',
-    //   validation: (Rule) => Rule.required(),
-    // },
-    // {
-    //   name: 'author',
-    //   type: 'reference',
-    //   to: [{type: 'author'}],
-    //   options: {disableNew: true},
-    //   title: 'Author',
-    //   validation: (Rule) => Rule.required(),
-    // },
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Obrazek wyróżniający',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'complexity',
+      type: 'string',
+      title: 'Poziom',
+      options: {
+        list: [
+          {title: 'Dla początkujących', value: '1'},
+          {title: 'Dla średnio zaawansowanych', value: '2'},
+          {title: 'Dla zaawansowanych', value: '3'},
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Długość kursu',
+      name: 'courseLength',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'materials_link',
+      title: 'Dodatkowe materiały',
+      type: 'reference',
+      to: [{type: 'product'}],
+    },
     {
       name: 'chapters',
       type: 'array',
