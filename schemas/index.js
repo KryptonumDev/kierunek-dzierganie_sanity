@@ -85,6 +85,7 @@ import CustomerCaseStudy from './components/CustomerCaseStudy'
 import WordsCollection from './components/WordsCollection'
 import Partners from './components/Partners'
 import Statute_Page_Content from './components/Statute_Page_Content'
+import ImageAndText from './components/FlexImageAndText'
 
 export const schemaTypes = [
   ...singleTypes,
@@ -136,5 +137,6 @@ export const schemaTypes = [
   CustomerCaseStudy,
   WordsCollection,
   Partners,
-  Statute_Page_Content
+  Statute_Page_Content,
+  ImageAndText
 ]

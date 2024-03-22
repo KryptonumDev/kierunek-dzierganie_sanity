@@ -38,16 +38,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'description',
-      type: 'markdown',
-      title: 'Opis lekcji',
-    },
-    {
-      name: 'description_image',
-      type: 'image',
-      title: 'Obrazek obok opisu lekcji',
-    },
-    {
       name: 'files',
       type: 'array',
       title: 'Pliki do pobrania',
@@ -64,6 +54,21 @@ export default {
       of: [
         {
           type: 'file',
+        },
+      ],
+    },
+    {
+      name: 'description',
+      type: 'markdown',
+      title: 'Czego się dzisiaj nauczysz?',
+    },
+    {
+      name: 'flex',
+      type: 'array',
+      title: 'Flexbox',
+      of: [
+        {
+          type: 'ImageAndText',
         },
       ],
     },
