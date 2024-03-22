@@ -1,4 +1,4 @@
-import {removeMarkdown} from '../../utils/functions'
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
   name: 'TilesIndicated',
@@ -9,7 +9,7 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'list',
@@ -20,7 +20,7 @@ export default {
         },
       ],
       title: 'Lista',
-      validation: (Rule) => Rule.required().min(2).max(2),
+      validation: Rule => Rule.required().min(2).max(2),
     },
   ],
   preview: {
@@ -28,14 +28,14 @@ export default {
       title: 'heading',
       list: 'list',
     },
-    prepare({title, list}) {
+    prepare({ title, list }) {
       return {
         title: `[Dwa kafelki ze wsazującymi strzałkami] ${removeMarkdown(title)}`,
         subtitle: `${list.length} elementy`,
-      }
+      };
     },
   },
-}
+};
 
 export const TilesIndicated_Item = {
   name: 'TilesIndicated_Item',
@@ -46,19 +46,19 @@ export const TilesIndicated_Item = {
       name: 'title',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'cta',
       type: 'cta',
       title: 'Wezwanie do działania',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
@@ -66,11 +66,11 @@ export const TilesIndicated_Item = {
       title: 'title',
       paragraph: 'paragraph',
     },
-    prepare({title, paragraph}) {
+    prepare({ title, paragraph }) {
       return {
         title,
         paragraph: removeMarkdown(paragraph),
-      }
+      };
     },
   },
-}
+};

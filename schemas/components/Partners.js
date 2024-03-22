@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "Partners",
-  title: "Sekcja partnerzy",
-  type: "object",
+  name: 'Partners',
+  title: 'Sekcja partnerzy',
+  type: 'object',
   icon: () => '👔',
   fields: [
     {
@@ -31,8 +31,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to:
-            { type: 'Partner_Collection' },
+          to: { type: 'Partner_Collection' },
         },
       ],
       title: 'Lista',
@@ -49,7 +48,7 @@ export default {
         title: `[Sekcja partnerzy] ${removeMarkdown(title)}`,
         subtitle: `${list?.length} pokazanych partnerów`,
         media: () => '👔',
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

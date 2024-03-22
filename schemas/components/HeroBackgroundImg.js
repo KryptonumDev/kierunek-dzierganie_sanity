@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "HeroBackgroundImg",
-  title: "Hero ze Zdjęciem w Tle",
-  type: "object",
+  name: 'HeroBackgroundImg',
+  title: 'Hero ze Zdjęciem w Tle',
+  type: 'object',
   fields: [
     {
       name: 'isReversed',
@@ -53,7 +53,7 @@ export default {
         title: `[Hero ze Zdjęciem w Tle] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
         media,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

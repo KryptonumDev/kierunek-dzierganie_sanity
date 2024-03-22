@@ -8,7 +8,7 @@ export default {
       name: 'name',
       type: 'string',
       title: 'Nazwa',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'slug',
@@ -17,13 +17,13 @@ export default {
         source: 'name',
       },
       title: 'Slug',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'video',
       type: 'string',
       title: 'Link do filmiku',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'video_alter',
@@ -35,7 +35,7 @@ export default {
       name: 'lengthInMinutes',
       type: 'number',
       title: 'Długość w minutach',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'files',
@@ -85,4 +85,4 @@ export default {
       name: 'seo',
     },
   ],
-}
+};

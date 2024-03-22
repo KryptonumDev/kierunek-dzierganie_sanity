@@ -8,7 +8,7 @@ export default {
       name: 'name',
       type: 'string',
       title: 'Nazwa kursu',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'slug',
@@ -17,7 +17,7 @@ export default {
         source: 'name',
       },
       title: 'Slug',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'image',
@@ -73,4 +73,4 @@ export default {
       name: 'seo',
     },
   ],
-}
+};

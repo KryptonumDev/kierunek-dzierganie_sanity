@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "Introduction",
-  title: "Przedstawienie osoby",
-  type: "object",
+  name: 'Introduction',
+  title: 'Przedstawienie osoby',
+  type: 'object',
   icon: () => '🙋‍♀️',
   fields: [
     {
@@ -11,7 +11,8 @@ export default {
       type: 'boolean',
       title: 'Czy sekcja ma zostać odwrócona?',
       initialValue: false,
-      description: 'Jeśli zaznaczone, zdjęcie będzie po lewej stronie, a tekst po prawej. Domyślnie zdjęcie jest po prawej wysunięte do góry, a tekst po lewej.',
+      description:
+        'Jeśli zaznaczone, zdjęcie będzie po lewej stronie, a tekst po prawej. Domyślnie zdjęcie jest po prawej wysunięte do góry, a tekst po lewej.',
       validation: Rule => Rule.required(),
     },
     {
@@ -48,8 +49,8 @@ export default {
       return {
         title: `[Przedstawienie osoby] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
-        media
-      }
-    }
-  }
-}
+        media,
+      };
+    },
+  },
+};

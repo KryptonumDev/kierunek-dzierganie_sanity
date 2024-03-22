@@ -1,8 +1,8 @@
 export default {
-  name: 'Knitting_Page',
-  title: 'Strona dzierganie na drutach',
+  name: 'Crocheting_Page',
+  title: 'Szydełkowanie',
   type: 'document',
-  icon: () => '🪡',
+  icon: () => '🧶',
   fields: [
     {
       name: 'content',

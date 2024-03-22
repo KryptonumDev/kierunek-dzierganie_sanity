@@ -1,9 +1,9 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
-  name: "TilesGrid",
-  title: "Sekcja z kolumną kafelków z CTA",
-  type: "object",
+  name: 'TilesGrid',
+  title: 'Sekcja z kolumną kafelków z CTA',
+  type: 'object',
   icon: () => '| CTA |',
   fields: [
     {
@@ -21,9 +21,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [
-        { type: 'TilesGrid_Item' }
-      ],
+      of: [{ type: 'TilesGrid_Item' }],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
@@ -39,15 +37,15 @@ export default {
         title: `[Sekcja z kolumną kafelków z CTA] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(paragraph),
         media: list[0].img,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};
 
 export const TilesGrid_Item = {
-  name: "TilesGrid_Item",
-  title: "Element",
-  type: "object",
+  name: 'TilesGrid_Item',
+  title: 'Element',
+  type: 'object',
   fields: [
     {
       name: 'img',
@@ -70,7 +68,7 @@ export const TilesGrid_Item = {
       return {
         title: `'${cta.text}' kierujący do '${cta.href}'`,
         media: img,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

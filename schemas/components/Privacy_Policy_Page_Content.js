@@ -1,7 +1,7 @@
-import { removeMarkdown } from '../../utils/functions';
+import {removeMarkdown} from '../../utils/functions'
 
 export default {
-  name: 'Statute_Page_Content',
+  name: 'Privacy_Policy_Page_Content',
   title: 'Zawartość',
   type: 'object',
   fields: [
@@ -22,10 +22,10 @@ export default {
       subtitle: 'description',
     },
   },
-  prepare({ title, subtitle }) {
+  prepare({title, subtitle}) {
     return {
       title: removeMarkdown(title),
       subtitle: removeMarkdown(subtitle),
-    };
+    }
   },
-};
+}

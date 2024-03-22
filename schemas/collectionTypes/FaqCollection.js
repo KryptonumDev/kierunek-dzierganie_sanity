@@ -1,10 +1,10 @@
-import { removeMarkdown } from "../../utils/functions"
+import { removeMarkdown } from '../../utils/functions';
 
 export default {
   name: 'FaqCollection',
   title: 'Zbiór elementów FAQ',
   type: 'document',
-  icon: () => '🤨',
+  icon: () => '❓',
   fields: [
     {
       name: 'question',
@@ -24,11 +24,11 @@ export default {
       question: 'question',
       answer: 'answer',
     },
-    prepare({ question, answer }){
+    prepare({ question, answer }) {
       return {
         title: removeMarkdown(question),
         subtitle: removeMarkdown(answer),
-      }
-    }
+      };
+    },
   },
-}
+};

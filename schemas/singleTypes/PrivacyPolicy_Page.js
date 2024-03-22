@@ -1,8 +1,8 @@
 export default {
-  name: 'Statute_Page',
-  title: 'Regulamin',
+  name: 'PrivacyPolicy_Page',
+  title: 'Polityka prywatności',
   type: 'document',
-  icon: () => '📜',
+  icon: () => '🔒',
   fields: [
     {
       name: 'header_Heading',
@@ -17,16 +17,9 @@ export default {
     {
       name: 'content',
       type: 'array',
-      of: [{ type: 'Statute_Page_Content' }],
+      of: [{type: 'Privacy_Policy_Page_Content'}],
       title: 'Zawartość',
       fieldset: 'content',
-    },
-    {
-      name: 'files',
-      type: 'array',
-      of: [{ type: 'file' }],
-      title: 'Lista plików',
-      fieldset: 'files',
     },
     {
       name: 'seo',
@@ -39,12 +32,12 @@ export default {
     {
       name: 'content',
       title: 'Zawartość podstrony',
-      options: { collapsible: true, collapsed: true },
+      options: {collapsible: true, collapsed: true},
     },
     {
       name: 'files',
       title: 'Pliki',
-      options: { collapsible: true, collapsed: true },
+      options: {collapsible: true, collapsed: true},
     },
   ],
   groups: [
@@ -53,4 +46,4 @@ export default {
       title: 'SEO',
     },
   ],
-};
+}

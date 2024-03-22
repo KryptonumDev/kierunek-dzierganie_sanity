@@ -1,7 +1,7 @@
 export default {
-  name: "ChapterList",
-  title: "Chapter List",
-  type: "object",
+  name: 'ChapterList',
+  title: 'Chapter List',
+  type: 'object',
   fields: [
     {
       name: 'chapterName',
@@ -38,4 +38,4 @@ export default {
       ],
     },
   ],
-}
+};

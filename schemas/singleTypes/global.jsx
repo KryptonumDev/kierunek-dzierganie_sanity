@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default {
   name: 'global',
   title: 'Globalne',
@@ -85,8 +87,22 @@ export default {
       name: 'robotsIndex',
       type: 'boolean',
       title: 'Indeksowanie przez roboty SEO',
-      description:
-        'Po włączeniu roboty SEO (takie jak Google) będą mogły indeksować witrynę w wyszukiwarkach.',
+      description: 'Po włączeniu roboty SEO (takie jak Google) będą mogły indeksować witrynę w wyszukiwarkach.',
+    },
+    {
+      type: 'global_OrganizationSchema',
+      name: 'OrganizationSchema',
+      title: 'Uporządkowane dane organizacji',
+      description: (
+        <a
+          href='https://developers.google.com/search/docs/appearance/structured-data/organization?hl=pl'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Więcej informacji o Schema
+        </a>
+      ),
+      options: { collapsible: true, collapsed: true },
     },
   ],
   fieldsets: [
@@ -114,7 +130,7 @@ export default {
       },
     },
   ],
-}
+};
 
 export const global_Seo = {
   name: 'global_Seo',
@@ -129,7 +145,26 @@ export const global_Seo = {
         'Zdjęcie, które jest widoczne przy udostępnianiu strony w mediach społecznościowych. Wymiary zdjęcia powinny mieć 1200x630px',
     },
   ],
-}
+};
+
+export const global_OrganizationSchema = {
+  name: 'global_OrganizationSchema',
+  title: 'Global SEO',
+  type: 'object',
+  fields: [
+    {
+      name: 'name',
+      type: 'string',
+      title: 'Nazwa Twojej organizacji',
+    },
+    {
+      name: 'description',
+      type: 'text',
+      rows: 3,
+      title: 'Szczegółowy opis Twojej organizacji',
+    },
+  ],
+};
 
 export const nav_Links = {
   name: 'nav_Links',
@@ -164,10 +199,10 @@ export const nav_Links = {
           type: 'nav_Link',
         },
       ],
-      hidden: ({parent: {href}}) => href !== undefined,
+      hidden: ({ parent: { href } }) => href !== undefined,
     },
   ],
-}
+};
 
 export const nav_Link = {
   name: 'nav_Link',
@@ -198,4 +233,4 @@ export const nav_Link = {
         }).required(),
     },
   ],
-}
+};
