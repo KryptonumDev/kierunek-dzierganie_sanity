@@ -46,7 +46,7 @@ export default {
     },
     {
       name: 'materials_link',
-      name: 'Dodatkowe materiały',
+      title: 'Dodatkowe materiały',
       type: 'reference',
       to: [{type: 'product'}],
     },

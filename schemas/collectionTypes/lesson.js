@@ -14,7 +14,7 @@ export default {
       name: 'slug',
       type: 'slug',
       options: {
-        source: 'name'
+        source: 'name',
       },
       title: 'Slug',
       validation: (Rule) => Rule.required(),
@@ -58,10 +58,20 @@ export default {
       ],
     },
     {
+      name: 'files_alter',
+      type: 'array',
+      title: 'Pliki do pobrania dla leworęcznych',
+      of: [
+        {
+          type: 'file',
+        },
+      ],
+    },
+    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
-      group: 'seo'
+      group: 'seo',
     },
   ],
   groups: [
@@ -69,5 +79,5 @@ export default {
       title: 'SEO',
       name: 'seo',
     },
-  ]
+  ],
 }
