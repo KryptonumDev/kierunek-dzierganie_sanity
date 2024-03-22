@@ -99,6 +99,7 @@ import Partners from './components/Partners';
 import Statute_Page_Content from './components/Statute_Page_Content';
 import Privacy_Policy_Page_Content from './components/Privacy_Policy_Page_Content'
 import MostPopularCourses from './components/MostPopularCourses';
+import StepsGrid, { StepGrid_Item } from './components/StepsGrid';
 
 export const schemaTypes = [
   ...singleTypes,
@@ -154,4 +155,6 @@ export const schemaTypes = [
   Privacy_Policy_Page_Content,
   MostPopularCourses,
   global_OrganizationSchema,
+  StepsGrid,
+  StepGrid_Item,
 ];
