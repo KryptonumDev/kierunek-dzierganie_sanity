@@ -65,7 +65,7 @@ export default {
     {
       name: 'flex',
       type: 'array',
-      title: 'Flexbox',
+      title: 'Sekcje dwukolumnowe z opisem i obrazkiem',
       of: [
         {
           type: 'ImageAndText',
