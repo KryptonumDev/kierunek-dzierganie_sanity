@@ -1,3 +1,6 @@
+import { HeroSimple_Title } from "../components/HeroSimple";
+import { StepsGrid_Title } from "../components/StepsGrid";
+
 export default {
   name: 'Crocheting_Page',
   title: 'Szydełkowanie',
@@ -5,9 +8,16 @@ export default {
   icon: () => '🧶',
   fields: [
     {
-      name: 'content',
-      type: 'content',
-      title: 'Komponenty podstrony nad listingiem',
+      name: 'HeroSimple',
+      type: 'HeroSimple',
+      title: HeroSimple_Title,
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: 'StepsGrid',
+      type: 'StepsGrid',
+      title: StepsGrid_Title,
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: 'listing_Heading',
