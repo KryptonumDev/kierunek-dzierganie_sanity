@@ -57,6 +57,12 @@ export const StepsGrid_Item = {
   type: 'object',
   fields: [
     {
+      name: 'img',
+      type: 'image',
+      title: 'Zdjęcie',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'heading',
       type: 'string',
       title: 'Tytuł',
