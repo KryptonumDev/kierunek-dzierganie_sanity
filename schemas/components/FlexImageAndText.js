@@ -19,7 +19,6 @@ export default {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie',
-      hidden: ({ parent }) => !parent?.isImg
     },
   ],
   preview: {
