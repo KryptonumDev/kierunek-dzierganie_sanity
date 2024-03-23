@@ -12,12 +12,14 @@ export default {
       type: 'HeroSimple',
       title: HeroSimple_Title,
       options: { collapsible: true, collapsed: true },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'StepsGrid',
       type: 'StepsGrid',
       title: StepsGrid_Title,
       options: { collapsible: true, collapsed: true },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'listing_Heading',
