@@ -1,3 +1,6 @@
+import { SimpleHero_Title } from "../components/SimpleHero";
+import { StepsGrid_Title } from "../components/StepsGrid";
+
 export default {
   name: 'Knitting_Page',
   title: 'Strona dzierganie na drutach',
@@ -5,9 +8,16 @@ export default {
   icon: () => '🪡',
   fields: [
     {
-      name: 'content',
-      type: 'content',
-      title: 'Komponenty podstrony nad listingiem',
+      name: 'SimpleHero',
+      type: 'SimpleHero',
+      title: SimpleHero_Title,
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: 'StepsGrid',
+      type: 'StepsGrid',
+      title: StepsGrid_Title,
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: 'listing_Heading',

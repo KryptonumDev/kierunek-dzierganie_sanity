@@ -99,8 +99,9 @@ import Partners from './components/Partners';
 import Statute_Page_Content from './components/Statute_Page_Content';
 import Privacy_Policy_Page_Content from './components/Privacy_Policy_Page_Content'
 import MostPopularCourses from './components/MostPopularCourses';
-import StepsGrid, { StepGrid_Item } from './components/StepsGrid';
+import StepsGrid, { StepsGrid_Item } from './components/StepsGrid';
 import ImageAndText from './components/FlexImageAndText'
+import SimpleHero from './components/SimpleHero';
 
 export const schemaTypes = [
   ...singleTypes,
@@ -158,5 +159,6 @@ export const schemaTypes = [
   MostPopularCourses,
   global_OrganizationSchema,
   StepsGrid,
-  StepGrid_Item,
+  StepsGrid_Item,
+  SimpleHero,
 ];

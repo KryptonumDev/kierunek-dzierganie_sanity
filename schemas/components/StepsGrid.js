@@ -1,10 +1,14 @@
 import { removeMarkdown } from '../../utils/functions';
 
+const title = 'Sekcja z siatką kroków';
+export const StepsGrid_Title = title;
+const icon = () => '🦶';
+
 export default {
-  name: 'StepGrid',
-  title: 'Sekcja z siatką kroków',
+  name: 'StepsGrid',
   type: 'object',
-  icon: () => '🦶',
+  title,
+  icon,
   fields: [
     {
       name: 'heading',
@@ -23,7 +27,7 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'StepGrid_Item',
+          type: 'StepsGrid_Item',
         },
       ],
       title: 'Lista',
@@ -32,22 +36,23 @@ export default {
   ],
   preview: {
     select: {
-      title: 'heading',
+      heading: 'heading',
       subtitle: 'paragraph',
       list: 'list',
     },
-    prepare({ title, subtitle, list }) {
+    prepare({ heading, subtitle, list }) {
       return {
-        title: `[Sekcja z listą elementów] ${removeMarkdown(title)}`,
+        title: `[${title}] ${removeMarkdown(heading)}`,
         subtitle: removeMarkdown(subtitle),
         media: () => list?.length || '',
+        icon,
       };
     },
   },
 };
 
-export const StepGrid_Item = {
-  name: 'StepGrid_Item',
+export const StepsGrid_Item = {
+  name: 'StepsGrid_Item',
   title: 'Element',
   type: 'object',
   fields: [
