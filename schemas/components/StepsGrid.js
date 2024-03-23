@@ -77,13 +77,15 @@ export const StepsGrid_Item = {
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'description',
+      title: 'heading',
+      subtitle: 'paragraph',
+      media: 'img',
     },
-    prepare({ title, subtitle }) {
+    prepare({ title, subtitle, media }) {
       return {
         title,
         subtitle: removeMarkdown(subtitle),
+        media,
       };
     },
   },
