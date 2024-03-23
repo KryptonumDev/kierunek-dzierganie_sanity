@@ -1,11 +1,11 @@
 import { removeMarkdown } from '../../utils/functions';
 
 const title = 'Prosta HERO sekcja';
-export const SimpleHero_Title = title;
+export const HeroSimple_Title = title;
 const icon = () => 'SH';
 
 export default {
-  name: 'SimpleHero',
+  name: 'HeroSimple',
   type: 'object',
   title,
   icon,

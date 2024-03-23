@@ -1,5 +1,5 @@
 import { slugify } from '../../utils/slugify';
-import { SimpleHero_Title } from '../components/SimpleHero';
+import { HeroSimple_Title } from '../components/HeroSimple';
 
 const title = 'Zbiór kategorii bloga';
 const icon = () => '📝';
@@ -35,9 +35,9 @@ export default {
         }).required(),
     },
     {
-      name: 'SimpleHero',
-      type: 'SimpleHero',
-      title: SimpleHero_Title,
+      name: 'HeroSimple',
+      type: 'HeroSimple',
+      title: HeroSimple_Title,
       options: { collapsible: true, collapsed: true },
       validation: Rule => Rule.required(),
     },

@@ -1,4 +1,4 @@
-import { SimpleHero_Title } from "../components/SimpleHero";
+import { HeroSimple_Title } from "../components/HeroSimple";
 import { StepsGrid_Title } from "../components/StepsGrid";
 
 export default {
@@ -8,9 +8,9 @@ export default {
   icon: () => '🪡',
   fields: [
     {
-      name: 'SimpleHero',
-      type: 'SimpleHero',
-      title: SimpleHero_Title,
+      name: 'HeroSimple',
+      type: 'HeroSimple',
+      title: HeroSimple_Title,
       options: { collapsible: true, collapsed: true },
     },
     {

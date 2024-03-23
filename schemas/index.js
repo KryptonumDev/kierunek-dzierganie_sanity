@@ -101,7 +101,7 @@ import Privacy_Policy_Page_Content from './components/Privacy_Policy_Page_Conten
 import MostPopularCourses from './components/MostPopularCourses';
 import StepsGrid, { StepsGrid_Item } from './components/StepsGrid';
 import ImageAndText from './components/FlexImageAndText'
-import SimpleHero from './components/SimpleHero';
+import HeroSimple from './components/HeroSimple';
 
 export const schemaTypes = [
   ...singleTypes,
@@ -160,5 +160,5 @@ export const schemaTypes = [
   global_OrganizationSchema,
   StepsGrid,
   StepsGrid_Item,
-  SimpleHero,
+  HeroSimple,
 ];
