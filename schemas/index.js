@@ -105,6 +105,7 @@ import BadgeSection from './components/BlogPosts/BadgeSection';
 import TableSection, { TableSection_Table } from './components/BlogPosts/TableSection';
 import ProcessShowcase, { ProcessShowcase_List } from './components/BlogPosts/ProcessShowcase';
 import QuoteSection from './components/BlogPosts/QuoteSection';
+import VideoSection from './components/BlogPosts/VideoSection';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -172,4 +173,5 @@ export const schemaTypes = [
   ProcessShowcase,
   ProcessShowcase_List,
   QuoteSection,
+  VideoSection,
 ];

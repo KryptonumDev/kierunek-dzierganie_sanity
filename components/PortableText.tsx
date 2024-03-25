@@ -63,5 +63,6 @@ export default {
     { type: 'image', name: 'LargeImage', title: 'Duży obraz', icon: () => '🖼️' },
     { type: 'ProcessShowcase' },
     { type: 'QuoteSection' },
+    { type: 'VideoSection' },
   ],
 };
