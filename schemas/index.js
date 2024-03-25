@@ -104,6 +104,7 @@ import ImagesGrid, { ImagesGrid_List } from './components/BlogPosts/ImagesGrid';
 import BadgeSection from './components/BlogPosts/BadgeSection';
 import TableSection, { TableSection_Table } from './components/BlogPosts/TableSection';
 import ProcessShowcase, { ProcessShowcase_List } from './components/BlogPosts/ProcessShowcase';
+import QuoteSection from './components/BlogPosts/QuoteSection';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -170,4 +171,5 @@ export const schemaTypes = [
   TableSection_Table,
   ProcessShowcase,
   ProcessShowcase_List,
+  QuoteSection,
 ];
