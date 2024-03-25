@@ -1,5 +1,3 @@
-import { removeMarkdown } from '../../../utils/functions';
-
 const title = 'Odznaczenie';
 const icon = () => '🌟';
 

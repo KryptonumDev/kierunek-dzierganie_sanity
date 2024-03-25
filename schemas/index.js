@@ -102,6 +102,7 @@ import Standout from './components/BlogPosts/Standout';
 import ImageBadge from './components/BlogPosts/ImageBadge';
 import ImagesGrid, { ImagesGrid_List } from './components/BlogPosts/ImagesGrid';
 import BadgeSection from './components/BlogPosts/BadgeSection';
+import TableSection, { TableSection_Table } from './components/BlogPosts/TableSection';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -164,4 +165,6 @@ export const schemaTypes = [
   ImagesGrid,
   ImagesGrid_List,
   BadgeSection,
+  TableSection,
+  TableSection_Table,
 ];
