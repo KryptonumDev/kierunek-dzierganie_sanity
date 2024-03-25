@@ -1,3 +1,5 @@
+import { removeMarkdown } from '../../../utils/functions';
+
 const title = 'Wyróżnione zdjęcie';
 const icon = () => '🖼️';
 
@@ -33,7 +35,7 @@ export default {
     },
     prepare({ paragraph, media }) {
       return {
-        title: `[${title}] - ${paragraph}`,
+        title: `[${title}] - ${removeMarkdown(paragraph)}`,
         media,
         icon,
       };
