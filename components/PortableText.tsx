@@ -60,5 +60,6 @@ export default {
     { type: 'ProcessComponent' },
     { type: 'ArticleGreetings' },
     { type: 'Standout' },
+    { type: 'image', name: 'LargeImage', title: 'Duży obraz', icon: () => '🖼️' },
   ],
 };
