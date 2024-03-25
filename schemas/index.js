@@ -40,7 +40,7 @@ import CustomerCaseStudy_Collection from './collectionTypes/CustomerCaseStudy_Co
 import Partner_Collection from './collectionTypes/Partner_Collection';
 import BlogCategory_Collection from './collectionTypes/BlogCategory_Collection';
 import Author_Collection from './collectionTypes/Author_Collection';
-import BlogPost_Collection from './collectionTypes/BlogPost_Collection';
+import BlogPost_Collection, { BlogPost_Collection_Hero } from './collectionTypes/BlogPost_Collection';
 
 export const collectionTypes = [
   landingPage,
@@ -183,4 +183,5 @@ export const schemaTypes = [
   ConversationShowcase_Recipient,
   ConversationShowcase_Sender,
   ConversationShowcase,
+  BlogPost_Collection_Hero,
 ];

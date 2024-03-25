@@ -11,33 +11,17 @@ export default {
   icon,
   fields: [
     {
-      name: 'hero_Img',
-      type: 'image',
-      title: 'Zdjęcie',
-      fieldset: 'hero',
+      name: 'hero',
+      type: 'BlogPost_Collection_Hero',
+      title: 'Hero',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'hero_Heading',
-      type: 'markdown',
-      title: 'Nagłówek',
-      fieldset: 'hero',
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'hero_Paragraph',
-      type: 'markdown',
-      title: 'Paragraf',
-      fieldset: 'hero',
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'hero_Author',
+      name: 'author',
       type: 'reference',
       to: [{ type: 'Author_Collection' }],
       title: 'Autor',
       options: { disableNew: true },
-      fieldset: 'hero',
       validation: Rule => Rule.required(),
     },
     {
@@ -54,7 +38,7 @@ export default {
       description:
         'Slug, to unikalny ciąg znaków, który znajdziemy zazwyczaj po ukośniku w adresie URL podstrony. Dzięki niemu jego forma jest zrozumiała dla użytkowników.',
       options: {
-        source: 'hero_Heading',
+        source: 'hero.heading',
         slugify: input => `${slugify(input)}`,
       },
       validation: Rule =>
@@ -71,16 +55,11 @@ export default {
       title: 'Zawartość bloga',
     },
   ],
-  fieldsets: [
-    {
-      name: 'hero',
-      title: 'Sekcja wstępna',
-    },
-  ],
+
   preview: {
     select: {
-      title: 'hero_Heading',
-      subtitle: 'hero_Paragraph',
+      title: 'hero.heading',
+      subtitle: 'hero.paragraph',
     },
     prepare: ({ title, subtitle }) => {
       return {
@@ -89,4 +68,27 @@ export default {
       };
     },
   },
+};
+
+export const BlogPost_Collection_Hero = {
+  name: 'BlogPost_Collection_Hero',
+  title: 'Sekcja wstępna',
+  type: 'object',
+  fields: [
+    {
+      name: 'img',
+      type: 'image',
+      title: 'Zdjęcie',
+    },
+    {
+      name: 'heading',
+      type: 'markdown',
+      title: 'Nagłówek',
+    },
+    {
+      name: 'paragraph',
+      type: 'markdown',
+      title: 'Paragraf',
+    },
+  ],
 };
