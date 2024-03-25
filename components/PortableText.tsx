@@ -53,6 +53,7 @@ export default {
       },
     },
     { type: 'ImageBadge' },
+    { type: 'ImagesGrid' },
     { type: 'HighlightedImage' },
     { type: 'ProcessComponent' },
     { type: 'ArticleGreetings' },

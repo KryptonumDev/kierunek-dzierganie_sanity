@@ -100,6 +100,7 @@ import HighlightedImage from './components/BlogPosts/HighlightedImage';
 import ArticleGreetings from './components/BlogPosts/ArticleGreetings';
 import Standout from './components/BlogPosts/Standout';
 import ImageBadge from './components/BlogPosts/ImageBadge';
+import ImagesGrid, { ImagesGrid_List } from './components/BlogPosts/ImagesGrid';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -159,4 +160,6 @@ export const schemaTypes = [
   ArticleGreetings,
   Standout,
   ImageBadge,
+  ImagesGrid,
+  ImagesGrid_List,
 ];

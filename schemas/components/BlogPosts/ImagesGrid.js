@@ -1,8 +1,10 @@
-const title = 'Proces';
-const icon = () => '🔧';
+import { removeMarkdown } from '../../../utils/functions';
+
+const title = 'Siatka zdjęć';
+const icon = () => '🖼️';
 
 export default {
-  name: 'ProcessComponent',
+  name: 'ImagesGrid',
   type: 'object',
   title,
   icon,
@@ -10,9 +12,8 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{ type: 'ProcessComponent_List' }],
+      of: [{ type: 'ImagesGrid_List' }],
       title: 'Lista',
-      description: 'Lista elementów procesu, które zostaną wyświetlone na stronie w tej samej kolejności',
       validation: Rule => Rule.required(),
     },
   ],
@@ -22,22 +23,24 @@ export default {
     },
     prepare({ list }) {
       return {
-        title: `[${title}] - ${list.length} elementów`,
+        title: `[${title}] - liczba zdjęć: ${list.length}`,
+        media: list[0].img,
         icon,
       };
     },
   },
 };
 
-export const ProcessComponent_List = {
-  name: 'ProcessComponent_List',
-  title: 'ProcessComponent List',
+export const ImagesGrid_List = {
+  name: 'ImagesGrid_List',
   type: 'object',
+  title: 'Lista zdjęć',
   fields: [
     {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
@@ -47,12 +50,12 @@ export const ProcessComponent_List = {
   ],
   preview: {
     select: {
+      paragraph: 'paragraph',
       media: 'img',
-      title: 'paragraph',
     },
-    prepare({ title, media }) {
+    prepare({ media, paragraph }) {
       return {
-        title: `${title}`,
+        title: `${paragraph ? removeMarkdown(paragraph) : 'Zdjęcie'}`,
         media,
       };
     },
