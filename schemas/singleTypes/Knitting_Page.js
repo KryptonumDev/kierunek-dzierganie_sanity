@@ -1,4 +1,5 @@
 import { HeroSimple_Title } from "../components/HeroSimple";
+import { LatestBlogEntries_Title } from "../components/LatestBlogEntries";
 import { StepsGrid_Title } from "../components/StepsGrid";
 
 export default {
@@ -32,6 +33,12 @@ export default {
       type: 'markdown',
       title: 'Paragraf',
       fieldset: 'listing',
+    },
+    {
+      name: 'LatestBlogEntries',
+      type: 'LatestBlogEntries',
+      title: LatestBlogEntries_Title,
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: 'seo',

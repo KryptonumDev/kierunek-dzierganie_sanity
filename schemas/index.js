@@ -102,6 +102,7 @@ import MostPopularCourses from './components/MostPopularCourses';
 import StepsGrid, { StepsGrid_Item } from './components/StepsGrid';
 import ImageAndText from './components/FlexImageAndText'
 import HeroSimple from './components/HeroSimple';
+import LatestBlogEntries from './components/LatestBlogEntries';
 
 export const schemaTypes = [
   ...singleTypes,
@@ -161,4 +162,5 @@ export const schemaTypes = [
   StepsGrid,
   StepsGrid_Item,
   HeroSimple,
+  LatestBlogEntries,
 ];
