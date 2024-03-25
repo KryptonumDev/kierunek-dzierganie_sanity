@@ -14,6 +14,7 @@ import NotFound_Page from './singleTypes/NotFound_Page';
 import Statute_page from './singleTypes/Statute_Page';
 import PrivacyPolicy_Page from './singleTypes/PrivacyPolicy_Page'
 import Blog_Page from './singleTypes/Blog_Page';
+import Logout_Page from './singleTypes/Logout_Page';
 
 export const singleTypes = [
   homepage,
@@ -107,6 +108,8 @@ import LatestBlogEntries from './components/LatestBlogEntries';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
+
+  Logout_Page,
 
   global,
   global_Seo,

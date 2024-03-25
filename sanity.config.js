@@ -57,6 +57,17 @@ export default defineConfig({
                   ])
               ),
             S.divider(),
+            S.listItem()
+              .title('Strony użytkowników')
+              .icon(() => '👤')
+              .child(
+                S.list()
+                  .title('Podstrony')
+                  .items([
+                    createListItem(S, 'Logout_Page'),
+                  ])
+              ),
+            S.divider(),
             createDocumentTypeListItem(S, 'landingPage'),
             S.divider(),
             S.listItem()

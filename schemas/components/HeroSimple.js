@@ -25,8 +25,12 @@ export default {
     {
       name: 'paragraph',
       type: 'markdown',
-      title: 'Paragraf',
-      validation: Rule => Rule.required(),
+      title: 'Paragraf (opcjonalnie)',
+    },
+    {
+      name: 'cta',
+      type: 'cta',
+      title: 'Wezwanie do działania (opcjonalnie)',
     },
   ],
   preview: {
