@@ -99,6 +99,7 @@ import ProcessComponent, { ProcessComponent_List } from './components/BlogPosts/
 import HighlightedImage from './components/BlogPosts/HighlightedImage';
 import ArticleGreetings from './components/BlogPosts/ArticleGreetings';
 import Standout from './components/BlogPosts/Standout';
+import ImageBadge from './components/BlogPosts/ImageBadge';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -157,4 +158,5 @@ export const schemaTypes = [
   HighlightedImage,
   ArticleGreetings,
   Standout,
+  ImageBadge,
 ];

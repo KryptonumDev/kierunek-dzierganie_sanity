@@ -52,9 +52,10 @@ export default {
         ],
       },
     },
+    { type: 'ImageBadge' },
     { type: 'HighlightedImage' },
     { type: 'ProcessComponent' },
     { type: 'ArticleGreetings' },
-    { type: 'Standout'},
+    { type: 'Standout' },
   ],
 };
