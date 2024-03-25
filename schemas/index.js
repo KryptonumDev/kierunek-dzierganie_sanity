@@ -103,6 +103,7 @@ import ImageBadge from './components/BlogPosts/ImageBadge';
 import ImagesGrid, { ImagesGrid_List } from './components/BlogPosts/ImagesGrid';
 import BadgeSection from './components/BlogPosts/BadgeSection';
 import TableSection, { TableSection_Table } from './components/BlogPosts/TableSection';
+import ProcessShowcase, { ProcessShowcase_List } from './components/BlogPosts/ProcessShowcase';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -167,4 +168,6 @@ export const schemaTypes = [
   BadgeSection,
   TableSection,
   TableSection_Table,
+  ProcessShowcase,
+  ProcessShowcase_List,
 ];

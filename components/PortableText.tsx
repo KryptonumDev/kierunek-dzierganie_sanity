@@ -61,5 +61,6 @@ export default {
     { type: 'ArticleGreetings' },
     { type: 'Standout' },
     { type: 'image', name: 'LargeImage', title: 'Duży obraz', icon: () => '🖼️' },
+    { type: 'ProcessShowcase' },
   ],
 };
