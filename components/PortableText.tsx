@@ -54,6 +54,7 @@ export default {
     },
     { type: 'ImageBadge' },
     { type: 'ImagesGrid' },
+    { type: 'BadgeSection' },
     { type: 'HighlightedImage' },
     { type: 'ProcessComponent' },
     { type: 'ArticleGreetings' },
