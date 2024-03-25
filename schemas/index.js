@@ -106,6 +106,11 @@ import TableSection, { TableSection_Table } from './components/BlogPosts/TableSe
 import ProcessShowcase, { ProcessShowcase_List } from './components/BlogPosts/ProcessShowcase';
 import QuoteSection from './components/BlogPosts/QuoteSection';
 import VideoSection from './components/BlogPosts/VideoSection';
+import ConversationShowcase, {
+  ConversationShowcase_List,
+  ConversationShowcase_Recipient,
+  ConversationShowcase_Sender,
+} from './components/BlogPosts/ConversationShowcase';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -174,4 +179,8 @@ export const schemaTypes = [
   ProcessShowcase_List,
   QuoteSection,
   VideoSection,
+  ConversationShowcase_List,
+  ConversationShowcase_Recipient,
+  ConversationShowcase_Sender,
+  ConversationShowcase,
 ];

@@ -64,5 +64,6 @@ export default {
     { type: 'ProcessShowcase' },
     { type: 'QuoteSection' },
     { type: 'VideoSection' },
+    { type: 'ConversationShowcase' },
   ],
 };
