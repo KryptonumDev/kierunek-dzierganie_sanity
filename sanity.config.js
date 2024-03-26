@@ -63,9 +63,7 @@ export default defineConfig({
               .child(
                 S.list()
                   .title('Podstrony')
-                  .items([
-                    createListItem(S, 'Logout_Page'),
-                  ])
+                  .items([createListItem(S, 'Logout_Page')])
               ),
             S.divider(),
             createDocumentTypeListItem(S, 'landingPage'),
@@ -83,6 +81,8 @@ export default defineConfig({
                     createDocumentTypeListItem(S, 'lesson'),
                     S.divider(),
                     createDocumentTypeListItem(S, 'productCategory'),
+                    S.divider(),
+                    createListItem(S, 'Cart'),
                   ])
               ),
           ]),
