@@ -31,10 +31,10 @@ export default {
   },
 };
 
-export const ProcessShowcase_List = {
-  name: 'ProcessShowcase_List',
+export const ProcessShowcase_Process = {
+  name: 'ProcessShowcase_Process',
   type: 'object',
-  title: 'Lista',
+  title: 'Proces',
   fields: [
     {
       name: 'img',
@@ -57,6 +57,39 @@ export const ProcessShowcase_List = {
     prepare({ media, paragraph }) {
       return {
         title: `${removeMarkdown(paragraph)}`,
+        media,
+      };
+    },
+  },
+};
+
+export const ProcessShowcase_List = {
+  name: 'ProcessShowcase_List',
+  type: 'object',
+  title: 'Lista',
+  fields: [
+    {
+      name: 'heading',
+      type: 'markdown',
+      title: 'Nagłówek',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'process',
+      type: 'array',
+      of: [{ type: 'ProcessShowcase_Process' }],
+      title: 'Proces',
+      validation: Rule => Rule.required(),
+    },
+  ],
+  preview: {
+    select: {
+      heading: 'heading',
+      media: 'process.0.img',
+    },
+    prepare({ media, heading }) {
+      return {
+        title: `${removeMarkdown(heading)}`,
         media,
       };
     },

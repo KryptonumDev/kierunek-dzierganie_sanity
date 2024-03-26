@@ -103,7 +103,7 @@ import ImageBadge from './components/BlogPosts/ImageBadge';
 import ImagesGrid, { ImagesGrid_List } from './components/BlogPosts/ImagesGrid';
 import BadgeSection from './components/BlogPosts/BadgeSection';
 import TableSection, { TableSection_Table } from './components/BlogPosts/TableSection';
-import ProcessShowcase, { ProcessShowcase_List } from './components/BlogPosts/ProcessShowcase';
+import ProcessShowcase, { ProcessShowcase_List, ProcessShowcase_Process } from './components/BlogPosts/ProcessShowcase';
 import QuoteSection from './components/BlogPosts/QuoteSection';
 import VideoSection from './components/BlogPosts/VideoSection';
 import ConversationShowcase, {
@@ -184,4 +184,5 @@ export const schemaTypes = [
   ConversationShowcase_Sender,
   ConversationShowcase,
   BlogPost_Collection_Hero,
+  ProcessShowcase_Process,
 ];
