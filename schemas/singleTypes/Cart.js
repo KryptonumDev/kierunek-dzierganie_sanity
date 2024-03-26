@@ -8,7 +8,7 @@ export default {
       name: 'highlighted',
       type: 'array',
       title: 'Wyróżnione produkty',
-      of: [{ type: 'reference', to: [{ type: 'Product' }] }],
+      of: [{ type: 'reference', to: [{ type: 'product' }] }],
       Rule: Rule => Rule.max(2).required(),
     },
   ],
