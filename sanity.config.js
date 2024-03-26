@@ -63,7 +63,10 @@ export default defineConfig({
               .child(
                 S.list()
                   .title('Podstrony')
-                  .items([createListItem(S, 'Logout_Page')])
+                  .items([
+                    createListItem(S, 'Support_Page'),
+                    createListItem(S, 'Logout_Page'),
+                  ])
               ),
             S.divider(),
             createDocumentTypeListItem(S, 'landingPage'),

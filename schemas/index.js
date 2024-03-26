@@ -14,8 +14,8 @@ import NotFound_Page from './singleTypes/NotFound_Page';
 import Statute_page from './singleTypes/Statute_Page';
 import PrivacyPolicy_Page from './singleTypes/PrivacyPolicy_Page'
 import Blog_Page from './singleTypes/Blog_Page';
-import Logout_Page from './singleTypes/Logout_Page';
 import Cart from './singleTypes/Cart';
+import Logout_Page from './singleTypes/dashboard/Logout_Page';
 
 export const singleTypes = [
   homepage,
@@ -106,12 +106,15 @@ import StepsGrid, { StepsGrid_Item } from './components/StepsGrid';
 import ImageAndText from './components/FlexImageAndText'
 import HeroSimple from './components/HeroSimple';
 import LatestBlogEntries from './components/LatestBlogEntries';
+import Support_Page, { Support_Page_Tabs } from './singleTypes/dashboard/Support_Page';
 
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
 
   Logout_Page,
+  Support_Page,
+  Support_Page_Tabs,
 
   global,
   global_Seo,
