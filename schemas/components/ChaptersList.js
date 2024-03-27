@@ -11,7 +11,7 @@ export default {
     },
     {
       name: 'chapterDescription',
-      type: 'string',
+      type: 'markdown',
       title: 'Opis rozdziału',
       validation: Rule => Rule.required(),
     },
