@@ -13,7 +13,6 @@ export default {
       name: 'chapterDescription',
       type: 'markdown',
       title: 'Opis rozdziału',
-      validation: Rule => Rule.required(),
     },
     {
       name: 'chapterImage',
