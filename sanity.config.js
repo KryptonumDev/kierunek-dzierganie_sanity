@@ -64,6 +64,7 @@ export default defineConfig({
                 S.list()
                   .title('Podstrony')
                   .items([
+                    createListItem(S, 'AffiliateDashboard_Page'),
                     createListItem(S, 'Support_Page'),
                     createListItem(S, 'Logout_Page'),
                   ])

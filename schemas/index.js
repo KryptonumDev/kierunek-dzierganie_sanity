@@ -105,6 +105,7 @@ import ImageAndText from './components/FlexImageAndText'
 import HeroSimple from './components/HeroSimple';
 import LatestBlogEntries from './components/LatestBlogEntries';
 import Support_Page, { Support_Page_Tabs } from './singleTypes/dashboard/Support_Page';
+import AffiliateDashboard_Page from './singleTypes/dashboard/AffiliateDashboard_Page';
 
 export const schemaTypes = [
   ...singleTypes,
@@ -113,6 +114,7 @@ export const schemaTypes = [
   Logout_Page,
   Support_Page,
   Support_Page_Tabs,
+  AffiliateDashboard_Page,
 
   global,
   global_Seo,
