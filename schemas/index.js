@@ -11,8 +11,8 @@ import Affiliate_Page from './singleTypes/Affiliate_Page';
 import Newsletter_Page from './singleTypes/Newsletter_Page';
 import WhyBrand_Page from './singleTypes/WhyBrand_Page';
 import NotFound_Page from './singleTypes/NotFound_Page';
-import Statute_page from './singleTypes/Statute_Page';
-import PrivacyPolicy_Page from './singleTypes/PrivacyPolicy_Page'
+import Statute_Page, { Statute_Page_Content } from './singleTypes/Statute_Page';
+import PrivacyPolicy_Page, { Privacy_Policy_Page_Content } from './singleTypes/PrivacyPolicy_Page'
 import Blog_Page from './singleTypes/Blog_Page';
 import Cart from './singleTypes/Cart';
 import Logout_Page from './singleTypes/dashboard/Logout_Page';
@@ -29,8 +29,8 @@ export const singleTypes = [
   Newsletter_Page,
   WhyBrand_Page,
   NotFound_Page,
-  Statute_page,
   PrivacyPolicy_Page,
+  Statute_Page,
   Blog_Page,
   Cart
 ];
@@ -99,8 +99,6 @@ import Newsletter from './components/Newsletter';
 import CustomerCaseStudy from './components/CustomerCaseStudy';
 import WordsCollection from './components/WordsCollection';
 import Partners from './components/Partners';
-import Statute_Page_Content from './components/Statute_Page_Content';
-import Privacy_Policy_Page_Content from './components/Privacy_Policy_Page_Content'
 import MostPopularCourses from './components/MostPopularCourses';
 import StepsGrid, { StepsGrid_Item } from './components/StepsGrid';
 import ImageAndText from './components/FlexImageAndText'
@@ -165,8 +163,8 @@ export const schemaTypes = [
   WordsCollection,
   Partners,
   Statute_Page_Content,
-  ImageAndText,
   Privacy_Policy_Page_Content,
+  ImageAndText,
   MostPopularCourses,
   global_OrganizationSchema,
   StepsGrid,

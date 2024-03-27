@@ -1,3 +1,5 @@
+import { removeMarkdown } from "../../utils/functions"
+
 export default {
   name: 'PrivacyPolicy_Page',
   title: 'Polityka prywatności',
@@ -17,7 +19,9 @@ export default {
     {
       name: 'content',
       type: 'array',
-      of: [{type: 'Privacy_Policy_Page_Content'}],
+      of: [{
+        type: 'Privacy_Policy_Page_Content'
+      }],
       title: 'Zawartość',
       fieldset: 'content',
     },
@@ -32,12 +36,12 @@ export default {
     {
       name: 'content',
       title: 'Zawartość podstrony',
-      options: {collapsible: true, collapsed: true},
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: 'files',
       title: 'Pliki',
-      options: {collapsible: true, collapsed: true},
+      options: { collapsible: true, collapsed: true },
     },
   ],
   groups: [
@@ -46,4 +50,34 @@ export default {
       title: 'SEO',
     },
   ],
+}
+
+export const Privacy_Policy_Page_Content = {
+  name: 'Privacy_Policy_Page_Content',
+  title: 'Zawartość',
+  type: 'object',
+  fields: [
+    {
+      name: 'title',
+      type: 'markdown',
+      title: 'Tytuł',
+    },
+    {
+      name: 'description',
+      type: 'markdown',
+      title: 'Opis',
+    },
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'description',
+    },
+    prepare({ title, subtitle }) {
+      return {
+        title: removeMarkdown(title),
+        subtitle: removeMarkdown(subtitle),
+      }
+    },
+  },
 }

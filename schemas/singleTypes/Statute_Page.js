@@ -1,3 +1,5 @@
+import { removeMarkdown } from "../../utils/functions";
+
 export default {
   name: 'Statute_Page',
   title: 'Regulamin',
@@ -17,7 +19,9 @@ export default {
     {
       name: 'content',
       type: 'array',
-      of: [{ type: 'Statute_Page_Content' }],
+      of: [{
+        type: 'Statute_Page_Content'
+      }],
       title: 'Zawartość',
       fieldset: 'content',
     },
@@ -53,4 +57,34 @@ export default {
       title: 'SEO',
     },
   ],
+};
+
+export const Statute_Page_Content = {
+  name: 'Statute_Page_Content',
+  title: 'Zawartość',
+  type: 'object',
+  fields: [
+    {
+      name: 'title',
+      type: 'markdown',
+      title: 'Tytuł',
+    },
+    {
+      name: 'description',
+      type: 'markdown',
+      title: 'Opis',
+    },
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'description',
+    },
+    prepare({ title, subtitle }) {
+      return {
+        title: removeMarkdown(title),
+        subtitle: removeMarkdown(subtitle),
+      };
+    },
+  },
 };
