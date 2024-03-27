@@ -1,6 +1,6 @@
 export default {
   name: 'ChapterList',
-  title: 'Chapter List',
+  title: 'Rozdział',
   type: 'object',
   fields: [
     {
