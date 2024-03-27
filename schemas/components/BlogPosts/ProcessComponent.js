@@ -52,7 +52,7 @@ export const ProcessComponent_List = {
     },
     prepare({ title, media }) {
       return {
-        title: `${title}`,
+        title: `${title ? title : 'Brak opisu'}`,
         media,
       };
     },
