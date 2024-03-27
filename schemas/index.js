@@ -14,6 +14,7 @@ import NotFound_Page from './singleTypes/NotFound_Page';
 import Statute_page from './singleTypes/Statute_Page';
 import PrivacyPolicy_Page from './singleTypes/PrivacyPolicy_Page'
 import Blog_Page from './singleTypes/Blog_Page';
+import Cart from './singleTypes/Cart';
 import Logout_Page from './singleTypes/dashboard/Logout_Page';
 
 export const singleTypes = [
@@ -31,6 +32,7 @@ export const singleTypes = [
   Statute_page,
   PrivacyPolicy_Page,
   Blog_Page,
+  Cart
 ];
 
 // Collection Types
