@@ -21,13 +21,14 @@ export default {
       title: 'Paragraf',
       validation: Rule => Rule.required(),
     },
-    {
-      name: 'courses',
-      type: 'reference',
-      to: [{ type: 'course' }],
-      title: 'Kursy',
-      validation: Rule => Rule.required(),
-    },
+    //TODO: Add courses reference
+    // {
+    //   name: 'courses',
+    //   type: 'reference',
+    //   to: [{ type: 'course' }],
+    //   title: 'Kursy',
+    //   validation: Rule => Rule.required(),
+    // },
   ],
   preview: {
     select: {
