@@ -25,7 +25,7 @@ export default {
   ],
   preview: {
     select: {
-      heading: 'author.heading',
+      heading: 'author.name',
       subtitle: 'text',
       media: 'author.img',
     },

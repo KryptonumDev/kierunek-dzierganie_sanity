@@ -10,9 +10,9 @@ export default {
   icon,
   fields: [
     {
-      name: 'heading',
+      name: 'name',
       type: 'markdown',
-      title: 'Nagłówek widoczny przy prezentacji autora',
+      title: 'Imię autora',
       validation: Rule => Rule.required(),
     },
     {
@@ -30,7 +30,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'heading',
+      title: 'name',
       subtitle: 'paragraph',
       media: 'img',
     },
