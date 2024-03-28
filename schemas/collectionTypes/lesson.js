@@ -91,4 +91,9 @@ export default {
       name: 'seo',
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+    },
+  },
 };
