@@ -78,18 +78,6 @@ export default {
         },
       ],
     },
-    {
-      name: 'seo',
-      type: 'seo',
-      title: 'SEO',
-      group: 'seo',
-    },
-  ],
-  groups: [
-    {
-      title: 'SEO',
-      name: 'seo',
-    },
   ],
   preview: {
     select: {
