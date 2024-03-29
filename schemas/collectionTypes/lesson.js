@@ -11,6 +11,12 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'title',
+      type: 'string',
+      title: 'Tytuł',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'slug',
       type: 'slug',
       options: {
@@ -72,17 +78,10 @@ export default {
         },
       ],
     },
-    {
-      name: 'seo',
-      type: 'seo',
-      title: 'SEO',
-      group: 'seo',
-    },
   ],
-  groups: [
-    {
-      title: 'SEO',
-      name: 'seo',
+  preview: {
+    select: {
+      title: 'name',
     },
-  ],
+  },
 };

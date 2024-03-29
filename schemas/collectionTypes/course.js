@@ -53,7 +53,7 @@ export default {
     {
       name: 'chapters',
       type: 'array',
-      title: 'Chapters',
+      title: 'Rozdziały',
       of: [
         {
           type: 'ChapterList',

@@ -1,6 +1,6 @@
 export default {
   name: 'ChapterList',
-  title: 'Chapter List',
+  title: 'Rozdział',
   type: 'object',
   fields: [
     {
@@ -13,7 +13,6 @@ export default {
       name: 'chapterDescription',
       type: 'markdown',
       title: 'Opis rozdziału',
-      validation: Rule => Rule.required(),
     },
     {
       name: 'chapterImage',
