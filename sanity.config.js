@@ -67,6 +67,7 @@ export default defineConfig({
                     createListItem(S, 'AffiliateDashboard_Page'),
                     createListItem(S, 'Support_Page'),
                     createListItem(S, 'Logout_Page'),
+                    createListItem(S, 'Delete_Page'),
                   ])
               ),
             S.divider(),

@@ -16,6 +16,7 @@ import PrivacyPolicy_Page, { Privacy_Policy_Page_Content } from './singleTypes/P
 import Blog_Page from './singleTypes/Blog_Page';
 import Cart from './singleTypes/Cart';
 import Logout_Page from './singleTypes/dashboard/Logout_Page';
+import Delete_Page from './singleTypes/dashboard/Delete_Page';
 
 export const singleTypes = [
   homepage,
@@ -111,6 +112,7 @@ export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
 
+  Delete_Page,
   Logout_Page,
   Support_Page,
   Support_Page_Tabs,
