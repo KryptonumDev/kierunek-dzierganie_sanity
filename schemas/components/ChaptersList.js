@@ -8,7 +8,7 @@ export default {
       type: 'string',
       title: 'Nazwa rozdziału',
       validation: Rule => Rule.required(),
-    },
+    }, 
     {
       name: 'chapterDescription',
       type: 'markdown',
