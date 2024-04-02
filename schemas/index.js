@@ -40,9 +40,9 @@ export const singleTypes = [
 import landingPage from './collectionTypes/landingPage';
 import ReviewCollection from './collectionTypes/ReviewCollection';
 import FaqCollection from './collectionTypes/FaqCollection';
-import product from './collectionTypes/product';
-import lesson from './collectionTypes/lesson';
-import course from './collectionTypes/course';
+import product from './collectionTypes/Product_Collection';
+import lesson from './collectionTypes/Lesson_Collection';
+import course from './collectionTypes/Course_Collection';
 import productCategory from './collectionTypes/ProductCategories';
 import CustomerCaseStudy_Collection from './collectionTypes/CustomerCaseStudy_Collection';
 import Partner_Collection from './collectionTypes/Partner_Collection';

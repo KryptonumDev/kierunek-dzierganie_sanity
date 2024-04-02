@@ -20,10 +20,29 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'type',
+      type: 'string',
+      title: 'Typ kursu',
+      options: {
+        list: [
+          {
+            title: 'Kurs',
+            value: 'course',
+          },
+          {
+            title: 'Program',
+            value: 'program',
+          },
+        ],
+      },
+      initialValue: 'course',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'image',
       type: 'image',
       title: 'Obrazek wyróżniający',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'complexity',
@@ -31,24 +50,24 @@ export default {
       title: 'Poziom',
       options: {
         list: [
-          {title: 'Dla początkujących', value: '1'},
-          {title: 'Dla średnio zaawansowanych', value: '2'},
-          {title: 'Dla zaawansowanych', value: '3'},
+          { title: 'Dla początkujących', value: '1' },
+          { title: 'Dla średnio zaawansowanych', value: '2' },
+          { title: 'Dla zaawansowanych', value: '3' },
         ],
       },
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       title: 'Długość kursu',
       name: 'courseLength',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'materials_link',
       title: 'Dodatkowe materiały',
       type: 'reference',
-      to: [{type: 'product'}],
+      to: [{ type: 'product' }],
     },
     {
       name: 'chapters',

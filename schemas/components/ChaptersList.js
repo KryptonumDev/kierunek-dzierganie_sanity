@@ -21,6 +21,12 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'dateOfUnlock',
+      type: 'date',
+      title: 'Data odblokowania',
+      description: 'Działa tylko w przypadku programów!',
+    },
+    {
       name: 'lessons',
       type: 'array',
       title: 'Lekcje w rozdziale',
