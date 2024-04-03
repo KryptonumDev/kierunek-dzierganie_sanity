@@ -57,7 +57,7 @@ export default {
     prepare({ nameOfReviewer, course }) {
       return {
         title: nameOfReviewer,
-        subtitle: course.name,
+        subtitle: course,
       };
     },
   },
