@@ -23,15 +23,27 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'listing_Heading',
+      name: 'listing_Heading_Courses',
       type: 'markdown',
-      title: 'Nagłówek',
+      title: 'Nagłówek dla listy kursów',
       fieldset: 'listing',
     },
     {
       name: 'listing_Paragraph',
       type: 'markdown',
-      title: 'Paragraf',
+      title: 'Paragraf dla listy kursów',
+      fieldset: 'listing',
+    },
+    {
+      name: 'listing_Heading_Products',
+      type: 'markdown',
+      title: 'Nagłówek dla listy produktów fizycznych',
+      fieldset: 'listing',
+    },
+    {
+      name: 'listing_Paragraph_Products',
+      type: 'markdown',
+      title: 'Paragraf dla listy produktów fizycznych',
       fieldset: 'listing',
     },
     {
