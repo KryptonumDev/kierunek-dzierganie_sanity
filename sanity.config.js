@@ -67,6 +67,7 @@ export default defineConfig({
                     createListItem(S, 'AffiliateDashboard_Page'),
                     createListItem(S, 'Support_Page'),
                     createListItem(S, 'Logout_Page'),
+                    createListItem(S, 'Delete_Page'),
                   ])
               ),
             S.divider(),
@@ -83,6 +84,8 @@ export default defineConfig({
                     S.divider(),
                     createDocumentTypeListItem(S, 'course'),
                     createDocumentTypeListItem(S, 'lesson'),
+                    // S.divider(),
+                    // createDocumentTypeListItem(S, 'CourseReviews_Collection'),
                     S.divider(),
                     createDocumentTypeListItem(S, 'productCategory'),
                     S.divider(),

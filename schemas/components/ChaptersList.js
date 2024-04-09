@@ -8,7 +8,7 @@ export default {
       type: 'string',
       title: 'Nazwa rozdziału',
       validation: Rule => Rule.required(),
-    },
+    }, 
     {
       name: 'chapterDescription',
       type: 'markdown',
@@ -19,6 +19,12 @@ export default {
       type: 'image',
       title: 'Obrazek rozdziału',
       validation: Rule => Rule.required(),
+    },
+    {
+      name: 'dateOfUnlock',
+      type: 'date',
+      title: 'Data odblokowania',
+      description: 'Działa tylko w przypadku programów!',
     },
     {
       name: 'lessons',

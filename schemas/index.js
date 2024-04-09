@@ -16,6 +16,7 @@ import PrivacyPolicy_Page, { Privacy_Policy_Page_Content } from './singleTypes/P
 import Blog_Page from './singleTypes/Blog_Page';
 import Cart from './singleTypes/Cart';
 import Logout_Page from './singleTypes/dashboard/Logout_Page';
+import Delete_Page from './singleTypes/dashboard/Delete_Page';
 
 export const singleTypes = [
   homepage,
@@ -39,15 +40,16 @@ export const singleTypes = [
 import landingPage from './collectionTypes/landingPage';
 import ReviewCollection from './collectionTypes/ReviewCollection';
 import FaqCollection from './collectionTypes/FaqCollection';
-import product from './collectionTypes/product';
-import lesson from './collectionTypes/lesson';
-import course from './collectionTypes/course';
+import product from './collectionTypes/Product_Collection';
+import lesson from './collectionTypes/Lesson_Collection';
+import course from './collectionTypes/Course_Collection';
 import productCategory from './collectionTypes/ProductCategories';
 import CustomerCaseStudy_Collection from './collectionTypes/CustomerCaseStudy_Collection';
 import Partner_Collection from './collectionTypes/Partner_Collection';
 import BlogCategory_Collection from './collectionTypes/BlogCategory_Collection';
 import Author_Collection from './collectionTypes/Author_Collection';
 import BlogPost_Collection from './collectionTypes/BlogPost_Collection';
+// import CourseReviews_Collection from './collectionTypes/CourseReviews_Collection';
 
 export const collectionTypes = [
   landingPage,
@@ -62,6 +64,7 @@ export const collectionTypes = [
   BlogCategory_Collection,
   Author_Collection,
   BlogPost_Collection,
+  // CourseReviews_Collection
 ];
 
 // Components
@@ -111,6 +114,7 @@ export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
 
+  Delete_Page,
   Logout_Page,
   Support_Page,
   Support_Page_Tabs,
