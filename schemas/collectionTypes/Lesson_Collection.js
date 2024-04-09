@@ -4,12 +4,14 @@ export default {
   type: 'document',
   icon: () => '',
   fields: [
+    // Unique name to identify the lesson
     {
       name: 'name',
       type: 'string',
       title: 'Nazwa',
       validation: Rule => Rule.required(),
     },
+    // The title that will be visible to a user
     {
       name: 'title',
       type: 'string',
