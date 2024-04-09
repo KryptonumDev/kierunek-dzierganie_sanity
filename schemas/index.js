@@ -109,6 +109,7 @@ import HeroSimple from './components/HeroSimple';
 import LatestBlogEntries from './components/LatestBlogEntries';
 import Support_Page, { Support_Page_Tabs } from './singleTypes/dashboard/Support_Page';
 import AffiliateDashboard_Page, { AffiliateDashboardPage_AffiliateCode, AffiliateDashboardPage_TextSection } from './singleTypes/dashboard/AffiliateDashboard_Page';
+import CookieConsent, { CookieConsent_Details, CookieConsent_Details_List, CookieConsent_Details_List_Cookies } from './components/CookieConsent';
 
 export const schemaTypes = [
   ...singleTypes,
@@ -124,6 +125,11 @@ export const schemaTypes = [
   global_Seo,
   nav_Link,
   nav_Links,
+  CookieConsent,
+  CookieConsent_Details,
+  CookieConsent_Details_List,
+  CookieConsent_Details_List_Cookies,
+
   cta,
   seo,
   titleAndDescription,

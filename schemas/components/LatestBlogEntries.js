@@ -1,4 +1,4 @@
-import { removeMarkdown } from '../../utils/functions';
+import { removeMarkdown } from '../../utils/remove-markdown';
 
 const title = 'Ostatnie posty blogowe';
 export const LatestBlogEntries_Title = title;

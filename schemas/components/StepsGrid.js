@@ -1,4 +1,4 @@
-import { removeMarkdown } from '../../utils/functions';
+import { removeMarkdown } from '../../utils/remove-markdown';
 
 const title = 'Sekcja z siatką kroków';
 export const StepsGrid_Title = title;

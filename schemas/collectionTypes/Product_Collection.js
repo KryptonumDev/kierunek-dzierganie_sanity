@@ -1,5 +1,5 @@
 import { countItems } from "../../utils/count-items";
-import { removeMarkdown } from "../../utils/functions";
+import { removeMarkdown } from '../../utils/remove-markdown';
 
 const ColumnImageSection = {
   name: 'ColumnImageSection',

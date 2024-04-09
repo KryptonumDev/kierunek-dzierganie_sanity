@@ -1,4 +1,4 @@
-import { removeMarkdown } from '../../utils/functions';
+import { removeMarkdown } from '../../utils/remove-markdown';
 import { slugify } from '../../utils/slugify';
 
 const title = 'Zbiór blogów';
