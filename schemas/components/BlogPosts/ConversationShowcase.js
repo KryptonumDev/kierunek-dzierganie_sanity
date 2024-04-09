@@ -80,7 +80,7 @@ export const ConversationShowcase_List = {
     },
     prepare({ message, isRecipient, audio }) {
       return {
-        title: `${isRecipient ? 'Odbiorca' : 'Nadawca'} - ${message} ${audio}`,
+        title: `${isRecipient ? 'Odbiorca' : 'Nadawca'} - ${message ? message : 'Plik audio'}`,
         media: icon,
       };
     },
