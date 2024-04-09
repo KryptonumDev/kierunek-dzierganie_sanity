@@ -1,7 +1,6 @@
 import { countItems } from "../../utils/count-items";
 import { removeMarkdown } from "../../utils/functions";
 
-
 const ColumnImageSection = {
   name: 'ColumnImageSection',
   title: 'Sekcja z obrazkiem w kolumnie',
