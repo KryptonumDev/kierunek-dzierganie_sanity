@@ -7,7 +7,16 @@ export default {
     {
       name: 'name',
       type: 'string',
-      title: 'Name',
+      title: 'Nazwa',
+    },
+    {
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+      },
+      title: 'Slug',
+      validation: Rule => Rule.required(),
     },
   ],
 };
