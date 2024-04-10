@@ -56,6 +56,13 @@ export default {
       fieldset: 'social',
     },
     {
+      name: 'pinterest',
+      type: 'url',
+      title: 'Pinterest',
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
+      fieldset: 'social',
+    },
+    {
       name: 'messenger',
       type: 'url',
       title: 'Messenger',
