@@ -1,4 +1,4 @@
-import { countItems } from "../../utils/count-items";
+import { countItems } from '../../utils/count-items';
 import { removeMarkdown } from '../../utils/remove-markdown';
 
 const ColumnImageSection = {
@@ -50,9 +50,9 @@ const ColumnImageSection = {
         subtitle: removeMarkdown(paragraph),
         media,
       };
-    }
-  }
-}
+    },
+  },
+};
 const OrderedList = {
   name: 'OrderedList',
   title: 'Sekcja z listą numerowaną',
@@ -67,9 +67,7 @@ const OrderedList = {
     {
       name: 'list',
       type: 'array',
-      of: [
-        { type: 'markdown' }
-      ],
+      of: [{ type: 'markdown' }],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
@@ -89,9 +87,9 @@ const OrderedList = {
         title: removeMarkdown(heading),
         subtitle: countItems(list.length),
       };
-    }
-  }
-}
+    },
+  },
+};
 const UnorderedList = {
   name: 'UnorderedList',
   title: 'Sekcja z listą nienumerowaną',
@@ -111,9 +109,7 @@ const UnorderedList = {
     {
       name: 'list',
       type: 'array',
-      of: [
-        { type: 'markdown' }
-      ],
+      of: [{ type: 'markdown' }],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
@@ -128,9 +124,9 @@ const UnorderedList = {
         title: removeMarkdown(heading),
         subtitle: countItems(list.length),
       };
-    }
-  }
-}
+    },
+  },
+};
 const Standout = {
   name: 'Standout',
   title: 'Sekcja wyróżniona',
@@ -159,9 +155,9 @@ const Standout = {
         title: removeMarkdown(heading),
         subtitle: removeMarkdown(paragraph),
       };
-    }
-  }
-}
+    },
+  },
+};
 const TextSection = {
   name: 'TextSection',
   title: 'Sekcja tekstowa',
@@ -195,9 +191,9 @@ const TextSection = {
         title: removeMarkdown(heading),
         subtitle: removeMarkdown(paragraph),
       };
-    }
-  }
-}
+    },
+  },
+};
 
 export default {
   name: 'product',
@@ -231,8 +227,14 @@ export default {
       name: 'category',
       type: 'reference',
       title: 'Kategoria',
-      to: [{ type: 'productCategory' }],
+      to: [
+        {
+          type: 'productCategory',
+          // show only if type is physical or variable
+        },
+      ],
       validation: Rule => Rule.required(),
+      hidden: ({ document }) => document.type === 'digital' || document.type === 'bundle',
     },
     {
       name: 'basis',
@@ -358,13 +360,7 @@ export default {
       name: 'description',
       type: 'array',
       title: 'Opis',
-      of: [
-        ColumnImageSection,
-        OrderedList,
-        Standout,
-        UnorderedList,
-        TextSection,
-      ],
+      of: [ColumnImageSection, OrderedList, Standout, UnorderedList, TextSection],
     },
     {
       name: 'parameters',

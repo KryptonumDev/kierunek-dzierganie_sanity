@@ -88,6 +88,7 @@ export default defineConfig({
                     // createDocumentTypeListItem(S, 'CourseReviews_Collection'),
                     S.divider(),
                     createDocumentTypeListItem(S, 'productCategory'),
+                    createDocumentTypeListItem(S, 'courseCategory'),
                     S.divider(),
                     createListItem(S, 'Cart'),
                   ])

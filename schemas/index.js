@@ -44,6 +44,7 @@ import product from './collectionTypes/Product_Collection';
 import lesson from './collectionTypes/Lesson_Collection';
 import course from './collectionTypes/Course_Collection';
 import productCategory from './collectionTypes/ProductCategories';
+import CourseCategories from './collectionTypes/CourseCategories';
 import CustomerCaseStudy_Collection from './collectionTypes/CustomerCaseStudy_Collection';
 import Partner_Collection from './collectionTypes/Partner_Collection';
 import BlogCategory_Collection from './collectionTypes/BlogCategory_Collection';
@@ -59,6 +60,7 @@ export const collectionTypes = [
   ReviewCollection,
   FaqCollection,
   productCategory,
+  CourseCategories,
   CustomerCaseStudy_Collection,
   Partner_Collection,
   BlogCategory_Collection,
