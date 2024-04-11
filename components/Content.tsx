@@ -31,5 +31,6 @@ export default {
     { type: 'WordsCollection' },
     { type: 'Partners' },
     { type: 'MostPopularCourses' },
+    { type: 'LatestBlogEntries' },
   ],
 };

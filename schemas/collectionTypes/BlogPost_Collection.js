@@ -50,9 +50,14 @@ export default {
         }).required(),
     },
     {
-      name: 'content',
+      name: 'portableText',
       type: 'PortableText',
       title: 'Zawartość bloga',
+    },
+    {
+      name: 'content',
+      type: 'content',
+      title: 'Komponenty strony',
     },
   ],
 

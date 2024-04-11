@@ -111,6 +111,7 @@ import ConversationShowcase, {
   ConversationShowcase_Recipient,
   ConversationShowcase_Sender,
 } from './components/BlogPosts/ConversationShowcase';
+import LatestBlogEntries from './components/LatestBlogEntries';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -185,4 +186,5 @@ export const schemaTypes = [
   ConversationShowcase,
   BlogPost_Collection_Hero,
   ProcessShowcase_Process,
+  LatestBlogEntries,
 ];
