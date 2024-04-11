@@ -233,8 +233,8 @@ export default {
         },
       ],
       validation: Rule =>
-        Rule.min(0).custom((currentValue, { document }) => {
-          if ((document.type === 'digital' || document.type === 'bundle') && currentValue === undefined)
+        Rule.custom((currentValue, { document }) => {
+          if (document.type !== 'digital' && document.type !== 'bundle' && currentValue === undefined)
             return 'To pole jest wymagane';
           return true;
         }),
