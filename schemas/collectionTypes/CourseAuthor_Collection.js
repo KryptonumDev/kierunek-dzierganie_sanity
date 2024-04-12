@@ -10,23 +10,26 @@ export default {
     {
       name: 'name',
       type: 'string',
-      title: 'Imię autora kursu',
+      title: 'Imię i nazwisko autora kursu',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'surname',
-      type: 'string',
-      title: 'Nazwisko autora kursu',
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+      },
+      title: 'Slug',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       title: 'name',
-      subtitle: 'surname',
     },
-    prepare({ title, subtitle }) {
+    prepare({ title }) {
       return {
-        title: `${title} ${subtitle ? subtitle : ''}`,
+        title: title,
       };
     },
   },
