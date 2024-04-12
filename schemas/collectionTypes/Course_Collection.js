@@ -20,6 +20,13 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'author',
+      type: 'reference',
+      to: [{ type: 'CourseAuthor_Collection' }],
+      title: 'Autor kursu',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'type',
       type: 'string',
       title: 'Typ kursu',
