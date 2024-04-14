@@ -22,6 +22,18 @@ export default {
       title: 'Slug',
       validation: Rule => Rule.required(),
     },
+    {
+      name: 'description',
+      type: 'markdown',
+      title: 'Opis autora',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Zdjęcie autora',
+      validation: Rule => Rule.required(),
+    }
   ],
   preview: {
     select: {
