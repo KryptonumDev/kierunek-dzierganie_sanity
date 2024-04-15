@@ -144,6 +144,12 @@ export default {
       group: 'seo',
     },
   ],
+  fieldsets: [
+    {
+      name: 'package',
+      title: 'Pakiet',
+    }
+  ],
   groups: [
     {
       name: 'seo',
