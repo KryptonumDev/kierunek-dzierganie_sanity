@@ -1,9 +1,24 @@
+import {
+  ColumnImageSection,
+  OrderedList,
+  Standout,
+  UnorderedList,
+  TextSection,
+} from '../components/Product_Components';
+
 export default {
   name: 'course',
   title: 'Kursy',
   type: 'document',
   icon: () => '',
   fields: [
+    {
+      name: 'visible',
+      type: 'boolean',
+      title: 'Widoczny w sklepie',
+      initialValue: true,
+      validation: Rule => Rule.required(),
+    },
     {
       name: 'name',
       type: 'string',
@@ -18,6 +33,40 @@ export default {
       },
       title: 'Slug',
       validation: Rule => Rule.required(),
+    },
+    {
+      name: 'basis',
+      type: 'string',
+      title: 'Rodzaj kursu',
+      options: {
+        list: [
+          {
+            title: 'Szydełkowanie',
+            value: 'crocheting',
+          },
+          {
+            title: 'Dzierganie na drutach',
+            value: 'knitting',
+          },
+        ],
+      },
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'price',
+      type: 'number',
+      title: 'Cena w groszach',
+      validation: Rule =>
+        Rule.min(0).custom((currentValue, { document }) => {
+          if (document.type !== 'variable' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
+    },
+    {
+      name: 'discount',
+      type: 'number',
+      title: 'Cena w groszach po rabacie',
+      validation: Rule => Rule.min(0),
     },
     {
       name: 'author',
@@ -68,9 +117,9 @@ export default {
       title: 'Poziom',
       options: {
         list: [
-          { title: 'Dla początkujących', value: '1' },
-          { title: 'Dla średnio zaawansowanych', value: '2' },
-          { title: 'Dla zaawansowanych', value: '3' },
+          { title: 'Dla początkujących', value: 'dla-poczatkujacych' },
+          { title: 'Dla średnio zaawansowanych', value: 'dla-srednio-zaawansowanych' },
+          { title: 'Dla zaawansowanych', value: 'dla-zaawansowanych' },
         ],
       },
       validation: Rule => Rule.required(),
@@ -79,7 +128,6 @@ export default {
       title: 'Długość kursu',
       name: 'courseLength',
       type: 'string',
-      validation: Rule => Rule.required(),
     },
     {
       name: 'materials_link',
@@ -96,6 +144,12 @@ export default {
           type: 'ChapterList',
         },
       ],
+    },
+    {
+      name: 'description',
+      type: 'array',
+      title: 'Opis kursu',
+      of: [ColumnImageSection, OrderedList, Standout, UnorderedList, TextSection],
     },
     {
       name: 'seo',
