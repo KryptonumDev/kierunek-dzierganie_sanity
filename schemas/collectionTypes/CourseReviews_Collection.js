@@ -2,7 +2,7 @@ export default {
   name: 'courseReviewCollection',
   title: 'Zbiór opinii o kursach',
   type: 'document',
-  icon: () => '📝',
+  icon: () => '',
   fields: [
     {
       name: 'nameOfReviewer',
@@ -51,13 +51,13 @@ export default {
   ],
   preview: {
     select: {
-      nameOfReviewer: 'nameOfReviewer',
-      course: 'course',
+      name: 'nameOfReviewer',
+      course: 'course.name',
+      mark: 'rating',
     },
-    prepare({ nameOfReviewer, course }) {
+    prepare({ name, course, mark }) {
       return {
-        title: nameOfReviewer,
-        subtitle: course,
+        title: `${course} - ${name} ${mark}/5`,
       };
     },
   },

@@ -44,12 +44,14 @@ import product from './collectionTypes/Product_Collection';
 import lesson from './collectionTypes/Lesson_Collection';
 import course from './collectionTypes/Course_Collection';
 import productCategory from './collectionTypes/ProductCategories';
+import CourseCategories from './collectionTypes/CourseCategories';
 import CustomerCaseStudy_Collection from './collectionTypes/CustomerCaseStudy_Collection';
 import Partner_Collection from './collectionTypes/Partner_Collection';
 import BlogCategory_Collection from './collectionTypes/BlogCategory_Collection';
 import Author_Collection from './collectionTypes/Author_Collection';
 import BlogPost_Collection from './collectionTypes/BlogPost_Collection';
-// import CourseReviews_Collection from './collectionTypes/CourseReviews_Collection';
+import CourseReviews_Collection from './collectionTypes/CourseReviews_Collection';
+import CourseAuthor_Collection from './collectionTypes/CourseAuthor_Collection';
 
 export const collectionTypes = [
   landingPage,
@@ -59,12 +61,14 @@ export const collectionTypes = [
   ReviewCollection,
   FaqCollection,
   productCategory,
+  CourseCategories,
   CustomerCaseStudy_Collection,
   Partner_Collection,
   BlogCategory_Collection,
   Author_Collection,
   BlogPost_Collection,
-  // CourseReviews_Collection
+  CourseReviews_Collection,
+  CourseAuthor_Collection,
 ];
 
 // Components
