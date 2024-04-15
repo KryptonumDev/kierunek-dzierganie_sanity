@@ -352,6 +352,33 @@ export default {
           return true;
         }),
       hidden: ({ document }) => document.type !== 'bundle',
+      fieldset: 'package',
+    },
+    {
+      name: 'package_Heading',
+      type: 'markdown',
+      title: 'Nagłówek',
+      initialValue: 'Jeden pakiet – niezliczona ilość wiedzy',
+      validation: Rule =>
+        Rule.custom((currentValue, { document }) => {
+          if (document.type === 'bundle' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
+      hidden: ({ document }) => document.type !== 'bundle',
+      fieldset: 'package',
+    },
+    {
+      name: 'package_Paragraph',
+      type: 'markdown',
+      title: 'Paragraf',
+      initialValue: 'Zdobądź niezbędne umiejętności i rozwijaj kreatywność z **pakietem kursów** – w korzystnej cenie!',
+      validation: Rule =>
+        Rule.custom((currentValue, { document }) => {
+          if (document.type === 'bundle' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
+      hidden: ({ document }) => document.type !== 'bundle',
+      fieldset: 'package',
     },
     // TODO: Add product
     {
@@ -379,6 +406,12 @@ export default {
       title: 'SEO',
       group: 'seo',
     },
+  ],
+  fieldsets: [
+    {
+      name: 'package',
+      title: 'Pakiet',
+    }
   ],
   groups: [
     {
