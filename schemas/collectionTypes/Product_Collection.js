@@ -85,7 +85,11 @@ export default {
       name: 'price',
       type: 'number',
       title: 'Cena w groszach',
-      validation: Rule => Rule.min(0).required(),
+      validation: Rule =>
+        Rule.min(0).custom((currentValue, { document }) => {
+          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
       hidden: ({ document }) => document.type !== 'physical',
     },
     {
@@ -99,7 +103,11 @@ export default {
       name: 'countInStock',
       type: 'number',
       title: 'Ilość w magazynie',
-      validation: Rule => Rule.min(0).required(),
+      validation: Rule =>
+        Rule.min(0).custom((currentValue, { document }) => {
+          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
       hidden: ({ document }) => document.type !== 'physical',
     },
     {
@@ -123,6 +131,11 @@ export default {
       type: 'array',
       title: 'Galeria',
       of: [{ type: 'image', validation: Rule => Rule.required() }],
+      validation: Rule =>
+        Rule.custom((currentValue, { document }) => {
+          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
       hidden: ({ document }) => document.type !== 'physical',
     },
     {
@@ -148,7 +161,7 @@ export default {
     {
       name: 'package',
       title: 'Pakiet',
-    }
+    },
   ],
   groups: [
     {
