@@ -1,5 +1,5 @@
 export default {
-  name: 'reviewCollection',
+  name: 'productReviewCollection',
   title: 'Zbiór opinii',
   type: 'document',
   icon: () => '',
