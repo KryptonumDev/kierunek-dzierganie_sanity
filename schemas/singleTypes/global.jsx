@@ -22,28 +22,28 @@ export default {
         },
       ],
       title: 'Linki w nawigacji',
-      validation: (Rule) => Rule.required().max(5),
+      validation: Rule => Rule.required().max(5),
       fieldset: 'nav',
     },
     {
       name: 'image_crochet',
       type: 'image',
       title: 'Zdjęcie szydełkowania',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
       fieldset: 'products',
     },
     {
       name: 'image_knitting',
       type: 'image',
       title: 'Zdjęcie dziergania na drutach',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
       fieldset: 'products',
     },
     {
       name: 'email',
       type: 'string',
       title: 'Adres e-mail',
-      validation: (Rule) => Rule.required().email(),
+      validation: Rule => Rule.required().email(),
     },
     {
       name: 'tel',
@@ -54,28 +54,28 @@ export default {
       name: 'facebook',
       type: 'url',
       title: 'Facebook',
-      validation: (Rule) => Rule.required().uri({scheme: ['https']}),
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
       name: 'instagram',
       type: 'url',
       title: 'Instagram',
-      validation: (Rule) => Rule.required().uri({scheme: ['https']}),
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
       name: 'youtube',
       type: 'url',
       title: 'YouTube',
-      validation: (Rule) => Rule.required().uri({scheme: ['https']}),
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
       name: 'messenger',
       type: 'url',
       title: 'Messenger',
-      validation: (Rule) => Rule.required().uri({scheme: ['https']}),
+      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
       fieldset: 'social',
     },
     {
@@ -180,19 +180,19 @@ export const nav_Links = {
       name: 'name',
       type: 'string',
       title: 'Nazwa',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'href',
       type: 'string',
       title: 'Link relatywny',
       description: 'Jeśli nie jest uzupełniony to znaczy, że jest to zakładka.',
-      validation: (Rule) =>
-        Rule.custom((value) => {
+      validation: Rule =>
+        Rule.custom(value => {
           if (value && !value.startsWith('/')) {
-            return 'Link musi być relatywny (zaczynający się od "/").'
+            return 'Link musi być relatywny (zaczynający się od "/").';
           }
-          return true
+          return true;
         }),
     },
     {
@@ -223,18 +223,18 @@ export const nav_Link = {
       name: 'name',
       type: 'string',
       title: 'Nazwa',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'href',
       type: 'string',
       title: 'Link relatywny',
-      validation: (Rule) =>
-        Rule.custom((value) => {
+      validation: Rule =>
+        Rule.custom(value => {
           if (value && !value.startsWith('/')) {
-            return 'Link musi być relatywny (zaczynający się od "/").'
+            return 'Link musi być relatywny (zaczynający się od "/").';
           }
-          return true
+          return true;
         }).required(),
     },
   ],
