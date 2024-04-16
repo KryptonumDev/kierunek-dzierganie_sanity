@@ -1,8 +1,7 @@
-import { removeMarkdown } from '../../utils/remove-markdown';
+import { removeMarkdown } from '../../utils/functions';
 
-const title = 'Ostatnie posty blogowe';
-export const LatestBlogEntries_Title = title;
-const icon = () => '🗞️';
+const icon = () => '📰';
+const title = 'Sekcja z najnowszymi wpisami bloga';
 
 export default {
   name: 'LatestBlogEntries',
@@ -28,12 +27,13 @@ export default {
   preview: {
     select: {
       heading: 'heading',
-      paragraph: 'paragraph',
+      subtitle: 'paragraph',
     },
-    prepare({ heading, paragraph }) {
+    prepare({ heading, subtitle }) {
       return {
         title: `[${title}] ${removeMarkdown(heading)}`,
-        subtitle: removeMarkdown(paragraph),
+        subtitle: removeMarkdown(subtitle),
+        icon,
       };
     },
   },

@@ -49,7 +49,7 @@ import CustomerCaseStudy_Collection from './collectionTypes/CustomerCaseStudy_Co
 import Partner_Collection from './collectionTypes/Partner_Collection';
 import BlogCategory_Collection from './collectionTypes/BlogCategory_Collection';
 import Author_Collection from './collectionTypes/Author_Collection';
-import BlogPost_Collection from './collectionTypes/BlogPost_Collection';
+import BlogPost_Collection, { BlogPost_Collection_Hero } from './collectionTypes/BlogPost_Collection';
 import CourseReviews_Collection from './collectionTypes/Reviews_Collection';
 import CourseAuthor_Collection from './collectionTypes/CourseAuthor_Collection';
 import bundle from './collectionTypes/Bundle_Collection';
@@ -116,7 +116,24 @@ import LatestBlogEntries from './components/LatestBlogEntries';
 import Support_Page, { Support_Page_Tabs } from './singleTypes/dashboard/Support_Page';
 import AffiliateDashboard_Page, { AffiliateDashboardPage_AffiliateCode, AffiliateDashboardPage_TextSection } from './singleTypes/dashboard/AffiliateDashboard_Page';
 import CookieConsent, { CookieConsent_Details, CookieConsent_Details_List, CookieConsent_Details_List_Cookies } from './components/CookieConsent';
-
+import PortableText from '../components/PortableText';
+import ProcessComponent, { ProcessComponent_List } from './components/BlogPosts/ProcessComponent';
+import HighlightedImage from './components/BlogPosts/HighlightedImage';
+import ArticleGreetings from './components/BlogPosts/ArticleGreetings';
+import Standout from './components/BlogPosts/Standout';
+import ImageBadge from './components/BlogPosts/ImageBadge';
+import ImagesGrid, { ImagesGrid_List } from './components/BlogPosts/ImagesGrid';
+import BadgeSection from './components/BlogPosts/BadgeSection';
+import TableSection, { TableSection_Table } from './components/BlogPosts/TableSection';
+import ProcessShowcase, { ProcessShowcase_List, ProcessShowcase_Process } from './components/BlogPosts/ProcessShowcase';
+import QuoteSection from './components/BlogPosts/QuoteSection';
+import VideoSection from './components/BlogPosts/VideoSection';
+import ConversationShowcase, {
+  ConversationShowcase_List,
+  ConversationShowcase_Recipient,
+  ConversationShowcase_Sender,
+} from './components/BlogPosts/ConversationShowcase';
+import ColorPicker, { ColorPicker_List } from './components/BlogPosts/ColorPicker';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -189,4 +206,29 @@ export const schemaTypes = [
   LatestBlogEntries,
   AffiliateDashboardPage_AffiliateCode,
   AffiliateDashboardPage_TextSection,
+  PortableText,
+  ProcessComponent,
+  ProcessComponent_List,
+  HighlightedImage,
+  ArticleGreetings,
+  Standout,
+  ImageBadge,
+  ImagesGrid,
+  ImagesGrid_List,
+  BadgeSection,
+  TableSection,
+  TableSection_Table,
+  ProcessShowcase,
+  ProcessShowcase_List,
+  QuoteSection,
+  VideoSection,
+  ConversationShowcase_List,
+  ConversationShowcase_Recipient,
+  ConversationShowcase_Sender,
+  ConversationShowcase,
+  BlogPost_Collection_Hero,
+  ProcessShowcase_Process,
+  LatestBlogEntries,
+  ColorPicker,
+  ColorPicker_List,
 ];

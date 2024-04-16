@@ -7,6 +7,7 @@ import { media } from 'sanity-plugin-media';
 import { markdownSchema } from 'sanity-plugin-markdown';
 import { CustomMarkdownInput } from './components/Markdown';
 import { ExternalLinks } from './components/ExternalLinks';
+import { colorInput } from '@sanity/color-input';
 
 const createListItem = (S, typeName) => {
   const { title, name, icon } = schemaTypes.find(item => item.name === typeName);
@@ -101,6 +102,7 @@ export default defineConfig({
     visionTool(),
     markdownSchema({ input: CustomMarkdownInput }),
     media(),
+    colorInput(),
   ],
 
   schema: {
