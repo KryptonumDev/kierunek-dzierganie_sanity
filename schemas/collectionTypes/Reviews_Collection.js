@@ -1,13 +1,20 @@
 export default {
   name: 'courseReviewCollection',
-  title: 'Zbiór opinii o kursach',
+  title: 'Zbiór opinii',
   type: 'document',
-  icon: () => '📝',
+  icon: () => '',
   fields: [
+    {
+      name: 'visible',
+      type: 'boolean',
+      title: 'Widoczny na podstronie produktu',
+      initialValue: true,
+      validation: Rule => Rule.required(),
+    },
     {
       name: 'nameOfReviewer',
       type: 'string',
-      title: 'Imię recenzenta',
+      title: 'Imię kursantki',
       validation: Rule => Rule.required(),
     },
     {
@@ -29,13 +36,19 @@ export default {
     },
     {
       name: 'course',
+      title: 'Produkt',
       type: 'reference',
       to: [
         {
           type: 'course',
         },
+        {
+          type: 'bundle',
+        },
+        {
+          type: 'product',
+        },
       ],
-      title: 'Kurs',
       validation: Rule => Rule.required(),
     },
     {
@@ -51,13 +64,13 @@ export default {
   ],
   preview: {
     select: {
-      nameOfReviewer: 'nameOfReviewer',
-      course: 'course',
+      name: 'nameOfReviewer',
+      course: 'course.name',
+      mark: 'rating',
     },
-    prepare({ nameOfReviewer, course }) {
+    prepare({ name, course, mark }) {
       return {
-        title: nameOfReviewer,
-        subtitle: course,
+        title: `${course} - ${name} ${mark}/5`,
       };
     },
   },

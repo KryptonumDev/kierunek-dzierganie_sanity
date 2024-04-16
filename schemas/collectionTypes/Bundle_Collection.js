@@ -7,8 +7,8 @@ import {
 } from '../components/Product_Components';
 
 export default {
-  name: 'course',
-  title: 'Kursy',
+  name: 'bundle',
+  title: 'Pakiety kursów',
   type: 'document',
   icon: () => '',
   fields: [
@@ -22,30 +22,30 @@ export default {
     {
       name: 'name',
       type: 'string',
-      title: 'Nazwa kursu',
+      title: 'Nazwa zestawu',
       validation: Rule => Rule.required(),
     },
     {
       name: 'slug',
       type: 'slug',
+      title: 'Slug',
       options: {
         source: 'name',
       },
-      title: 'Slug',
       validation: Rule => Rule.required(),
     },
     {
       name: 'basis',
       type: 'string',
-      title: 'Rodzaj kursu',
+      title: 'Rodzaj pakietu',
       options: {
         list: [
           {
-            title: 'Szydełkowanie',
+            title: 'Pakiet kursów szydełkowania',
             value: 'crocheting',
           },
           {
-            title: 'Dzierganie na drutach',
+            title: 'Pakiet kursów dziergania na drutach',
             value: 'knitting',
           },
         ],
@@ -56,11 +56,7 @@ export default {
       name: 'price',
       type: 'number',
       title: 'Cena w groszach',
-      validation: Rule =>
-        Rule.min(0).custom((currentValue, { document }) => {
-          if (document.type !== 'variable' && currentValue === undefined) return 'To pole jest wymagane';
-          return true;
-        }),
+      validation: Rule => Rule.min(0).required(),
     },
     {
       name: 'discount',
@@ -72,37 +68,14 @@ export default {
       name: 'author',
       type: 'reference',
       to: [{ type: 'CourseAuthor_Collection' }],
-      title: 'Autor kursu',
+      title: 'Autor kursów w pakiecie',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'type',
-      type: 'string',
-      title: 'Typ kursu',
-      options: {
-        list: [
-          {
-            title: 'Kurs',
-            value: 'course',
-          },
-          {
-            title: 'Program',
-            value: 'program',
-          },
-        ],
-      },
-      initialValue: 'course',
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'category',
-      type: 'reference',
-      title: 'Kategoria',
-      to: [
-        {
-          type: 'courseCategory',
-        },
-      ],
+      name: 'categories',
+      type: 'array',
+      title: 'Kategorie kursów',
+      of: [{ type: 'reference', to: [{ type: 'courseCategory' }] }],
       validation: Rule => Rule.required(),
     },
     {
@@ -131,30 +104,16 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      title: 'Długość kursu',
-      name: 'courseLength',
-      type: 'string',
-    },
-    {
-      name: 'materials_link',
-      title: 'Dodatkowe materiały',
-      type: 'reference',
-      to: [{ type: 'product' }],
-    },
-    {
-      name: 'chapters',
+      name: 'courses',
       type: 'array',
-      title: 'Rozdziały',
-      of: [
-        {
-          type: 'ChapterList',
-        },
-      ],
+      title: 'Powiązane kursy',
+      of: [{ type: 'reference', to: [{ type: 'course' }] }],
+      validation: Rule => Rule.min(0).required(),
     },
     {
       name: 'description',
       type: 'array',
-      title: 'Opis kursu',
+      title: 'Opis',
       of: [ColumnImageSection, OrderedList, Standout, UnorderedList, TextSection],
     },
     {
@@ -166,8 +125,8 @@ export default {
   ],
   groups: [
     {
-      title: 'SEO',
       name: 'seo',
+      title: 'SEO',
     },
   ],
 };
