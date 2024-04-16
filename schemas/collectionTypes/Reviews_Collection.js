@@ -1,5 +1,5 @@
 export default {
-  name: 'courseReviewCollection',
+  name: 'reviewCollection',
   title: 'Zbiór opinii',
   type: 'document',
   icon: () => '',
