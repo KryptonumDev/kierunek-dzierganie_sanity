@@ -106,10 +106,16 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'image',
-      type: 'image',
-      title: 'Obrazek wyróżniający',
-      validation: Rule => Rule.required(),
+      name: 'featuredVideo',
+      type: 'string',
+      title: 'Link do filmu wyróżniającego',
+      description: 'Link do iframe',
+    },
+    {
+      name: 'gallery',
+      type: 'array',
+      title: 'Galeria',
+      of: [{ type: 'image', validation: Rule => Rule.required() }],
     },
     {
       name: 'complexity',

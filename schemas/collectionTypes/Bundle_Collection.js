@@ -8,7 +8,7 @@ import {
 
 export default {
   name: 'bundle',
-  title: 'Zestaw produktów',
+  title: 'Pakiety kursów',
   type: 'document',
   icon: () => '',
   fields: [
