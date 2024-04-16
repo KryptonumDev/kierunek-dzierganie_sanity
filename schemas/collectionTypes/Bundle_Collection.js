@@ -42,6 +42,19 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'complexity',
+      type: 'string',
+      title: 'Poziom',
+      options: {
+        list: [
+          { title: 'Dla początkujących', value: 'dla-poczatkujacych' },
+          { title: 'Dla średnio zaawansowanych', value: 'dla-srednio-zaawansowanych' },
+          { title: 'Dla zaawansowanych', value: 'dla-zaawansowanych' },
+        ],
+      },
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'basis',
       type: 'string',
       title: 'Rodzaj pakietu',
