@@ -35,6 +35,11 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'excerpt',
+      type: 'markdown',
+      title: 'Krótki opis na karcie wyróżnionego produktu',
+    },
+    {
       name: 'category',
       type: 'reference',
       title: 'Kategoria',
