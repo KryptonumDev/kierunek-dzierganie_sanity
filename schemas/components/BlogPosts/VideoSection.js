@@ -8,19 +8,27 @@ export default {
   icon,
   fields: [
     {
+      name: 'title',
+      type: 'string',
+      title: 'Tytuł filmu',
+      description: 'Tytuł filmu, który zostanie wyświetlony na stronie',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'video',
-      type: 'file',
+      type: 'url',
       title: 'Wideo',
+      description: 'Link do Vimeo',
       validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
-      video: 'video',
+      heading: 'title',
     },
-    prepare({ video }) {
+    prepare({ heading }) {
       return {
-        title: `[${title}] - ${video}`,
+        title: `[${title}] - ${heading}`,
         icon,
       };
     },

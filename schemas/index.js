@@ -112,6 +112,7 @@ import ConversationShowcase, {
   ConversationShowcase_Sender,
 } from './components/BlogPosts/ConversationShowcase';
 import LatestBlogEntries from './components/LatestBlogEntries';
+import ColorPicker, { ColorPicker_List } from './components/BlogPosts/ColorPicker';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -187,4 +188,6 @@ export const schemaTypes = [
   BlogPost_Collection_Hero,
   ProcessShowcase_Process,
   LatestBlogEntries,
+  ColorPicker,
+  ColorPicker_List,
 ];

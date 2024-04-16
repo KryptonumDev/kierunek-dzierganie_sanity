@@ -9,14 +9,9 @@ export default {
       type: 'block',
       styles: [
         {
-          title: 'Normal',
+          title: 'Normalna czcionka',
           value: 'normal',
           component: ({ children }) => <span style={{ fontWeight: 400 }}>{children}</span>,
-        },
-        {
-          title: 'Large Paragraph',
-          value: 'largeParagraph',
-          component: ({ children }) => <p style={{ fontSize: '1.1em', margin: 0 }}>{children}</p>,
         },
         {
           title: 'H2',
@@ -65,5 +60,6 @@ export default {
     { type: 'QuoteSection' },
     { type: 'VideoSection' },
     { type: 'ConversationShowcase' },
+    { type: 'ColorPicker' },
   ],
 };
