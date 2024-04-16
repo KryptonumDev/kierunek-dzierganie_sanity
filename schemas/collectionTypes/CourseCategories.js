@@ -1,6 +1,6 @@
 export default {
-  name: 'productCategory',
-  title: 'Kategorie produktów',
+  name: 'courseCategory',
+  title: 'Kategorie kursów',
   type: 'document',
   icon: () => '',
   fields: [

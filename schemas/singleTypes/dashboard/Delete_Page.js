@@ -1,8 +1,11 @@
+const title = 'Konto pomyślnie usunięte'
+const icon = () => '🗑️';
+
 export default {
-  name: 'WhyBrand_Page',
-  title: 'Dlaczego powstała marka?',
+  name: 'Delete_Page',
   type: 'document',
-  icon: () => '💼',
+  title,
+  icon,
   fields: [
     {
       name: 'content',

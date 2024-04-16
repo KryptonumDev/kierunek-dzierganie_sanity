@@ -3,10 +3,10 @@ import { LatestBlogEntries_Title } from "../components/LatestBlogEntries";
 import { StepsGrid_Title } from "../components/StepsGrid";
 
 export default {
-  name: 'Knitting_Page',
-  title: 'Strona dzierganie na drutach',
+  name: 'Crocheting_Page',
+  title: 'Szydełkowanie',
   type: 'document',
-  icon: () => '🪡',
+  icon: () => '🧶',
   fields: [
     {
       name: 'HeroSimple',

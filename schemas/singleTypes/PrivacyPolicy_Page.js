@@ -1,10 +1,10 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 
 export default {
-  name: 'Statute_Page',
-  title: 'Regulamin',
+  name: 'PrivacyPolicy_Page',
+  title: 'Polityka prywatności',
   type: 'document',
-  icon: () => '📜',
+  icon: () => '🔒',
   fields: [
     {
       name: 'header_Heading',
@@ -20,17 +20,10 @@ export default {
       name: 'content',
       type: 'array',
       of: [{
-        type: 'Statute_Page_Content'
+        type: 'Privacy_Policy_Page_Content'
       }],
       title: 'Zawartość',
       fieldset: 'content',
-    },
-    {
-      name: 'files',
-      type: 'array',
-      of: [{ type: 'file' }],
-      title: 'Lista plików',
-      fieldset: 'files',
     },
     {
       name: 'seo',
@@ -57,10 +50,10 @@ export default {
       title: 'SEO',
     },
   ],
-};
+}
 
-export const Statute_Page_Content = {
-  name: 'Statute_Page_Content',
+export const Privacy_Policy_Page_Content = {
+  name: 'Privacy_Policy_Page_Content',
   title: 'Zawartość',
   type: 'object',
   fields: [
@@ -84,7 +77,7 @@ export const Statute_Page_Content = {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),
-      };
+      }
     },
   },
-};
+}

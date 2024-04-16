@@ -5,6 +5,7 @@ export default {
   of: [
     { type: 'HeroBackgroundImg' },
     { type: 'HeroColumn' },
+    { type: 'HeroSimple' },
     { type: 'Benefits' },
     { type: 'Faq' },
     { type: 'Opinions' },

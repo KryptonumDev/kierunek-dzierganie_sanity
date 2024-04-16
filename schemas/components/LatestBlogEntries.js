@@ -14,12 +14,14 @@ export default {
       type: 'markdown',
       title: 'Nagłówek',
       validation: Rule => Rule.required(),
+      initialValue: 'Blog pełen pasji i **inspiracji**',
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
       validation: Rule => Rule.required(),
+      initialValue: 'Zanurz się w artykuły pełne wartościowych porad i nowinek z zakresu dziergania i szydełkowania.',
     },
   ],
   preview: {

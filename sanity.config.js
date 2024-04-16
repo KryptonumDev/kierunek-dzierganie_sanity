@@ -47,18 +47,32 @@ export default defineConfig({
                   .items([
                     ...singleTypes.map(item => createListItem(S, item.name)),
                     S.divider(),
-                    createDocumentTypeListItem(S, 'landingPage'),
-                    S.divider(),
                     createDocumentTypeListItem(S, 'ReviewCollection'),
                     createDocumentTypeListItem(S, 'FaqCollection'),
                     createDocumentTypeListItem(S, 'CustomerCaseStudy_Collection'),
                     createDocumentTypeListItem(S, 'Partner_Collection'),
                     S.divider(),
-                    createDocumentTypeListItem(S, 'BlogCategory_Collection'),
                     createDocumentTypeListItem(S, 'BlogPost_Collection'),
+                    createDocumentTypeListItem(S, 'BlogCategory_Collection'),
                     createDocumentTypeListItem(S, 'Author_Collection'),
                   ])
               ),
+            S.divider(),
+            S.listItem()
+              .title('Strony użytkowników')
+              .icon(() => '👤')
+              .child(
+                S.list()
+                  .title('Podstrony')
+                  .items([
+                    createListItem(S, 'AffiliateDashboard_Page'),
+                    createListItem(S, 'Support_Page'),
+                    createListItem(S, 'Logout_Page'),
+                    createListItem(S, 'Delete_Page'),
+                  ])
+              ),
+            S.divider(),
+            createDocumentTypeListItem(S, 'landingPage'),
             S.divider(),
             S.listItem()
               .title('Sklep')
@@ -71,8 +85,13 @@ export default defineConfig({
                     S.divider(),
                     createDocumentTypeListItem(S, 'course'),
                     createDocumentTypeListItem(S, 'lesson'),
+                    // S.divider(),
+                    // createDocumentTypeListItem(S, 'CourseReviews_Collection'),
                     S.divider(),
                     createDocumentTypeListItem(S, 'productCategory'),
+                    createDocumentTypeListItem(S, 'courseCategory'),
+                    S.divider(),
+                    createListItem(S, 'Cart'),
                   ])
               ),
           ]),

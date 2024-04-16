@@ -1,6 +1,8 @@
 // Single Types
-import global, { global_Seo, nav_Link, nav_Links } from './singleTypes/global';
+import global, { global_OrganizationSchema, global_Seo, nav_Link, nav_Links } from './singleTypes/global';
 import homepage from './singleTypes/homepage';
+import Knitting_Page from './singleTypes/Knitting_Page';
+import Crocheting_Page from './singleTypes/Crocheting_Page';
 import AboutMe_Page from './singleTypes/AboutMe_Page';
 import Contact_Page from './singleTypes/Contact_Page';
 import Partners_Page from './singleTypes/Partners_Page';
@@ -8,13 +10,18 @@ import Cooperation_Page from './singleTypes/Cooperation_Page';
 import Affiliate_Page from './singleTypes/Affiliate_Page';
 import Newsletter_Page from './singleTypes/Newsletter_Page';
 import WhyBrand_Page from './singleTypes/WhyBrand_Page';
-import Knitting_Page from './singleTypes/Knitting_Page';
 import NotFound_Page from './singleTypes/NotFound_Page';
-import Statute_page from './singleTypes/Statute_Page';
+import Statute_Page, { Statute_Page_Content } from './singleTypes/Statute_Page';
+import PrivacyPolicy_Page, { Privacy_Policy_Page_Content } from './singleTypes/PrivacyPolicy_Page'
 import Blog_Page from './singleTypes/Blog_Page';
+import Cart from './singleTypes/Cart';
+import Logout_Page from './singleTypes/dashboard/Logout_Page';
+import Delete_Page from './singleTypes/dashboard/Delete_Page';
 
 export const singleTypes = [
   homepage,
+  Knitting_Page,
+  Crocheting_Page,
   AboutMe_Page,
   Contact_Page,
   Partners_Page,
@@ -22,20 +29,22 @@ export const singleTypes = [
   Affiliate_Page,
   Newsletter_Page,
   WhyBrand_Page,
-  Knitting_Page,
   NotFound_Page,
-  Statute_page,
+  PrivacyPolicy_Page,
+  Statute_Page,
   Blog_Page,
+  Cart
 ];
 
 // Collection Types
 import landingPage from './collectionTypes/landingPage';
 import ReviewCollection from './collectionTypes/ReviewCollection';
 import FaqCollection from './collectionTypes/FaqCollection';
-import product from './collectionTypes/product';
-import lesson from './collectionTypes/lesson';
-import course from './collectionTypes/course';
+import product from './collectionTypes/Product_Collection';
+import lesson from './collectionTypes/Lesson_Collection';
+import course from './collectionTypes/Course_Collection';
 import productCategory from './collectionTypes/ProductCategories';
+import CourseCategories from './collectionTypes/CourseCategories';
 import CustomerCaseStudy_Collection from './collectionTypes/CustomerCaseStudy_Collection';
 import Partner_Collection from './collectionTypes/Partner_Collection';
 import BlogCategory_Collection from './collectionTypes/BlogCategory_Collection';
@@ -50,11 +59,13 @@ export const collectionTypes = [
   ReviewCollection,
   FaqCollection,
   productCategory,
+  CourseCategories,
   CustomerCaseStudy_Collection,
   Partner_Collection,
   BlogCategory_Collection,
   Author_Collection,
   BlogPost_Collection,
+  // CourseReviews_Collection
 ];
 
 // Components
@@ -92,8 +103,14 @@ import Newsletter from './components/Newsletter';
 import CustomerCaseStudy from './components/CustomerCaseStudy';
 import WordsCollection from './components/WordsCollection';
 import Partners from './components/Partners';
-import Statute_Page_Content from './components/Statute_Page_Content';
 import MostPopularCourses from './components/MostPopularCourses';
+import StepsGrid, { StepsGrid_Item } from './components/StepsGrid';
+import ImageAndText from './components/FlexImageAndText'
+import HeroSimple from './components/HeroSimple';
+import LatestBlogEntries from './components/LatestBlogEntries';
+import Support_Page, { Support_Page_Tabs } from './singleTypes/dashboard/Support_Page';
+import AffiliateDashboard_Page, { AffiliateDashboardPage_AffiliateCode, AffiliateDashboardPage_TextSection } from './singleTypes/dashboard/AffiliateDashboard_Page';
+import CookieConsent, { CookieConsent_Details, CookieConsent_Details_List, CookieConsent_Details_List_Cookies } from './components/CookieConsent';
 import PortableText from '../components/PortableText';
 import ProcessComponent, { ProcessComponent_List } from './components/BlogPosts/ProcessComponent';
 import HighlightedImage from './components/BlogPosts/HighlightedImage';
@@ -111,16 +128,26 @@ import ConversationShowcase, {
   ConversationShowcase_Recipient,
   ConversationShowcase_Sender,
 } from './components/BlogPosts/ConversationShowcase';
-import LatestBlogEntries from './components/LatestBlogEntries';
 import ColorPicker, { ColorPicker_List } from './components/BlogPosts/ColorPicker';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
 
+  Delete_Page,
+  Logout_Page,
+  Support_Page,
+  Support_Page_Tabs,
+  AffiliateDashboard_Page,
+
   global,
   global_Seo,
   nav_Link,
   nav_Links,
+  CookieConsent,
+  CookieConsent_Details,
+  CookieConsent_Details_List,
+  CookieConsent_Details_List_Cookies,
+
   cta,
   seo,
   titleAndDescription,
@@ -164,7 +191,16 @@ export const schemaTypes = [
   WordsCollection,
   Partners,
   Statute_Page_Content,
+  Privacy_Policy_Page_Content,
+  ImageAndText,
   MostPopularCourses,
+  global_OrganizationSchema,
+  StepsGrid,
+  StepsGrid_Item,
+  HeroSimple,
+  LatestBlogEntries,
+  AffiliateDashboardPage_AffiliateCode,
+  AffiliateDashboardPage_TextSection,
   PortableText,
   ProcessComponent,
   ProcessComponent_List,

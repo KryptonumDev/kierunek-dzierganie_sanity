@@ -1,4 +1,5 @@
 import { slugify } from '../../utils/slugify';
+import { HeroSimple_Title } from '../components/HeroSimple';
 
 const title = 'Zbiór kategorii bloga';
 const icon = () => '📝';
@@ -34,18 +35,11 @@ export default {
         }).required(),
     },
     {
-      name: 'hero_Heading',
-      type: 'markdown',
-      title: 'Nagłówek',
+      name: 'HeroSimple',
+      type: 'HeroSimple',
+      title: HeroSimple_Title,
+      options: { collapsible: true, collapsed: true },
       validation: Rule => Rule.required(),
-      fieldset: 'hero',
-    },
-    {
-      name: 'hero_Paragraph',
-      type: 'markdown',
-      title: 'Paragraf',
-      validation: Rule => Rule.required(),
-      fieldset: 'hero',
     },
     {
       name: 'categories_Heading',
@@ -92,11 +86,6 @@ export default {
     },
   ],
   fieldsets: [
-    {
-      name: 'hero',
-      title: 'Sekcja wstępna',
-      options: { collapsible: true, collapsed: true },
-    },
     {
       name: 'categories',
       title: 'Sekcja z kategoriami bloga',

@@ -1,3 +1,5 @@
+import { HeroSimple_Title } from "../components/HeroSimple";
+
 const title = 'Blog';
 const icon = () => '📝';
 
@@ -8,18 +10,11 @@ export default {
   icon,
   fields: [
     {
-      name: 'hero_Heading',
-      type: 'markdown',
-      title: 'Nagłówek',
+      name: 'HeroSimple',
+      type: 'HeroSimple',
+      title: HeroSimple_Title,
+      options: { collapsible: true, collapsed: true },
       validation: Rule => Rule.required(),
-      fieldset: 'hero',
-    },
-    {
-      name: 'hero_Paragraph',
-      type: 'markdown',
-      title: 'Paragraf',
-      validation: Rule => Rule.required(),
-      fieldset: 'hero',
     },
     {
       name: 'categories_Heading',

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default {
   name: 'global',
   title: 'Globalne',
@@ -20,14 +22,28 @@ export default {
         },
       ],
       title: 'Linki w nawigacji',
-      validation: Rule => Rule.required().max(5),
+      validation: (Rule) => Rule.required().max(5),
       fieldset: 'nav',
+    },
+    {
+      name: 'image_crochet',
+      type: 'image',
+      title: 'Zdjęcie szydełkowania',
+      validation: (Rule) => Rule.required(),
+      fieldset: 'products',
+    },
+    {
+      name: 'image_knitting',
+      type: 'image',
+      title: 'Zdjęcie dziergania na drutach',
+      validation: (Rule) => Rule.required(),
+      fieldset: 'products',
     },
     {
       name: 'email',
       type: 'string',
       title: 'Adres e-mail',
-      validation: Rule => Rule.required().email(),
+      validation: (Rule) => Rule.required().email(),
     },
     {
       name: 'tel',
@@ -38,21 +54,21 @@ export default {
       name: 'facebook',
       type: 'url',
       title: 'Facebook',
-      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
+      validation: (Rule) => Rule.required().uri({scheme: ['https']}),
       fieldset: 'social',
     },
     {
       name: 'instagram',
       type: 'url',
       title: 'Instagram',
-      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
+      validation: (Rule) => Rule.required().uri({scheme: ['https']}),
       fieldset: 'social',
     },
     {
       name: 'youtube',
       type: 'url',
       title: 'YouTube',
-      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
+      validation: (Rule) => Rule.required().uri({scheme: ['https']}),
       fieldset: 'social',
     },
     {
@@ -66,7 +82,7 @@ export default {
       name: 'messenger',
       type: 'url',
       title: 'Messenger',
-      validation: Rule => Rule.required().uri({ scheme: ['https'] }),
+      validation: (Rule) => Rule.required().uri({scheme: ['https']}),
       fieldset: 'social',
     },
     {
@@ -80,6 +96,26 @@ export default {
       title: 'Indeksowanie przez roboty SEO',
       description: 'Po włączeniu roboty SEO (takie jak Google) będą mogły indeksować witrynę w wyszukiwarkach.',
     },
+    {
+      type: 'global_OrganizationSchema',
+      name: 'OrganizationSchema',
+      title: 'Uporządkowane dane organizacji',
+      description: (
+        <a
+          href='https://developers.google.com/search/docs/appearance/structured-data/organization?hl=pl'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Więcej informacji o Schema
+        </a>
+      ),
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: 'CookieConsent',
+      type: 'CookieConsent',
+      title: 'Baner z informacją o ciasteczkach',
+    },
   ],
   fieldsets: [
     {
@@ -92,6 +128,14 @@ export default {
     {
       name: 'social',
       title: 'Social linki',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+    {
+      name: 'products',
+      title: 'Obrazki linków do stron produktowych',
       options: {
         collapsible: true,
         collapsed: true,
@@ -115,6 +159,25 @@ export const global_Seo = {
   ],
 };
 
+export const global_OrganizationSchema = {
+  name: 'global_OrganizationSchema',
+  title: 'Global SEO',
+  type: 'object',
+  fields: [
+    {
+      name: 'name',
+      type: 'string',
+      title: 'Nazwa Twojej organizacji',
+    },
+    {
+      name: 'description',
+      type: 'text',
+      rows: 3,
+      title: 'Szczegółowy opis Twojej organizacji',
+    },
+  ],
+};
+
 export const nav_Links = {
   name: 'nav_Links',
   title: 'Linki w nawigacji',
@@ -124,19 +187,19 @@ export const nav_Links = {
       name: 'name',
       type: 'string',
       title: 'Nazwa',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'href',
       type: 'string',
       title: 'Link relatywny',
       description: 'Jeśli nie jest uzupełniony to znaczy, że jest to zakładka.',
-      validation: Rule =>
-        Rule.custom(value => {
+      validation: (Rule) =>
+        Rule.custom((value) => {
           if (value && !value.startsWith('/')) {
-            return 'Link musi być relatywny (zaczynający się od "/").';
+            return 'Link musi być relatywny (zaczynający się od "/").'
           }
-          return true;
+          return true
         }),
     },
     {
@@ -167,18 +230,18 @@ export const nav_Link = {
       name: 'name',
       type: 'string',
       title: 'Nazwa',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'href',
       type: 'string',
       title: 'Link relatywny',
-      validation: Rule =>
-        Rule.custom(value => {
+      validation: (Rule) =>
+        Rule.custom((value) => {
           if (value && !value.startsWith('/')) {
-            return 'Link musi być relatywny (zaczynający się od "/").';
+            return 'Link musi być relatywny (zaczynający się od "/").'
           }
-          return true;
+          return true
         }).required(),
     },
   ],

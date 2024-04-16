@@ -1,4 +1,4 @@
-import { removeMarkdown } from '../../utils/functions';
+import { removeMarkdown } from '../../utils/remove-markdown';
 import { slugify } from '../../utils/slugify';
 
 const title = 'Zbiór blogów';
@@ -27,7 +27,12 @@ export default {
     {
       name: 'category',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'BlogCategory_Collection' }] }],
+      of: [{
+        type: 'reference',
+        to: [{
+          type: 'BlogCategory_Collection'
+        }]
+      }],
       title: 'Kategoria',
       validation: Rule => Rule.required(),
     },

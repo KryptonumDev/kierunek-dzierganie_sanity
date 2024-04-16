@@ -1,10 +1,14 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 
+const title = 'Sekcja z siatką kroków';
+export const StepsGrid_Title = title;
+const icon = () => '🦶';
+
 export default {
-  name: 'StepList',
-  title: 'Sekcja z listą elementów',
+  name: 'StepsGrid',
   type: 'object',
-  icon: () => '✅',
+  title,
+  icon,
   fields: [
     {
       name: 'heading',
@@ -23,7 +27,7 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'StepList_Item',
+          type: 'StepsGrid_Item',
         },
       ],
       title: 'Lista',
@@ -32,33 +36,40 @@ export default {
   ],
   preview: {
     select: {
-      title: 'heading',
+      heading: 'heading',
       subtitle: 'paragraph',
       list: 'list',
     },
-    prepare({ title, subtitle, list }) {
+    prepare({ heading, subtitle, list }) {
       return {
-        title: `[Sekcja z listą elementów] ${removeMarkdown(title)}`,
+        title: `[${title}] ${removeMarkdown(heading)}`,
         subtitle: removeMarkdown(subtitle),
         media: () => list?.length || '',
+        icon,
       };
     },
   },
 };
 
-export const StepList_Item = {
-  name: 'StepList_Item',
+export const StepsGrid_Item = {
+  name: 'StepsGrid_Item',
   title: 'Element',
   type: 'object',
   fields: [
     {
-      name: 'title',
+      name: 'img',
+      type: 'image',
+      title: 'Zdjęcie',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'heading',
       type: 'string',
       title: 'Tytuł',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'description',
+      name: 'paragraph',
       type: 'markdown',
       title: 'Opis',
       validation: Rule => Rule.required(),
@@ -66,13 +77,15 @@ export const StepList_Item = {
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'description',
+      title: 'heading',
+      subtitle: 'paragraph',
+      media: 'img',
     },
-    prepare({ title, subtitle }) {
+    prepare({ title, subtitle, media }) {
       return {
         title,
         subtitle: removeMarkdown(subtitle),
+        media,
       };
     },
   },

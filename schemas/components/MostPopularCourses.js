@@ -1,4 +1,4 @@
-import { removeMarkdown } from '../../utils/functions';
+import { removeMarkdown } from '../../utils/remove-markdown';
 
 const title = 'Najpopularniejsze kursy';
 const icon = () => '🔥';
@@ -21,13 +21,14 @@ export default {
       title: 'Paragraf',
       validation: Rule => Rule.required(),
     },
-    {
-      name: 'courses',
-      type: 'reference',
-      to: [{ type: 'course' }],
-      title: 'Kursy',
-      validation: Rule => Rule.required(),
-    },
+    //TODO: Add courses reference
+    // {
+    //   name: 'courses',
+    //   type: 'reference',
+    //   to: [{ type: 'course' }],
+    //   title: 'Kursy',
+    //   validation: Rule => Rule.required(),
+    // },
   ],
   preview: {
     select: {
