@@ -81,8 +81,9 @@ export default defineConfig({
                   .title('Elementy')
                   .items([
                     createDocumentTypeListItem(S, 'product'),
-                    S.divider(),
                     createDocumentTypeListItem(S, 'course'),
+                    createDocumentTypeListItem(S, 'bundle'),
+                    S.divider(),
                     createDocumentTypeListItem(S, 'lesson'),
                     S.divider(),
                     createDocumentTypeListItem(S, 'courseReviewCollection'),

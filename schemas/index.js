@@ -50,8 +50,9 @@ import Partner_Collection from './collectionTypes/Partner_Collection';
 import BlogCategory_Collection from './collectionTypes/BlogCategory_Collection';
 import Author_Collection from './collectionTypes/Author_Collection';
 import BlogPost_Collection from './collectionTypes/BlogPost_Collection';
-import CourseReviews_Collection from './collectionTypes/CourseReviews_Collection';
+import CourseReviews_Collection from './collectionTypes/Reviews_Collection';
 import CourseAuthor_Collection from './collectionTypes/CourseAuthor_Collection';
+import bundle from './collectionTypes/Bundle_Collection';
 
 export const collectionTypes = [
   landingPage,
@@ -69,6 +70,7 @@ export const collectionTypes = [
   BlogPost_Collection,
   CourseReviews_Collection,
   CourseAuthor_Collection,
+  bundle,
 ];
 
 // Components
