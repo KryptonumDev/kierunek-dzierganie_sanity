@@ -87,12 +87,8 @@ export default {
       name: 'courses',
       type: 'array',
       title: 'Powiązane kursy',
-      of: [{ type: 'reference', to: [{ type: 'product' }] }],
-      validation: Rule =>
-        Rule.custom((currentValue, { document }) => {
-          if (document.type === 'bundle' && currentValue === undefined) return 'To pole jest wymagane';
-          return true;
-        }),
+      of: [{ type: 'reference', to: [{ type: 'course' }] }],
+      validation: Rule => Rule.min(0).required(),
     },
     {
       name: 'description',
