@@ -35,26 +35,6 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'categories',
-      type: 'array',
-      title: 'Kategorie kursów',
-      of: [{ type: 'reference', to: [{ type: 'courseCategory' }] }],
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'complexity',
-      type: 'string',
-      title: 'Poziom',
-      options: {
-        list: [
-          { title: 'Dla początkujących', value: 'dla-poczatkujacych' },
-          { title: 'Dla średnio zaawansowanych', value: 'dla-srednio-zaawansowanych' },
-          { title: 'Dla zaawansowanych', value: 'dla-zaawansowanych' },
-        ],
-      },
-      validation: Rule => Rule.required(),
-    },
-    {
       name: 'basis',
       type: 'string',
       title: 'Rodzaj pakietu',
@@ -85,6 +65,20 @@ export default {
       validation: Rule => Rule.min(0),
     },
     {
+      name: 'author',
+      type: 'reference',
+      to: [{ type: 'CourseAuthor_Collection' }],
+      title: 'Autor kursów w pakiecie',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'categories',
+      type: 'array',
+      title: 'Kategorie kursów',
+      of: [{ type: 'reference', to: [{ type: 'courseCategory' }] }],
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'featuredVideo',
       type: 'string',
       title: 'Link do filmu wyróżniającego',
@@ -95,6 +89,19 @@ export default {
       type: 'array',
       title: 'Galeria',
       of: [{ type: 'image', validation: Rule => Rule.required() }],
+    },
+    {
+      name: 'complexity',
+      type: 'string',
+      title: 'Poziom',
+      options: {
+        list: [
+          { title: 'Dla początkujących', value: 'dla-poczatkujacych' },
+          { title: 'Dla średnio zaawansowanych', value: 'dla-srednio-zaawansowanych' },
+          { title: 'Dla zaawansowanych', value: 'dla-zaawansowanych' },
+        ],
+      },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'courses',
