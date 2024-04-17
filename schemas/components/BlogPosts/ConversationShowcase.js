@@ -1,5 +1,4 @@
-import { removeMarkdown } from '../../../utils/functions';
-
+import { removeMarkdown } from '../../../utils/remove-markdown';
 const title = 'Przedstawienie rozmowy';
 const icon = () => '💬';
 

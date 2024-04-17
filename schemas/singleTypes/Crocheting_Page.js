@@ -1,6 +1,5 @@
-import { HeroSimple_Title } from "../components/HeroSimple";
-import { LatestBlogEntries_Title } from "../components/LatestBlogEntries";
-import { StepsGrid_Title } from "../components/StepsGrid";
+import { HeroSimple_Title } from '../components/HeroSimple';
+import { StepsGrid_Title } from '../components/StepsGrid';
 
 export default {
   name: 'Crocheting_Page',
@@ -49,7 +48,7 @@ export default {
     {
       name: 'LatestBlogEntries',
       type: 'LatestBlogEntries',
-      title: LatestBlogEntries_Title,
+      title: 'Najnowsze wpisy bloga',
       options: { collapsible: true, collapsed: true },
     },
     {

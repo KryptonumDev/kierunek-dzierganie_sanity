@@ -1,4 +1,4 @@
-import { removeMarkdown } from '../../utils/functions';
+import { removeMarkdown } from '../../utils/remove-markdown';
 
 const icon = () => '📰';
 const title = 'Sekcja z najnowszymi wpisami bloga';

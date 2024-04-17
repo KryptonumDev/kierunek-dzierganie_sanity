@@ -228,7 +228,6 @@ export const schemaTypes = [
   ConversationShowcase,
   BlogPost_Collection_Hero,
   ProcessShowcase_Process,
-  LatestBlogEntries,
   ColorPicker,
   ColorPicker_List,
 ];
