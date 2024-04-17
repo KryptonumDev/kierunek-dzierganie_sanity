@@ -40,6 +40,13 @@ export default {
       title: 'Krótki opis na karcie wyróżnionego produktu',
     },
     {
+      name: 'additionalInformation',
+      type: 'array',
+      title: 'Dodatkowe informacje o produkcie',
+      of: [{ type: 'string' }],
+      initialValue: ['Darmowy zwrot do 14 dni', 'Dostawa w ciągu 3 dni'],
+    },
+    {
       name: 'category',
       type: 'reference',
       title: 'Kategoria',
