@@ -1,7 +1,7 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 import { slugify } from '../../utils/slugify';
 
-const title = 'Zbiór blogów';
+const title = 'Zbiór artykułów';
 const icon = () => '✒️';
 
 export default {
@@ -64,6 +64,12 @@ export default {
       type: 'content',
       title: 'Komponenty strony',
     },
+    {
+      name: 'seo',
+      type: 'seo',
+      title: 'SEO',
+      group: 'seo',
+    },
   ],
 
   preview: {
@@ -99,6 +105,10 @@ export const BlogPost_Collection_Hero = {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
     },
   ],
 };
