@@ -147,6 +147,12 @@ export default {
       to: [{ type: 'product' }],
     },
     {
+      name: 'printed_manual',
+      title: 'Instrukcja drukowana',
+      type: 'reference',
+      to: [{ type: 'product' }],
+    },
+    {
       name: 'chapters',
       type: 'array',
       title: 'Rozdziały',
