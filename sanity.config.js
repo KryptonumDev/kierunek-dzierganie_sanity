@@ -65,8 +65,20 @@ export default defineConfig({
                 S.list()
                   .title('Podstrony')
                   .items([
+
+                    createListItem(S, 'Courses_Page'),
+                    createListItem(S, 'Orders_Page'),
+                    createListItem(S, 'Data_Page'),
+                    createListItem(S, 'Files_Page'),
                     createListItem(S, 'AffiliateDashboard_Page'),
                     createListItem(S, 'Support_Page'),
+                    S.divider(),
+                    createListItem(S, 'Authorization_Page'),
+                    createListItem(S, 'RegisterSuccess_Page'),
+                    createListItem(S, 'ChangePasswordSuccess_Page'),
+                    createListItem(S, 'ResetPassword_Page'),
+                    createListItem(S, 'SetPassword_Page'),
+                    S.divider(),
                     createListItem(S, 'Logout_Page'),
                     createListItem(S, 'Delete_Page'),
                   ])

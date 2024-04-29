@@ -18,6 +18,16 @@ import Cart from './singleTypes/Cart';
 import Logout_Page from './singleTypes/dashboard/Logout_Page';
 import Delete_Page from './singleTypes/dashboard/Delete_Page';
 
+import Authorization_Page from './singleTypes/dashboard/Authorization_Page';
+import ChangePasswordSuccess_Page from './singleTypes/dashboard/ChangePasswordSuccess_Page';
+import Courses_Page from './singleTypes/dashboard/Courses_Page';
+import Data_Page from './singleTypes/dashboard/Data_Page';
+import Files_Page from './singleTypes/dashboard/Files_Page';
+import Orders_Page from './singleTypes/dashboard/Orders_Page';
+import RegisterSuccess_Page from './singleTypes/dashboard/RegisterSuccess_Page';
+import ResetPassword_Page from './singleTypes/dashboard/ResetPassword_Page';
+import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
+
 export const singleTypes = [
   homepage,
   Knitting_Page,
@@ -33,7 +43,16 @@ export const singleTypes = [
   PrivacyPolicy_Page,
   Statute_Page,
   Blog_Page,
-  Cart
+  Cart,
+  Authorization_Page,
+  ChangePasswordSuccess_Page,
+  Courses_Page,
+  Data_Page,
+  Files_Page,
+  Orders_Page,
+  RegisterSuccess_Page,
+  ResetPassword_Page,
+  SetPassword_Page,
 ];
 
 // Collection Types
