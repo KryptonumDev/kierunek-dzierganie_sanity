@@ -44,15 +44,6 @@ export const singleTypes = [
   Statute_Page,
   Blog_Page,
   Cart,
-  Authorization_Page,
-  ChangePasswordSuccess_Page,
-  Courses_Page,
-  Data_Page,
-  Files_Page,
-  Orders_Page,
-  RegisterSuccess_Page,
-  ResetPassword_Page,
-  SetPassword_Page,
 ];
 
 // Collection Types
@@ -162,6 +153,15 @@ export const schemaTypes = [
   Support_Page,
   Support_Page_Tabs,
   AffiliateDashboard_Page,
+  Authorization_Page,
+  ChangePasswordSuccess_Page,
+  Courses_Page,
+  Data_Page,
+  Files_Page,
+  Orders_Page,
+  RegisterSuccess_Page,
+  ResetPassword_Page,
+  SetPassword_Page,
 
   global,
   global_Seo,

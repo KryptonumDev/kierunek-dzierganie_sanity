@@ -74,6 +74,13 @@ export const StepsGrid_Item = {
       title: 'Opis',
       validation: Rule => Rule.required(),
     },
+    {
+      name: 'relatedCourse',
+      type: 'reference',
+      title: 'Powiązany kurs',
+      to: [{ type: 'course' }],
+      validation: Rule => Rule.required(),
+    }
   ],
   preview: {
     select: {

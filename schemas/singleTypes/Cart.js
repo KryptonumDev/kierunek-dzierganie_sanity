@@ -2,7 +2,7 @@ export default {
   name: 'Cart',
   title: 'Koszyk',
   type: 'document',
-  icon: () => '',
+  icon: () => '🛒',
   fields: [
     {
       name: 'highlighted',
