@@ -23,8 +23,8 @@ export default {
     },
     prepare({ list }) {
       return {
-        title: `[${title}] - ${removeMarkdown(list[0].paragraph)}`,
-        media: list[0].img,
+        title: `[${title}] - ${removeMarkdown(list[0].heading)}`,
+        media: list[0].process[0].img,
         icon,
       };
     },
@@ -40,12 +40,17 @@ export const ProcessShowcase_Process = {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie',
-      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
+    },
+    {
+      name: 'isReversed',
+      type: 'boolean',
+      title: 'Czy zdjęcie ma być po prawej stronie?',
+      initialValue: false,
       validation: Rule => Rule.required(),
     },
   ],
