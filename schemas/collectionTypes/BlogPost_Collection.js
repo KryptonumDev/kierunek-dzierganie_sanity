@@ -68,7 +68,6 @@ export default {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
-      group: 'seo',
     },
   ],
 
@@ -105,10 +104,6 @@ export const BlogPost_Collection_Hero = {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-    },
-    {
-      name: 'seo',
-      title: 'SEO',
     },
   ],
 };
