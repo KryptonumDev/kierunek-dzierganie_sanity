@@ -169,6 +169,12 @@ export default {
       of: [ColumnImageSection, OrderedList, Standout, UnorderedList, TextSection],
     },
     {
+      name: 'generateCertificate',
+      type: 'boolean',
+      title: 'Generuj certyfikat po ukończeniu kursu',
+      initialValue: false,
+    },
+    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
