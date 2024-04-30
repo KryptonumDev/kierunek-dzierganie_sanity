@@ -16,7 +16,6 @@ import NotFound_Page from './singleTypes/NotFound_Page';
 import Statute_Page, { Statute_Page_Content } from './singleTypes/Statute_Page';
 import PrivacyPolicy_Page, { Privacy_Policy_Page_Content } from './singleTypes/PrivacyPolicy_Page'
 import Blog_Page from './singleTypes/Blog_Page';
-import Cart from './singleTypes/Cart';
 import Logout_Page from './singleTypes/dashboard/Logout_Page';
 import Delete_Page from './singleTypes/dashboard/Delete_Page';
 
@@ -47,7 +46,6 @@ export const singleTypes = [
   PrivacyPolicy_Page,
   Statute_Page,
   Blog_Page,
-  Cart,
 ];
 
 // Collection Types
