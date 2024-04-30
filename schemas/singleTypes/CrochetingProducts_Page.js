@@ -1,11 +1,11 @@
-import { HeroSimple_Title } from "../components/HeroSimple";
-import { StepsGrid_Title } from "../components/StepsGrid";
+import { HeroSimple_Title } from '../components/HeroSimple';
+import { StepsGrid_Title } from '../components/StepsGrid';
 
 export default {
-  name: 'Knitting_Page',
-  title: 'Strona dzierganie na drutach',
+  name: 'CrochetingProducts_Page',
+  title: 'Produkty do szydełkowania',
   type: 'document',
-  icon: () => '🪡',
+  icon: () => '🧶',
   fields: [
     {
       name: 'HeroSimple',
@@ -31,18 +31,6 @@ export default {
       name: 'listing_Paragraph',
       type: 'markdown',
       title: 'Paragraf dla listy kursów',
-      fieldset: 'listing',
-    },
-    {
-      name: 'listing_Heading_Products',
-      type: 'markdown',
-      title: 'Nagłówek dla listy produktów fizycznych',
-      fieldset: 'listing',
-    },
-    {
-      name: 'listing_Paragraph_Products',
-      type: 'markdown',
-      title: 'Paragraf dla listy produktów fizycznych',
       fieldset: 'listing',
     },
     {

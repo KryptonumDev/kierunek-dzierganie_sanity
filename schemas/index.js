@@ -1,8 +1,10 @@
 // Single Types
 import global, { global_OrganizationSchema, global_Seo, nav_Link, nav_Links } from './singleTypes/global';
 import homepage from './singleTypes/homepage';
-import Knitting_Page from './singleTypes/Knitting_Page';
-import Crocheting_Page from './singleTypes/Crocheting_Page';
+import Knitting_Page from './singleTypes/KnittingCourses_Page';
+import KnittingProducts_Page from './singleTypes/KnittingProducts_Page';
+import Crocheting_Page from './singleTypes/CrochetingCourses_Page';
+import CrochetingProducts_Page from './singleTypes/CrochetingProducts_Page';
 import AboutMe_Page from './singleTypes/AboutMe_Page';
 import Contact_Page from './singleTypes/Contact_Page';
 import Partners_Page from './singleTypes/Partners_Page';
@@ -31,7 +33,9 @@ import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
 export const singleTypes = [
   homepage,
   Knitting_Page,
+  KnittingProducts_Page,
   Crocheting_Page,
+  CrochetingProducts_Page,
   AboutMe_Page,
   Contact_Page,
   Partners_Page,
