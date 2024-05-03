@@ -16,7 +16,6 @@ import NotFound_Page from './singleTypes/NotFound_Page';
 import Statute_Page, { Statute_Page_Content } from './singleTypes/Statute_Page';
 import PrivacyPolicy_Page, { Privacy_Policy_Page_Content } from './singleTypes/PrivacyPolicy_Page'
 import Blog_Page from './singleTypes/Blog_Page';
-import Cart from './singleTypes/Cart';
 import Logout_Page from './singleTypes/dashboard/Logout_Page';
 import Delete_Page from './singleTypes/dashboard/Delete_Page';
 
@@ -29,6 +28,7 @@ import Orders_Page from './singleTypes/dashboard/Orders_Page';
 import RegisterSuccess_Page from './singleTypes/dashboard/RegisterSuccess_Page';
 import ResetPassword_Page from './singleTypes/dashboard/ResetPassword_Page';
 import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
+import Cart from './singleTypes/Cart';
 
 export const singleTypes = [
   homepage,
@@ -47,7 +47,7 @@ export const singleTypes = [
   PrivacyPolicy_Page,
   Statute_Page,
   Blog_Page,
-  Cart,
+  Cart
 ];
 
 // Collection Types
