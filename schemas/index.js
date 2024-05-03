@@ -28,6 +28,7 @@ import Orders_Page from './singleTypes/dashboard/Orders_Page';
 import RegisterSuccess_Page from './singleTypes/dashboard/RegisterSuccess_Page';
 import ResetPassword_Page from './singleTypes/dashboard/ResetPassword_Page';
 import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
+import Cart from './singleTypes/Cart';
 
 export const singleTypes = [
   homepage,
@@ -46,6 +47,7 @@ export const singleTypes = [
   PrivacyPolicy_Page,
   Statute_Page,
   Blog_Page,
+  Cart
 ];
 
 // Collection Types
