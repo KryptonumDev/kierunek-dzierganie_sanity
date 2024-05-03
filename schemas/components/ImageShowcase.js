@@ -10,16 +10,19 @@ export default {
       type: 'boolean',
       initialValue: true,
       title: 'Czy jest zwykła galeria w kolumnach?',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'cta',

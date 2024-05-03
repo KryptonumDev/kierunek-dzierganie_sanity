@@ -2,7 +2,7 @@ import { slugify } from '../../utils/slugify';
 
 export default {
   name: 'CustomerCaseStudy_Collection',
-  title: 'Zbiór historii kursantów',
+  title: 'Zbiór historii kursantek',
   type: 'document',
   icon: () => '🙋‍♀️',
   fields: [
@@ -20,7 +20,7 @@ export default {
         'Slug, to unikalny ciąg znaków, który znajdziemy zazwyczaj po ukośniku w adresie URL podstrony. Dzięki niemu jego forma jest zrozumiała dla użytkowników.',
       options: {
         source: 'name',
-        slugify: input => `historia-${slugify(input)}`,
+        slugify: input => slugify(input),
       },
       validation: Rule =>
         Rule.custom(({ current: slug }) => {
@@ -33,15 +33,41 @@ export default {
     {
       name: 'img',
       type: 'image',
-      title: 'Zdjęcie',
+      title: 'Miniaturka',
       validation: Rule => Rule.required(),
     },
     {
       name: 'excerpt',
       type: 'text',
-      rows: 3,
+      rows: 5,
       title: 'Zajawka',
       validation: Rule => Rule.required(),
+    },
+    {
+      name: 'userId',
+      type: 'string',
+      title: 'ID użytkownika',
+      description: 'ID użytkownika z bazy danych. Wymagane pole, aby wyświetlić kursy, które dana kursantka ukończyła.',
+    },
+    {
+      name: 'content',
+      type: 'object',
+      title: 'Zawartość podstrony',
+      validation: Rule => Rule.required(),
+      options: { collapsible: true },
+      fields: [
+        {
+          name: 'Introduction',
+          type: 'Introduction',
+          title: 'Sekcja HERO - Przedstawienie kursantki',
+          validation: Rule => Rule.required(),
+        },
+        {
+          name: 'ImageShowcase',
+          type: 'ImageShowcase',
+          title: 'Sekcja pokaz zdjęć',
+        },
+      ]
     },
   ],
   preview: {
