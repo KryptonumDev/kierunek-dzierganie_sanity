@@ -22,7 +22,7 @@ export default {
         },
       ],
       title: 'Linki w nawigacji',
-      validation: Rule => Rule.required().max(5),
+      validation: Rule => Rule.required().max(6),
       fieldset: 'nav',
     },
     {
