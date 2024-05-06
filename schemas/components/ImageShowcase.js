@@ -9,7 +9,8 @@ export default {
       name: 'isGrid',
       type: 'boolean',
       initialValue: true,
-      title: 'Czy jest zwykła galeria w kolumnach?',
+      title: 'Czy galeria jest w formie siatki?',
+      description: 'Jeśli zaznaczone, zdjęcia będą wyświetlane w formie siatki. W przeciwnym wypadku będą wyświetlane jako "latające" zdjęcia i wtedy ich maksymalna ilość to 4.',
       validation: Rule => Rule.required(),
     },
     {
@@ -27,23 +28,25 @@ export default {
     {
       name: 'cta',
       type: 'cta',
-      title: 'CTA',
+      title: 'Wezwanie do działania (opcjonalne)',
     },
     {
       name: 'cta_Annotation',
       type: 'markdown',
-      title: 'CTA Annotation',
+      title: 'Podpis pod przyciskiem (opcjonalne)',
     },
     {
       name: 'img',
       type: 'array',
       of: [
-        {
-          type: 'image',
-        },
+        { type: 'image' }
       ],
       title: 'Zdjęcia',
-      validation: Rule => Rule.min(9).max(9).warning('Jeżeli nie jest zwykła galeria użyj 9 zdjęć'),
+      validation: Rule =>
+        Rule.custom((array, context) => {
+          if (!context.parent.isGrid && array.length > 4) return 'Galeria nie może mieć więcej niż 4 zdjęcia';
+          return true;
+        }),
     },
   ],
   preview: {
