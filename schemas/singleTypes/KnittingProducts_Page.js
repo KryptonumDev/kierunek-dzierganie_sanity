@@ -39,7 +39,7 @@ export default {
       title: 'Najpopularniejszy kurs',
       to: [{ type: 'product' }],
       options: {
-        filter: '_type == "product" && basis == "knitting" && visibility == true',
+        filter: '_type == "product" && basis == "knitting" && visible == true',
       },
       validation: Rule => Rule.required(),
     },
