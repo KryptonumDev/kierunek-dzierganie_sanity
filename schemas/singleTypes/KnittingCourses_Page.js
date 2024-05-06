@@ -1,5 +1,5 @@
-import { HeroSimple_Title } from "../components/HeroSimple";
-import { StepsGrid_Title } from "../components/StepsGrid";
+import { HeroSimple_Title } from '../components/HeroSimple';
+import { StepsGrid_Title } from '../components/StepsGrid';
 
 export default {
   name: 'KnittingCourses_Page',
@@ -32,6 +32,16 @@ export default {
       type: 'markdown',
       title: 'Paragraf dla listy kursów',
       fieldset: 'listing',
+    },
+    {
+      name: 'listing_BestSeller',
+      type: 'reference',
+      title: 'Najpopularniejszy kurs',
+      to: [{ type: 'course' }],
+      options: {
+        filter: '_type == "course" && basis == "knitting" && visible == true',
+      },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'LatestBlogEntries',
