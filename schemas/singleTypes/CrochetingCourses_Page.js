@@ -34,6 +34,16 @@ export default {
       fieldset: 'listing',
     },
     {
+      name: 'listing_BestSeller',
+      type: 'reference',
+      title: 'Najpopularniejszy kurs',
+      to: [{ type: 'course' }],
+      options: {
+        filter: '_type == "course" && basis == "crocheting"',
+      },
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'LatestBlogEntries',
       type: 'LatestBlogEntries',
       title: 'Najnowsze wpisy bloga',
