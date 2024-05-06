@@ -38,6 +38,9 @@ export default {
       type: 'reference',
       title: 'Najpopularniejszy kurs',
       to: [{ type: 'product' }],
+      options: {
+        filter: '_type == "product" && basis == "crocheting" && visibility == true',
+      },
       validation: Rule => Rule.required(),
     },
     {
