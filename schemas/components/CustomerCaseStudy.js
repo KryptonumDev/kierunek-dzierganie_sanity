@@ -35,7 +35,7 @@ export default {
         },
       ],
       title: 'Lista',
-      validation: Rule => Rule.required().min(3),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
