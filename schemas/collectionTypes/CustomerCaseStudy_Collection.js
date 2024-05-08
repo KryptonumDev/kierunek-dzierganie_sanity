@@ -69,6 +69,12 @@ export default {
         },
       ]
     },
+    {
+      name: 'seo',
+      type: 'seo',
+      title: 'SEO',
+      group: 'seo',
+    },
   ],
   preview: {
     select: {
@@ -84,4 +90,10 @@ export default {
       };
     },
   },
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO',
+    },
+  ],
 };
