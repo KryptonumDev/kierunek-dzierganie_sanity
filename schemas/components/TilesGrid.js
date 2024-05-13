@@ -1,3 +1,4 @@
+import { validation } from 'sanity';
 import { removeMarkdown } from '../../utils/remove-markdown';
 
 export default {
@@ -47,6 +48,12 @@ export const TilesGrid_Item = {
   title: 'Element',
   type: 'object',
   fields: [
+    {
+      name: 'badge',
+      type: 'image',
+      title: 'Odznaka',
+      validation: Rule => Rule.required(),
+    },
     {
       name: 'img',
       type: 'image',
