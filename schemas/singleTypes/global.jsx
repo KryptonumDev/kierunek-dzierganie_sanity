@@ -103,7 +103,7 @@ export default {
           validation: Rule => Rule.required(),
         },
         {
-          name: 'images',
+          name: 'image',
           type: 'array',
           of: [{ type: 'image' }],
           title: 'Zbiór zdjęć',
