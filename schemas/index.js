@@ -5,7 +5,6 @@ import Knitting_Page from './singleTypes/KnittingCourses_Page';
 import KnittingProducts_Page from './singleTypes/KnittingProducts_Page';
 import Crocheting_Page from './singleTypes/CrochetingCourses_Page';
 import CrochetingProducts_Page from './singleTypes/CrochetingProducts_Page';
-import AboutMe_Page from './singleTypes/AboutMe_Page';
 import Contact_Page from './singleTypes/Contact_Page';
 import Partners_Page from './singleTypes/Partners_Page';
 import Cooperation_Page from './singleTypes/Cooperation_Page';
@@ -37,7 +36,6 @@ export const singleTypes = [
   KnittingProducts_Page,
   Crocheting_Page,
   CrochetingProducts_Page,
-  AboutMe_Page,
   AboutUs_Page,
   Contact_Page,
   Partners_Page,
