@@ -91,10 +91,26 @@ export default {
       title: 'Globalne SEO',
     },
     {
-      name: 'robotsIndex',
-      type: 'boolean',
-      title: 'Indeksowanie przez roboty SEO',
-      description: 'Po włączeniu roboty SEO (takie jak Google) będą mogły indeksować witrynę w wyszukiwarkach.',
+      name: 'mascots',
+      type: 'object',
+      title: 'Maskotki',
+      fields: [
+        {
+          name: 'text',
+          type: 'array',
+          of: [{ type: 'string' }],
+          title: 'Zbiór tekstów',
+          validation: Rule => Rule.required(),
+        },
+        {
+          name: 'images',
+          type: 'array',
+          of: [{ type: 'image' }],
+          title: 'Zbiór zdjęć',
+          validation: Rule => Rule.required(),
+        },
+      ],
+      options: { collapsible: true, collapsed: true },
     },
     {
       type: 'global_OrganizationSchema',
