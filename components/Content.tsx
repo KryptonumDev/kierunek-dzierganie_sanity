@@ -34,5 +34,6 @@ export default {
     { type: 'MostPopularCourses' },
     { type: 'LatestBlogEntries' },
     { type: 'CompaniesShowcase' },
+    { type: 'TeamShowcase' },
   ],
 };
