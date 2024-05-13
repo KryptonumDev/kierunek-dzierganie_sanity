@@ -33,5 +33,6 @@ export default {
     { type: 'Partners' },
     { type: 'MostPopularCourses' },
     { type: 'LatestBlogEntries' },
+    { type: 'CompaniesShowcase' },
   ],
 };
