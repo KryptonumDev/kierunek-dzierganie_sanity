@@ -175,6 +175,13 @@ export default {
       initialValue: false,
     },
     {
+      name: 'popup',
+      type: 'boolean',
+      title: 'Wyskakujące okienko po dodaniu do koszyka',
+      description: 'Wyskakujące okienko z dodatkowymi materiałami oraz instrukcją drukowaną',
+      initialValue: false,
+    },
+    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
