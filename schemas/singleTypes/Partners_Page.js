@@ -5,6 +5,12 @@ export default {
   icon: () => '🤝',
   fields: [
     {
+      name: 'displayPage',
+      type: 'boolean',
+      title: 'Wyświetl stronę',
+      initialValue: true,
+    },
+    {
       name: 'content',
       type: 'content',
       title: 'Komponenty podstrony',
