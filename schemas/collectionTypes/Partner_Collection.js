@@ -24,6 +24,11 @@ export default {
       title: 'Opis',
       validation: Rule => Rule.required(),
     },
+    {
+      name: 'href',
+      type: 'url',
+      title: 'Link do strony partnera',
+    },
   ],
   preview: {
     select: {
