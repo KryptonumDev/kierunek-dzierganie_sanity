@@ -34,9 +34,15 @@ export default {
       fieldset: 'listing',
     },
     {
-      name: 'listing_BestSeller',
+      name: 'listing_HighlightedCourse_Badge',
+      type: 'string',
+      title: 'Odznaka dla wyróżnionego kursu',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'listing_HighlightedCourse',
       type: 'reference',
-      title: 'Najpopularniejszy kurs',
+      title: 'Wyróżniony kurs',
       to: [{ type: 'course' }],
       options: {
         filter: '_type == "course" && basis == "knitting" && visible == true',
