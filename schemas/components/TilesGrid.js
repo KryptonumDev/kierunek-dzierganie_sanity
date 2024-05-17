@@ -49,12 +49,6 @@ export const TilesGrid_Item = {
   type: 'object',
   fields: [
     {
-      name: 'badge',
-      type: 'image',
-      title: 'Odznaka',
-      validation: Rule => Rule.required(),
-    },
-    {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie',
