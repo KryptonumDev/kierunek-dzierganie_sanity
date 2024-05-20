@@ -182,6 +182,11 @@ export default {
       initialValue: false,
     },
     {
+      name: 'automatizationId',
+      type: 'string',
+      title: 'Identyfikator automatyzacji',
+    },
+    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
