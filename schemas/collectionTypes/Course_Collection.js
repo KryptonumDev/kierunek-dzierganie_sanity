@@ -185,6 +185,7 @@ export default {
       name: 'automatizationId',
       type: 'string',
       title: 'Identyfikator automatyzacji',
+      description: 'ID grupy w automatyzacji MailerLite',
     },
     {
       name: 'seo',
