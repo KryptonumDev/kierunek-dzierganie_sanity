@@ -10,7 +10,7 @@ import Partners_Page from './singleTypes/Partners_Page';
 import Cooperation_Page from './singleTypes/Cooperation_Page';
 import Affiliate_Page from './singleTypes/Affiliate_Page';
 import Newsletter_Page from './singleTypes/Newsletter_Page';
-import WhyBrand_Page from './singleTypes/WhyBrand_Page';
+// import WhyBrand_Page from './singleTypes/WhyBrand_Page';
 import NotFound_Page from './singleTypes/NotFound_Page';
 import Statute_Page, { Statute_Page_Content } from './singleTypes/Statute_Page';
 import PrivacyPolicy_Page, { Privacy_Policy_Page_Content } from './singleTypes/PrivacyPolicy_Page';
@@ -46,7 +46,7 @@ export const singleTypes = [
   Cooperation_Page,
   Affiliate_Page,
   Newsletter_Page,
-  WhyBrand_Page,
+  // WhyBrand_Page,
   NotFound_Page,
   PrivacyPolicy_Page,
   Statute_Page,
