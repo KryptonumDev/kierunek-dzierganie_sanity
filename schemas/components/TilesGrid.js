@@ -8,6 +8,11 @@ export default {
   icon: () => '| CTA |',
   fields: [
     {
+      name: 'logo',
+      type: 'image',
+      title: 'Logo (opcjonalne)',
+    },
+    {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
