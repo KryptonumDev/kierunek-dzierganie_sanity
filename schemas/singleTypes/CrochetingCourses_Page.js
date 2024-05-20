@@ -1,4 +1,5 @@
 import { HeroSimple_Title } from '../components/HeroSimple';
+import { LogoSection_Title } from '../components/LogoSection';
 import { StepsGrid_Title } from '../components/StepsGrid';
 
 export default {
@@ -8,12 +9,21 @@ export default {
   icon: () => '🧶',
   fields: [
     {
-      name: 'HeroSimple',
-      type: 'HeroSimple',
-      title: HeroSimple_Title,
+      name: 'LogoSection',
+      type: 'LogoSection',
+      title: LogoSection_Title,
       options: { collapsible: true, collapsed: true },
       validation: Rule => Rule.required(),
     },
+    // Commented because of client preferences
+    
+    // {
+    //   name: 'HeroSimple',
+    //   type: 'HeroSimple',
+    //   title: HeroSimple_Title,
+    //   options: { collapsible: true, collapsed: true },
+    //   validation: Rule => Rule.required(),
+    // },
     {
       name: 'StepsGrid',
       type: 'StepsGrid',

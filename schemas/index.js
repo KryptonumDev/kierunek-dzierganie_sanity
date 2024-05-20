@@ -157,6 +157,7 @@ import ConversationShowcase, {
 import ColorPicker, { ColorPicker_List } from './components/BlogPosts/ColorPicker';
 import CompaniesShowcase, { CompaniesShowcase_Item } from './components/CompaniesShowcase';
 import TeamShowcase, { TeamShowcase_Item } from './components/TeamShowcase';
+import LogoSection from './components/LogoSection';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -266,4 +267,5 @@ export const schemaTypes = [
   CompaniesShowcase,
   TeamShowcase_Item,
   TeamShowcase,
+  LogoSection,
 ];

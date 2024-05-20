@@ -35,5 +35,6 @@ export default {
     { type: 'LatestBlogEntries' },
     { type: 'CompaniesShowcase' },
     { type: 'TeamShowcase' },
+    { type: 'LogoSection' },
   ],
 };
