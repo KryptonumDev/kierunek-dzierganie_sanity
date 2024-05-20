@@ -29,6 +29,7 @@ import ResetPassword_Page from './singleTypes/dashboard/ResetPassword_Page';
 import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
 import Cart from './singleTypes/Cart';
 import AboutUs_Page from './singleTypes/AboutUs_Page';
+import OurBrands_Page from './singleTypes/OurBrands_Page';
 
 export const singleTypes = [
   homepage,
@@ -39,6 +40,7 @@ export const singleTypes = [
   AboutUs_Page,
   Contact_Page,
   Partners_Page,
+  OurBrands_Page,
   Cooperation_Page,
   Affiliate_Page,
   Newsletter_Page,
