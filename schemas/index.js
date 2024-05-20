@@ -28,7 +28,7 @@ import RegisterSuccess_Page from './singleTypes/dashboard/RegisterSuccess_Page';
 import ResetPassword_Page from './singleTypes/dashboard/ResetPassword_Page';
 import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
 import Cart from './singleTypes/Cart';
-import AboutUs_Page from './singleTypes/AboutUs_Page';
+// import AboutUs_Page from './singleTypes/AboutUs_Page';
 import OurBrands_Page from './singleTypes/OurBrands_Page';
 import Team_Page from './singleTypes/Team_Page';
 
@@ -38,7 +38,7 @@ export const singleTypes = [
   KnittingProducts_Page,
   Crocheting_Page,
   CrochetingProducts_Page,
-  AboutUs_Page,
+  // AboutUs_Page,
   Team_Page,
   Contact_Page,
   Partners_Page,
