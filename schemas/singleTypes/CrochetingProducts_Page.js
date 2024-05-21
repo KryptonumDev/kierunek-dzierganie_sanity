@@ -51,12 +51,11 @@ export default {
     {
       name: 'listing_HighlightedCourse',
       type: 'reference',
-      title: 'Najpopularniejszy produkt',
+      title: 'Wyróżniony produkt',
       to: [{ type: 'product' }],
       options: {
         filter: '_type == "product" && basis == "crocheting" && visible == true',
       },
-      validation: Rule => Rule.required(),
     },
     {
       name: 'LatestBlogEntries',

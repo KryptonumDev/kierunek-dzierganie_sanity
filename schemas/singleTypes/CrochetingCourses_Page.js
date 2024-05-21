@@ -57,7 +57,6 @@ export default {
       options: {
         filter: '_type == "course" && basis == "crocheting" && visible == true',
       },
-      validation: Rule => Rule.required(),
     },
     {
       name: 'LatestBlogEntries',

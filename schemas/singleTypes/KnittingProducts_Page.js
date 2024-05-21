@@ -56,7 +56,6 @@ export default {
       options: {
         filter: '_type == "product" && basis == "knitting" && visible == true',
       },
-      validation: Rule => Rule.required(),
     },
     {
       name: 'LatestBlogEntries',
