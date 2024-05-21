@@ -10,7 +10,7 @@ import Partners_Page from './singleTypes/Partners_Page';
 import Cooperation_Page from './singleTypes/Cooperation_Page';
 import Affiliate_Page from './singleTypes/Affiliate_Page';
 import Newsletter_Page from './singleTypes/Newsletter_Page';
-import WhyBrand_Page from './singleTypes/WhyBrand_Page';
+// import WhyBrand_Page from './singleTypes/WhyBrand_Page';
 import NotFound_Page from './singleTypes/NotFound_Page';
 import Statute_Page, { Statute_Page_Content } from './singleTypes/Statute_Page';
 import PrivacyPolicy_Page, { Privacy_Policy_Page_Content } from './singleTypes/PrivacyPolicy_Page';
@@ -28,8 +28,9 @@ import RegisterSuccess_Page from './singleTypes/dashboard/RegisterSuccess_Page';
 import ResetPassword_Page from './singleTypes/dashboard/ResetPassword_Page';
 import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
 import Cart from './singleTypes/Cart';
-import AboutUs_Page from './singleTypes/AboutUs_Page';
+// import AboutUs_Page from './singleTypes/AboutUs_Page';
 import OurBrands_Page from './singleTypes/OurBrands_Page';
+import Team_Page from './singleTypes/Team_Page';
 
 export const singleTypes = [
   homepage,
@@ -37,14 +38,15 @@ export const singleTypes = [
   KnittingProducts_Page,
   Crocheting_Page,
   CrochetingProducts_Page,
-  AboutUs_Page,
+  // AboutUs_Page,
+  Team_Page,
   Contact_Page,
   Partners_Page,
   OurBrands_Page,
   Cooperation_Page,
   Affiliate_Page,
   Newsletter_Page,
-  WhyBrand_Page,
+  // WhyBrand_Page,
   NotFound_Page,
   PrivacyPolicy_Page,
   Statute_Page,
