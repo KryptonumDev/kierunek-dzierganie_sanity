@@ -5,6 +5,13 @@ export default {
   icon: () => '',
   fields: [
     {
+      name: 'visible',
+      type: 'boolean',
+      title: 'Widoczny w sklepie',
+      initialValue: true,
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'name',
       type: 'string',
       title: 'Nazwa',
