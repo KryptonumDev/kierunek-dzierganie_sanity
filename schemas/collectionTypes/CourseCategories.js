@@ -5,9 +5,16 @@ export default {
   icon: () => '',
   fields: [
     {
-      name: 'visible',
+      name: 'visibleInKnitting',
       type: 'boolean',
-      title: 'Widoczny w sklepie',
+      title: 'Widoczny na podstronie dziergania',
+      initialValue: true,
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'visibleInCrocheting',
+      type: 'boolean',
+      title: 'Widoczny na podstronie szydełkowania',
       initialValue: true,
       validation: Rule => Rule.required(),
     },
