@@ -5,12 +5,13 @@ import {
   UnorderedList,
   TextSection,
 } from '../components/Product_Components';
+import productVariant from '../components/productVariant';
 
 export default {
   name: 'product',
   title: 'Produkty fizyczne',
   type: 'document',
-  icon: () => '',
+  icon: () => '🧶',
   fields: [
     {
       name: 'visible',
@@ -142,7 +143,9 @@ export default {
       name: 'gallery',
       type: 'array',
       title: 'Galeria',
-      of: [{ type: 'image', validation: Rule => Rule.required() }],
+      of: [
+        { type: 'image', validation: Rule => Rule.required() }
+      ],
       validation: Rule =>
         Rule.custom((currentValue, { document }) => {
           if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
@@ -181,4 +184,21 @@ export default {
       title: 'SEO',
     },
   ],
+  preview: {
+    select: {
+      visible: 'visible',
+      type: 'type',
+      title: 'name',
+      gallery: 'gallery',
+      variants: 'variants',
+    },
+    prepare({ visible, type, title, gallery, variants }) {
+      console.log(type);
+      return {
+        title,
+        subtitle: (type === 'physical' ? 'Produkt fizyczny' : 'Produkt z wariantami') + ' | ' + (visible ? 'Widoczny' : 'Ukryty'),
+        media: gallery ? gallery[0] : variants[0].gallery[0],
+      };
+    }
+  }
 };

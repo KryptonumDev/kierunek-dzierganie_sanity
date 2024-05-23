@@ -75,11 +75,13 @@ export default {
     select: {
       title: 'hero.heading',
       subtitle: 'hero.paragraph',
+      media: 'hero.img',
     },
-    prepare: ({ title, subtitle }) => {
+    prepare: ({ title, subtitle, media }) => {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),
+        media,
       };
     },
   },
