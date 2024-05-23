@@ -1,6 +1,6 @@
 export default {
-  name: 'AboutMe_Page',
-  title: 'O mnie',
+  name: 'AboutUs_Page',
+  title: 'O nas',
   type: 'document',
   icon: () => '🙋‍♀️',
   fields: [

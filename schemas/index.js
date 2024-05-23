@@ -5,16 +5,15 @@ import Knitting_Page from './singleTypes/KnittingCourses_Page';
 import KnittingProducts_Page from './singleTypes/KnittingProducts_Page';
 import Crocheting_Page from './singleTypes/CrochetingCourses_Page';
 import CrochetingProducts_Page from './singleTypes/CrochetingProducts_Page';
-import AboutMe_Page from './singleTypes/AboutMe_Page';
 import Contact_Page from './singleTypes/Contact_Page';
 import Partners_Page from './singleTypes/Partners_Page';
 import Cooperation_Page from './singleTypes/Cooperation_Page';
 import Affiliate_Page from './singleTypes/Affiliate_Page';
 import Newsletter_Page from './singleTypes/Newsletter_Page';
-import WhyBrand_Page from './singleTypes/WhyBrand_Page';
+// import WhyBrand_Page from './singleTypes/WhyBrand_Page';
 import NotFound_Page from './singleTypes/NotFound_Page';
 import Statute_Page, { Statute_Page_Content } from './singleTypes/Statute_Page';
-import PrivacyPolicy_Page, { Privacy_Policy_Page_Content } from './singleTypes/PrivacyPolicy_Page'
+import PrivacyPolicy_Page, { Privacy_Policy_Page_Content } from './singleTypes/PrivacyPolicy_Page';
 import Blog_Page from './singleTypes/Blog_Page';
 import Logout_Page from './singleTypes/dashboard/Logout_Page';
 import Delete_Page from './singleTypes/dashboard/Delete_Page';
@@ -29,6 +28,9 @@ import RegisterSuccess_Page from './singleTypes/dashboard/RegisterSuccess_Page';
 import ResetPassword_Page from './singleTypes/dashboard/ResetPassword_Page';
 import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
 import Cart from './singleTypes/Cart';
+// import AboutUs_Page from './singleTypes/AboutUs_Page';
+import OurBrands_Page from './singleTypes/OurBrands_Page';
+import Team_Page from './singleTypes/Team_Page';
 
 export const singleTypes = [
   homepage,
@@ -36,18 +38,20 @@ export const singleTypes = [
   KnittingProducts_Page,
   Crocheting_Page,
   CrochetingProducts_Page,
-  AboutMe_Page,
+  // AboutUs_Page,
+  Team_Page,
   Contact_Page,
   Partners_Page,
+  OurBrands_Page,
   Cooperation_Page,
   Affiliate_Page,
   Newsletter_Page,
-  WhyBrand_Page,
+  // WhyBrand_Page,
   NotFound_Page,
   PrivacyPolicy_Page,
   Statute_Page,
   Blog_Page,
-  Cart
+  Cart,
 ];
 
 // Collection Types
@@ -124,12 +128,19 @@ import WordsCollection from './components/WordsCollection';
 import Partners from './components/Partners';
 import MostPopularCourses from './components/MostPopularCourses';
 import StepsGrid, { StepsGrid_Item } from './components/StepsGrid';
-import ImageAndText from './components/FlexImageAndText'
+import ImageAndText from './components/FlexImageAndText';
 import HeroSimple from './components/HeroSimple';
 import LatestBlogEntries from './components/LatestBlogEntries';
 import Support_Page, { Support_Page_Tabs } from './singleTypes/dashboard/Support_Page';
-import AffiliateDashboard_Page, { AffiliateDashboardPage_AffiliateCode, AffiliateDashboardPage_TextSection } from './singleTypes/dashboard/AffiliateDashboard_Page';
-import CookieConsent, { CookieConsent_Details, CookieConsent_Details_List, CookieConsent_Details_List_Cookies } from './components/CookieConsent';
+import AffiliateDashboard_Page, {
+  AffiliateDashboardPage_AffiliateCode,
+  AffiliateDashboardPage_TextSection,
+} from './singleTypes/dashboard/AffiliateDashboard_Page';
+import CookieConsent, {
+  CookieConsent_Details,
+  CookieConsent_Details_List,
+  CookieConsent_Details_List_Cookies,
+} from './components/CookieConsent';
 import PortableText from '../components/PortableText';
 import ProcessComponent, { ProcessComponent_List } from './components/BlogPosts/ProcessComponent';
 import HighlightedImage from './components/BlogPosts/HighlightedImage';
@@ -148,6 +159,9 @@ import ConversationShowcase, {
   ConversationShowcase_Sender,
 } from './components/BlogPosts/ConversationShowcase';
 import ColorPicker, { ColorPicker_List } from './components/BlogPosts/ColorPicker';
+import CompaniesShowcase, { CompaniesShowcase_Item } from './components/CompaniesShowcase';
+import TeamShowcase, { TeamShowcase_Item } from './components/TeamShowcase';
+import LogoSection from './components/LogoSection';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -253,4 +267,9 @@ export const schemaTypes = [
   ProcessShowcase_Process,
   ColorPicker,
   ColorPicker_List,
+  CompaniesShowcase_Item,
+  CompaniesShowcase,
+  TeamShowcase_Item,
+  TeamShowcase,
+  LogoSection,
 ];

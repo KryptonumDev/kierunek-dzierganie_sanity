@@ -8,6 +8,11 @@ export default {
   icon: () => '| CTA |',
   fields: [
     {
+      name: 'logo',
+      type: 'image',
+      title: 'Logo (opcjonalne)',
+    },
+    {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
@@ -48,12 +53,6 @@ export const TilesGrid_Item = {
   title: 'Element',
   type: 'object',
   fields: [
-    {
-      name: 'badge',
-      type: 'image',
-      title: 'Odznaka',
-      validation: Rule => Rule.required(),
-    },
     {
       name: 'img',
       type: 'image',

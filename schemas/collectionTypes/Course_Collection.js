@@ -175,6 +175,19 @@ export default {
       initialValue: false,
     },
     {
+      name: 'popup',
+      type: 'boolean',
+      title: 'Wyskakujące okienko po dodaniu do koszyka',
+      description: 'Wyskakujące okienko z dodatkowymi materiałami oraz instrukcją drukowaną',
+      initialValue: false,
+    },
+    {
+      name: 'automatizationId',
+      type: 'string',
+      title: 'Identyfikator automatyzacji',
+      description: 'ID grupy w automatyzacji MailerLite',
+    },
+    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',

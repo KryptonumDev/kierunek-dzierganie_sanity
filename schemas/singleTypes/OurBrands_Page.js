@@ -1,15 +1,9 @@
 export default {
-  name: 'Partners_Page',
-  title: 'Partnerzy',
+  name: 'OurBrands_Page',
+  title: 'Nasze marki',
   type: 'document',
-  icon: () => '🤝',
+  icon: () => '💼',
   fields: [
-    {
-      name: 'displayPage',
-      type: 'boolean',
-      title: 'Wyświetl stronę',
-      initialValue: true,
-    },
     {
       name: 'content',
       type: 'content',
