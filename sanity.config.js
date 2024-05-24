@@ -22,7 +22,6 @@ const singletonTypes = new Set(singleTypes.map(type => type.name));
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 const createDocumentTypeListItem = (S, name) =>
   S.documentTypeListItem(collectionTypes.find(type => type.name === name).name);
-
 export default defineConfig({
   name: 'default',
   title: 'Kierunek Dzierganie',
@@ -65,7 +64,6 @@ export default defineConfig({
                 S.list()
                   .title('Podstrony')
                   .items([
-
                     createListItem(S, 'Courses_Page'),
                     createListItem(S, 'Orders_Page'),
                     createListItem(S, 'Data_Page'),
@@ -93,9 +91,19 @@ export default defineConfig({
                 S.list()
                   .title('Elementy')
                   .items([
-                    createDocumentTypeListItem(S, 'product'),
-                    createDocumentTypeListItem(S, 'course'),
-                    createDocumentTypeListItem(S, 'bundle'),
+                    S.listItem()
+                      .title('Produkty')
+                      .icon(() => '🧶')
+                      .child(
+                        S.list()
+                          .title('Produkty')
+                          .defaultLayout('detail')
+                          .items([
+                            createDocumentTypeListItem(S, 'product'),
+                            createDocumentTypeListItem(S, 'course'),
+                            createDocumentTypeListItem(S, 'bundle'),
+                          ])
+                      ),
                     S.divider(),
                     createDocumentTypeListItem(S, 'lesson'),
                     S.divider(),
