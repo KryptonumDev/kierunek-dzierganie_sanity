@@ -36,6 +36,35 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'price',
+      type: 'number',
+      title: 'Cena w groszach',
+      validation: Rule =>
+        Rule.min(0).custom((currentValue, { document }) => {
+          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
+      hidden: ({ document }) => document.type !== 'physical',
+    },
+    {
+      name: 'discount',
+      type: 'number',
+      title: 'Cena w groszach po rabacie',
+      validation: Rule => Rule.min(0),
+      hidden: ({ document }) => document.type !== 'physical',
+    },
+    {
+      name: 'countInStock',
+      type: 'number',
+      title: 'Ilość w magazynie',
+      validation: Rule =>
+        Rule.min(0).custom((currentValue, { document }) => {
+          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
+      hidden: ({ document }) => document.type !== 'physical',
+    },
+    {
       name: 'excerpt',
       type: 'markdown',
       title: 'Krótki opis na karcie wyróżnionego produktu',
@@ -46,17 +75,6 @@ export default {
       title: 'Dodatkowe informacje o produkcie',
       of: [{ type: 'string' }],
       initialValue: ['Darmowy zwrot do 14 dni', 'Dostawa w ciągu 3 dni'],
-    },
-    {
-      name: 'category',
-      type: 'reference',
-      title: 'Kategoria',
-      to: [
-        {
-          type: 'productCategory',
-        },
-      ],
-      validation: Rule => Rule.required(),
     },
     {
       name: 'basis',
@@ -95,33 +113,15 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'price',
-      type: 'number',
-      title: 'Cena w groszach',
-      validation: Rule =>
-        Rule.min(0).custom((currentValue, { document }) => {
-          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
-          return true;
-        }),
-      hidden: ({ document }) => document.type !== 'physical',
-    },
-    {
-      name: 'discount',
-      type: 'number',
-      title: 'Cena w groszach po rabacie',
-      validation: Rule => Rule.min(0),
-      hidden: ({ document }) => document.type !== 'physical',
-    },
-    {
-      name: 'countInStock',
-      type: 'number',
-      title: 'Ilość w magazynie',
-      validation: Rule =>
-        Rule.min(0).custom((currentValue, { document }) => {
-          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
-          return true;
-        }),
-      hidden: ({ document }) => document.type !== 'physical',
+      name: 'category',
+      type: 'reference',
+      title: 'Kategoria',
+      to: [
+        {
+          type: 'productCategory',
+        },
+      ],
+      validation: Rule => Rule.required(),
     },
     {
       name: 'variants',
@@ -131,13 +131,6 @@ export default {
       description:
         'Proszę upewnić się że każdy z wariantów ma wszystkie atrybuty, w przypadku gdy któryś z nich nie będzie miał takiego samego zestawu atrybutów jak pozostałe strona nię będzie działać prawidłowo!',
       hidden: ({ document }) => document.type !== 'variable',
-    },
-    {
-      name: 'featuredVideo',
-      type: 'string',
-      title: 'Link do filmu wyróżniającego',
-      description: 'Link do iframe',
-      hidden: ({ document }) => document.type !== 'physical',
     },
     {
       name: 'gallery',
@@ -162,6 +155,13 @@ export default {
       type: 'array',
       title: 'Parametry',
       of: [{ type: 'productParameters' }],
+    },
+    {
+      name: 'featuredVideo',
+      type: 'string',
+      title: 'Link do filmu wyróżniającego',
+      description: 'Link do iframe',
+      hidden: ({ document }) => document.type !== 'physical',
     },
     {
       name: 'seo',
