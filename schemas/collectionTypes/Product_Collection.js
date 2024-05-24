@@ -11,7 +11,7 @@ export default {
   name: 'product',
   title: 'Produkty fizyczne',
   type: 'document',
-  icon: () => '🧶',
+  icon: () => '',
   fields: [
     {
       name: 'visible',
@@ -143,9 +143,7 @@ export default {
       name: 'gallery',
       type: 'array',
       title: 'Galeria',
-      of: [
-        { type: 'image', validation: Rule => Rule.required() }
-      ],
+      of: [{ type: 'image', validation: Rule => Rule.required() }],
       validation: Rule =>
         Rule.custom((currentValue, { document }) => {
           if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
@@ -191,14 +189,30 @@ export default {
       title: 'name',
       gallery: 'gallery',
       variants: 'variants',
+      countInStock: 'countInStock',
+      price: 'price',
+      category: 'category.name',
     },
-    prepare({ visible, type, title, gallery, variants }) {
-      console.log(type);
+    prepare({ visible, type, title, gallery, variants, countInStock, price, category }) {
       return {
         title,
-        subtitle: (type === 'physical' ? 'Produkt fizyczny' : 'Produkt z wariantami') + ' | ' + (visible ? 'Widoczny' : 'Ukryty'),
+        subtitle:
+          (type === 'physical' ? 'Produkt fizyczny' : 'Produkt z wariantami') +
+          ' | ' +
+          (visible ? 'Widoczny' : 'Ukryty') +
+          ' | ' +
+          (countInStock || variants?.filter(variant => variant.countInStock > 0).length > 0
+            ? 'Na stanie'
+            : 'Brak na stanie') +
+          ' | ' +
+          (price
+            ? `${parseInt(price) / 100} zł`
+            : `${Math.min(...variants.map(variant => parseInt(variant.price / 100)))} zł -
+              ${Math.max(...variants.map(variant => parseInt(variant.price / 100)))} zł`) +
+          ' | ' +
+          category,
         media: gallery ? gallery[0] : variants[0].gallery[0],
       };
-    }
-  }
+    },
+  },
 };
