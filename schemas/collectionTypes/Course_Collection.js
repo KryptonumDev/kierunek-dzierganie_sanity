@@ -35,6 +35,22 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'price',
+      type: 'number',
+      title: 'Cena w groszach',
+      validation: Rule =>
+        Rule.min(0).custom((currentValue, { document }) => {
+          if (document.type !== 'variable' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
+    },
+    {
+      name: 'discount',
+      type: 'number',
+      title: 'Cena w groszach po rabacie',
+      validation: Rule => Rule.min(0),
+    },
+    {
       name: 'excerpt',
       type: 'markdown',
       title: 'Krótki opis na karcie wyróżnionego produktu',
@@ -56,22 +72,6 @@ export default {
         ],
       },
       validation: Rule => Rule.required(),
-    },
-    {
-      name: 'price',
-      type: 'number',
-      title: 'Cena w groszach',
-      validation: Rule =>
-        Rule.min(0).custom((currentValue, { document }) => {
-          if (document.type !== 'variable' && currentValue === undefined) return 'To pole jest wymagane';
-          return true;
-        }),
-    },
-    {
-      name: 'discount',
-      type: 'number',
-      title: 'Cena w groszach po rabacie',
-      validation: Rule => Rule.min(0),
     },
     {
       name: 'author',
@@ -111,18 +111,6 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'featuredVideo',
-      type: 'string',
-      title: 'Link do filmu wyróżniającego',
-      description: 'Link do iframe',
-    },
-    {
-      name: 'gallery',
-      type: 'array',
-      title: 'Galeria',
-      of: [{ type: 'image', validation: Rule => Rule.required() }],
-    },
-    {
       name: 'complexity',
       type: 'string',
       title: 'Poziom',
@@ -153,6 +141,12 @@ export default {
       to: [{ type: 'product' }],
     },
     {
+      name: 'gallery',
+      type: 'array',
+      title: 'Galeria',
+      of: [{ type: 'image', validation: Rule => Rule.required() }],
+    },
+    {
       name: 'chapters',
       type: 'array',
       title: 'Rozdziały',
@@ -167,6 +161,12 @@ export default {
       type: 'array',
       title: 'Opis kursu',
       of: [ColumnImageSection, OrderedList, Standout, UnorderedList, TextSection],
+    },
+    {
+      name: 'featuredVideo',
+      type: 'string',
+      title: 'Link do filmu wyróżniającego',
+      description: 'Link do iframe',
     },
     {
       name: 'generateCertificate',
