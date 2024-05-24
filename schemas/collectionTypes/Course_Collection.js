@@ -200,4 +200,19 @@ export default {
       name: 'seo',
     },
   ],
+  preview: {
+    select: {
+      name: 'name',
+      gallery: 'gallery',
+      price: 'price',
+      excerpt: 'excerpt',
+    },
+    prepare({ name, gallery, excerpt, price }) {
+      return {
+        title: name,
+        media: gallery[0],
+        subtitle: (excerpt ? `${excerpt.slice(0, 50)}...` : `Brak opisu`) + ` | ${parseInt(price / 100)} zł`,
+      };
+    },
+  },
 };
