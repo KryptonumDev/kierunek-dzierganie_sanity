@@ -22,19 +22,20 @@ export default {
     {
       name: 'groupId',
       type: 'string',
-      title: 'ID grupy z MailerLite',
+      title: 'ID grupy z MailerLite (opcjonalne)',
       description: 'Domyślnie grupa Newsletter (ID: 112582388). Po uzupełnieniu tego pola, użytkownik, który wypełni formularz zostanie dodany do tej grupy.',
-      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       title: 'heading',
+      groupId: 'groupId',
       media: 'img',
     },
-    prepare({ title, media }) {
+    prepare({ title, groupId, media }) {
       return {
         title: `[Newsletter] ${removeMarkdown(title)}`,
+        subtitle: `ID grupy: ${groupId || 112582388}`,
         media,
       };
     },
