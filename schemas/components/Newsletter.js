@@ -18,7 +18,13 @@ export default {
       type: 'image',
       title: 'Zdjęcie',
       validation: Rule => Rule.required(),
-      // TODO: add initialValue for img
+    },
+    {
+      name: 'groupId',
+      type: 'string',
+      title: 'ID grupy z MailerLite',
+      description: 'Domyślnie grupa Newsletter (ID: 112582388). Po uzupełnieniu tego pola, użytkownik, który wypełni formularz zostanie dodany do tej grupy.',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
