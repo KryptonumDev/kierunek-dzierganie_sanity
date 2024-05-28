@@ -211,7 +211,7 @@ export default {
       return {
         title: name,
         media: gallery[0],
-        subtitle: (excerpt ? `${excerpt.slice(0, 50)}...` : `Brak opisu`) + ` | ${parseInt(price / 100)} zł`,
+        subtitle: `${parseInt(price / 100)} zł`,
       };
     },
   },
