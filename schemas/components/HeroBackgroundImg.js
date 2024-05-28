@@ -27,8 +27,7 @@ export default {
     {
       name: 'cta',
       type: 'cta',
-      title: 'CTA',
-      validation: Rule => Rule.warning(),
+      title: 'Wezwanie do działania (opcjonalnie)',
     },
     {
       name: 'cta_Annotation',
