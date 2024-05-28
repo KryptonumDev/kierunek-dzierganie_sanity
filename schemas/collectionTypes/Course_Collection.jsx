@@ -1,3 +1,5 @@
+import CourseSlug from '../../components/CourseSlug';
+
 import {
   ColumnImageSection,
   OrderedList,
@@ -30,6 +32,9 @@ export default {
       type: 'slug',
       options: {
         source: 'name',
+      },
+      components: {
+        input: CourseSlug,
       },
       title: 'Slug',
       validation: Rule => Rule.required(),
@@ -157,6 +162,18 @@ export default {
       ],
     },
     {
+      name: 'previewLessons',
+      type: 'array',
+      title: 'Podgląd kursu',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'lesson' }],
+          validation: Rule => Rule.required(),
+        },
+      ],
+    },
+    {
       name: 'description',
       type: 'array',
       title: 'Opis kursu',
@@ -205,13 +222,13 @@ export default {
       name: 'name',
       gallery: 'gallery',
       price: 'price',
-      excerpt: 'excerpt',
+      discount: 'discount',
     },
-    prepare({ name, gallery, excerpt, price }) {
+    prepare({ name, gallery, price, discount }) {
       return {
         title: name,
         media: gallery[0],
-        subtitle: (excerpt ? `${excerpt.slice(0, 50)}...` : `Brak opisu`) + ` | ${parseInt(price / 100)} zł`,
+        subtitle: `${parseInt(price / 100)} zł` + (discount ? ` | rabat: ${parseInt(discount / 100)} zł` : ''),
       };
     },
   },
