@@ -5,7 +5,6 @@ import {
   UnorderedList,
   TextSection,
 } from '../components/Product_Components';
-import productVariant from '../components/productVariant';
 
 export default {
   name: 'product',
