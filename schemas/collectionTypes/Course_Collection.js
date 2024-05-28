@@ -157,6 +157,18 @@ export default {
       ],
     },
     {
+      name: 'previewLessons',
+      type: 'array',
+      title: 'Podgląd kursu',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'lesson' }],
+          validation: Rule => Rule.required(),
+        },
+      ],
+    },
+    {
       name: 'description',
       type: 'array',
       title: 'Opis kursu',
