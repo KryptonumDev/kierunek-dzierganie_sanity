@@ -20,12 +20,14 @@ export default {
       title: 'Widoczny w sklepie',
       initialValue: true,
       validation: Rule => Rule.required(),
+      group: 'configuration',
     },
     {
       name: 'name',
       type: 'string',
       title: 'Nazwa kursu',
       validation: Rule => Rule.required(),
+      group: 'configuration',
     },
     {
       name: 'slug',
@@ -38,27 +40,7 @@ export default {
       },
       title: 'Slug',
       validation: Rule => Rule.required(),
-    },
-    {
-      name: 'price',
-      type: 'number',
-      title: 'Cena w groszach',
-      validation: Rule =>
-        Rule.min(0).custom((currentValue, { document }) => {
-          if (document.type !== 'variable' && currentValue === undefined) return 'To pole jest wymagane';
-          return true;
-        }),
-    },
-    {
-      name: 'discount',
-      type: 'number',
-      title: 'Cena w groszach po rabacie',
-      validation: Rule => Rule.min(0),
-    },
-    {
-      name: 'excerpt',
-      type: 'markdown',
-      title: 'Krótki opis na karcie wyróżnionego produktu',
+      group: 'configuration',
     },
     {
       name: 'basis',
@@ -77,13 +59,7 @@ export default {
         ],
       },
       validation: Rule => Rule.required(),
-    },
-    {
-      name: 'author',
-      type: 'reference',
-      to: [{ type: 'CourseAuthor_Collection' }],
-      title: 'Autor kursu',
-      validation: Rule => Rule.required(),
+      group: 'configuration',
     },
     {
       name: 'type',
@@ -103,6 +79,7 @@ export default {
       },
       initialValue: 'course',
       validation: Rule => Rule.required(),
+      group: 'configuration',
     },
     {
       name: 'category',
@@ -114,6 +91,27 @@ export default {
         },
       ],
       validation: Rule => Rule.required(),
+      group: 'configuration',
+    },
+    {
+      title: 'Długość kursu',
+      name: 'courseLength',
+      type: 'string',
+      group: 'configuration',
+    },
+    {
+      name: 'materials_link',
+      title: 'Dodatkowe materiały',
+      type: 'reference',
+      to: [{ type: 'product' }],
+      group: 'configuration',
+    },
+    {
+      name: 'printed_manual',
+      title: 'Instrukcja drukowana',
+      type: 'reference',
+      to: [{ type: 'product' }],
+      group: 'configuration',
     },
     {
       name: 'complexity',
@@ -127,29 +125,68 @@ export default {
         ],
       },
       validation: Rule => Rule.required(),
+      group: 'configuration',
     },
     {
-      title: 'Długość kursu',
-      name: 'courseLength',
+      name: 'author',
+      type: 'reference',
+      to: [{ type: 'CourseAuthor_Collection' }],
+      title: 'Autor kursu',
+      validation: Rule => Rule.required(),
+      group: 'configuration',
+    },
+    {
+      name: 'generateCertificate',
+      type: 'boolean',
+      title: 'Generuj certyfikat po ukończeniu kursu',
+      initialValue: false,
+      group: 'configuration',
+    },
+    {
+      name: 'popup',
+      type: 'boolean',
+      title: 'Wyskakujące okienko po dodaniu do koszyka',
+      description: 'Wyskakujące okienko z dodatkowymi materiałami oraz instrukcją drukowaną',
+      initialValue: false,
+      group: 'configuration',
+    },
+    {
+      name: 'automatizationId',
       type: 'string',
+      title: 'Identyfikator automatyzacji',
+      description: 'ID grupy w automatyzacji MailerLite',
+      group: 'configuration',
     },
     {
-      name: 'materials_link',
-      title: 'Dodatkowe materiały',
-      type: 'reference',
-      to: [{ type: 'product' }],
+      name: 'price',
+      type: 'number',
+      title: 'Cena w groszach',
+      validation: Rule =>
+        Rule.min(0).custom((currentValue, { document }) => {
+          if (document.type !== 'variable' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
+      group: 'prices',
     },
     {
-      name: 'printed_manual',
-      title: 'Instrukcja drukowana',
-      type: 'reference',
-      to: [{ type: 'product' }],
+      name: 'discount',
+      type: 'number',
+      title: 'Cena w groszach po rabacie',
+      validation: Rule => Rule.min(0),
+      group: 'prices',
+    },
+    {
+      name: 'excerpt',
+      type: 'markdown',
+      title: 'Krótki opis na karcie wyróżnionego produktu',
+      group: 'description',
     },
     {
       name: 'gallery',
       type: 'array',
       title: 'Galeria',
       of: [{ type: 'image', validation: Rule => Rule.required() }],
+      group: 'description',
     },
     {
       name: 'chapters',
@@ -160,6 +197,7 @@ export default {
           type: 'ChapterList',
         },
       ],
+      group: 'description',
     },
     {
       name: 'previewLessons',
@@ -172,37 +210,21 @@ export default {
           validation: Rule => Rule.required(),
         },
       ],
+      group: 'description',
     },
     {
       name: 'description',
       type: 'array',
       title: 'Opis kursu',
       of: [ColumnImageSection, OrderedList, Standout, UnorderedList, TextSection],
+      group: 'description',
     },
     {
       name: 'featuredVideo',
       type: 'string',
       title: 'Link do filmu wyróżniającego',
       description: 'Link do iframe',
-    },
-    {
-      name: 'generateCertificate',
-      type: 'boolean',
-      title: 'Generuj certyfikat po ukończeniu kursu',
-      initialValue: false,
-    },
-    {
-      name: 'popup',
-      type: 'boolean',
-      title: 'Wyskakujące okienko po dodaniu do koszyka',
-      description: 'Wyskakujące okienko z dodatkowymi materiałami oraz instrukcją drukowaną',
-      initialValue: false,
-    },
-    {
-      name: 'automatizationId',
-      type: 'string',
-      title: 'Identyfikator automatyzacji',
-      description: 'ID grupy w automatyzacji MailerLite',
+      group: 'description',
     },
     {
       name: 'seo',
@@ -213,8 +235,20 @@ export default {
   ],
   groups: [
     {
-      title: 'SEO',
+      name: 'configuration',
+      title: 'KONFIGURACJA',
+    },
+    {
+      name: 'prices',
+      title: 'CENY',
+    },
+    {
+      name: 'description',
+      title: 'TREŚCI',
+    },
+    {
       name: 'seo',
+      title: 'SEO',
     },
   ],
   preview: {
