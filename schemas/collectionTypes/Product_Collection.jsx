@@ -20,12 +20,14 @@ export default {
       title: 'Widoczny w sklepie',
       initialValue: true,
       validation: Rule => Rule.required(),
+      group: 'configuration',
     },
     {
       name: 'name',
       type: 'string',
       title: 'Nazwa produktu',
       validation: Rule => Rule.required(),
+      group: 'configuration',
     },
     {
       name: 'slug',
@@ -38,47 +40,7 @@ export default {
         input: ProductSlug,
       },
       validation: Rule => Rule.required(),
-    },
-    {
-      name: 'price',
-      type: 'number',
-      title: 'Cena w groszach',
-      validation: Rule =>
-        Rule.min(0).custom((currentValue, { document }) => {
-          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
-          return true;
-        }),
-      hidden: ({ document }) => document.type !== 'physical',
-    },
-    {
-      name: 'discount',
-      type: 'number',
-      title: 'Cena w groszach po rabacie',
-      validation: Rule => Rule.min(0),
-      hidden: ({ document }) => document.type !== 'physical',
-    },
-    {
-      name: 'countInStock',
-      type: 'number',
-      title: 'Ilość w magazynie',
-      validation: Rule =>
-        Rule.min(0).custom((currentValue, { document }) => {
-          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
-          return true;
-        }),
-      hidden: ({ document }) => document.type !== 'physical',
-    },
-    {
-      name: 'excerpt',
-      type: 'markdown',
-      title: 'Krótki opis na karcie wyróżnionego produktu',
-    },
-    {
-      name: 'additionalInformation',
-      type: 'array',
-      title: 'Dodatkowe informacje o produkcie',
-      of: [{ type: 'string' }],
-      initialValue: ['Darmowy zwrot do 14 dni', 'Dostawa w ciągu 3 dni'],
+      group: 'configuration',
     },
     {
       name: 'basis',
@@ -97,6 +59,7 @@ export default {
         ],
       },
       validation: Rule => Rule.required(),
+      group: 'configuration',
     },
     {
       name: 'type',
@@ -115,6 +78,7 @@ export default {
         ],
       },
       validation: Rule => Rule.required(),
+      group: 'configuration',
     },
     {
       name: 'category',
@@ -126,6 +90,60 @@ export default {
         },
       ],
       validation: Rule => Rule.required(),
+      group: 'configuration',
+    },
+    {
+      name: 'countInStock',
+      type: 'number',
+      title: 'Ilość w magazynie',
+      validation: Rule =>
+        Rule.min(0).custom((currentValue, { document }) => {
+          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
+      hidden: ({ document }) => document.type !== 'physical',
+      group: 'configuration',
+    },
+    {
+      name: 'parameters',
+      type: 'array',
+      title: 'Parametry',
+      of: [{ type: 'productParameters' }],
+      group: 'configuration',
+    },
+    {
+      name: 'price',
+      type: 'number',
+      title: 'Cena w groszach',
+      validation: Rule =>
+        Rule.min(0).custom((currentValue, { document }) => {
+          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
+          return true;
+        }),
+      hidden: ({ document }) => document.type !== 'physical',
+      group: 'prices',
+    },
+    {
+      name: 'discount',
+      type: 'number',
+      title: 'Cena w groszach po rabacie',
+      validation: Rule => Rule.min(0),
+      hidden: ({ document }) => document.type !== 'physical',
+      group: 'prices',
+    },
+    {
+      name: 'excerpt',
+      type: 'markdown',
+      title: 'Krótki opis na karcie wyróżnionego produktu',
+      group: 'description',
+    },
+    {
+      name: 'additionalInformation',
+      type: 'array',
+      title: 'Dodatkowe informacje o produkcie',
+      of: [{ type: 'string' }],
+      initialValue: ['Darmowy zwrot do 14 dni', 'Dostawa w ciągu 3 dni'],
+      group: 'description',
     },
     {
       name: 'variants',
@@ -135,6 +153,7 @@ export default {
       description:
         'Proszę upewnić się że każdy z wariantów ma wszystkie atrybuty, w przypadku gdy któryś z nich nie będzie miał takiego samego zestawu atrybutów jak pozostałe strona nię będzie działać prawidłowo!',
       hidden: ({ document }) => document.type !== 'variable',
+      group: 'description',
     },
     {
       name: 'gallery',
@@ -147,18 +166,14 @@ export default {
           return true;
         }),
       hidden: ({ document }) => document.type !== 'physical',
+      group: 'description',
     },
     {
       name: 'description',
       type: 'array',
       title: 'Opis produktu',
       of: [ColumnImageSection, OrderedList, Standout, UnorderedList, TextSection],
-    },
-    {
-      name: 'parameters',
-      type: 'array',
-      title: 'Parametry',
-      of: [{ type: 'productParameters' }],
+      group: 'description',
     },
     {
       name: 'featuredVideo',
@@ -166,6 +181,7 @@ export default {
       title: 'Link do filmu wyróżniającego',
       description: 'Link do iframe',
       hidden: ({ document }) => document.type !== 'physical',
+      group: 'description',
     },
     {
       name: 'seo',
@@ -181,6 +197,18 @@ export default {
     },
   ],
   groups: [
+    {
+      name: 'configuration',
+      title: 'KONFIGURACJA',
+    },
+    {
+      name: 'prices',
+      title: 'CENY',
+    },
+    {
+      name: 'description',
+      title: 'TREŚCI',
+    },
     {
       name: 'seo',
       title: 'SEO',
