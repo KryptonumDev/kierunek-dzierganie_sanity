@@ -8,6 +8,7 @@ import { markdownSchema } from 'sanity-plugin-markdown';
 import { CustomMarkdownInput } from './components/Markdown';
 import { ExternalLinks } from './components/ExternalLinks';
 import { colorInput } from '@sanity/color-input';
+import "./styles.css";
 
 const createListItem = (S, typeName) => {
   const { title, name, icon } = schemaTypes.find(item => item.name === typeName);
@@ -22,6 +23,7 @@ const singletonTypes = new Set(singleTypes.map(type => type.name));
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 const createDocumentTypeListItem = (S, name) =>
   S.documentTypeListItem(collectionTypes.find(type => type.name === name).name);
+
 export default defineConfig({
   name: 'default',
   title: 'Kierunek Dzierganie',

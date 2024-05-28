@@ -1,0 +1,5 @@
+div[data-testid='detail-preview__header'] {
+  span {
+    text-wrap: wrap;
+  }
+}
