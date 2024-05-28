@@ -1,3 +1,5 @@
+import CourseSlug from '../../components/CourseSlug';
+
 import {
   ColumnImageSection,
   OrderedList,
@@ -30,6 +32,9 @@ export default {
       type: 'slug',
       options: {
         source: 'name',
+      },
+      components: {
+        input: CourseSlug,
       },
       title: 'Slug',
       validation: Rule => Rule.required(),

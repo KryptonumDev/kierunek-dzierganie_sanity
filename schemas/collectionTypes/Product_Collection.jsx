@@ -1,3 +1,5 @@
+import ProductSlug from '../../components/ProductSlug';
+
 import {
   ColumnImageSection,
   OrderedList,
@@ -31,6 +33,9 @@ export default {
       title: 'Slug',
       options: {
         source: 'name',
+      },
+      components: {
+        input: ProductSlug,
       },
       validation: Rule => Rule.required(),
     },
