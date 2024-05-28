@@ -217,13 +217,13 @@ export default {
       name: 'name',
       gallery: 'gallery',
       price: 'price',
-      excerpt: 'excerpt',
+      discount: 'discount',
     },
-    prepare({ name, gallery, excerpt, price }) {
+    prepare({ name, gallery, price, discount }) {
       return {
         title: name,
         media: gallery[0],
-        subtitle: `${parseInt(price / 100)} zł`,
+        subtitle: `${parseInt(price / 100)} zł` + (discount ? ` | rabat: ${parseInt(discount / 100)} zł` : ''),
       };
     },
   },

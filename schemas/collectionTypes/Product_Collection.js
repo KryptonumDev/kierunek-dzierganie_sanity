@@ -191,8 +191,9 @@ export default {
       countInStock: 'countInStock',
       price: 'price',
       category: 'category.name',
+      discount: 'discount',
     },
-    prepare({ visible, type, title, gallery, variants, countInStock, price, category }) {
+    prepare({ visible, type, title, gallery, variants, countInStock, price, category, discount }) {
       return {
         title,
         subtitle:
@@ -209,6 +210,12 @@ export default {
             : `${Math.min(...variants.map(variant => parseInt(variant.price / 100)))} zł -
               ${Math.max(...variants.map(variant => parseInt(variant.price / 100)))} zł`) +
           ' | ' +
+          (discount
+            ? discount
+              ? `rabat: ${parseInt(discount) / 100} zł | `
+              : `rabaty: ${Math.min(...variants.map(variant => parseInt(variant.discount / 100)))} zł -
+              ${Math.max(...variants.map(variant => parseInt(variant.discount / 100)))} zł | `
+            : '') +
           category,
         media: gallery ? gallery[0] : variants[0].gallery[0],
       };
