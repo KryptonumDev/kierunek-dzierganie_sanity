@@ -8,7 +8,7 @@ import { markdownSchema } from 'sanity-plugin-markdown';
 import { CustomMarkdownInput } from './components/Markdown';
 import { ExternalLinks } from './components/ExternalLinks';
 import { colorInput } from '@sanity/color-input';
-import "./styles.css";
+import './styles.css';
 
 const createListItem = (S, typeName) => {
   const { title, name, icon } = schemaTypes.find(item => item.name === typeName);
@@ -93,19 +93,9 @@ export default defineConfig({
                 S.list()
                   .title('Elementy')
                   .items([
-                    S.listItem()
-                      .title('Produkty')
-                      .icon(() => '🧶')
-                      .child(
-                        S.list()
-                          .title('Produkty')
-                          .defaultLayout('detail')
-                          .items([
-                            createDocumentTypeListItem(S, 'product'),
-                            createDocumentTypeListItem(S, 'course'),
-                            createDocumentTypeListItem(S, 'bundle'),
-                          ])
-                      ),
+                    createDocumentTypeListItem(S, 'product'),
+                    createDocumentTypeListItem(S, 'course'),
+                    createDocumentTypeListItem(S, 'bundle'),
                     S.divider(),
                     createDocumentTypeListItem(S, 'lesson'),
                     S.divider(),

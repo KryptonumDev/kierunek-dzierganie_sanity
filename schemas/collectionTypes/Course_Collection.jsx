@@ -200,19 +200,6 @@ export default {
       group: 'description',
     },
     {
-      name: 'previewLessons',
-      type: 'array',
-      title: 'Podgląd kursu',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'lesson' }],
-          validation: Rule => Rule.required(),
-        },
-      ],
-      group: 'description',
-    },
-    {
       name: 'description',
       type: 'array',
       title: 'Opis kursu',
@@ -227,6 +214,27 @@ export default {
       group: 'description',
     },
     {
+      name: 'previewLessons',
+      type: 'array',
+      title: 'Podgląd kursu',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'lesson' }],
+          validation: Rule => Rule.required(),
+        },
+      ],
+      group: 'preview',
+    },
+    {
+      name: 'previewGroupMailerLite',
+      type: 'string',
+      title: 'Grupa w MailerLite',
+      group: 'preview',
+      description:
+        'Grupa do której dodawane są osoby, które skorzystały z podglądu kursu, po kupieniu kursu automatycznie są usuwane z tej grupy',
+    },
+    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
@@ -236,15 +244,19 @@ export default {
   groups: [
     {
       name: 'configuration',
-      title: 'KONFIGURACJA',
+      title: 'Konfiguracja',
     },
     {
       name: 'prices',
-      title: 'CENY',
+      title: 'Ceny',
     },
     {
       name: 'description',
-      title: 'TREŚCI',
+      title: 'Treści',
+    },
+    {
+      name: 'preview',
+      title: 'Podgląd kursu',
     },
     {
       name: 'seo',
