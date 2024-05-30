@@ -6,7 +6,6 @@ import { media } from 'sanity-plugin-media';
 
 import { markdownSchema } from 'sanity-plugin-markdown';
 import { CustomMarkdownInput } from './components/Markdown';
-import { ExternalLinks } from './components/ExternalLinks';
 import { colorInput } from '@sanity/color-input';
 import './styles.css';
 
@@ -126,6 +125,4 @@ export default defineConfig({
         ? input.filter(({ action }) => action && singletonActions.has(action))
         : input,
   },
-
-  tools: [ExternalLinks()],
 });
