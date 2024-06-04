@@ -46,6 +46,16 @@ export default {
       validation: Rule => Rule.required().email(),
     },
     {
+      name: 'email_orders',
+      type: 'string',
+      title: 'Adres e-mail w sprawie zamówień',
+    },
+    {
+      name: 'email_support',
+      type: 'string',
+      title: 'Adres e-mail w sprawie kwestii technicznych',
+    },
+    {
       name: 'tel',
       type: 'string',
       title: 'Numer telefonu',
