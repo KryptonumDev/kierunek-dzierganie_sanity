@@ -11,8 +11,7 @@ const courseUrls: { knitting: string; crocheting: string } = {
   crocheting: '/kursy-szydelkowania',
 };
 
-function CoruseSlug(props) {
-  const name = 'Link do kursu';
+function CourseSlug(props) {
   const { renderDefault, value } = props;
   const basisValue = useFormValue([`basis`]) as string;
   return (
@@ -20,14 +19,24 @@ function CoruseSlug(props) {
       <div style={{ flex: 1 }}>{renderDefault(props)}</div>
       {basisValue && value && (
         <a
+          target='_blank'
           href={`https://kierunekdzierganie.pl${courseUrls[basisValue]}/${value.current}`}
           style={styles}
         >
-          {name}
+          Link do kursu
+        </a>
+      )}
+      {basisValue && value && (
+        <a
+          target='_blank'
+          href={`https://kierunek-dzierganie-git-beta-kryptonum.vercel.app${courseUrls[basisValue]}/${value.current}`}
+          style={styles}
+        >
+          Link do podglądu kursu
         </a>
       )}
     </>
   );
 }
 
-export default CoruseSlug;
+export default CourseSlug;

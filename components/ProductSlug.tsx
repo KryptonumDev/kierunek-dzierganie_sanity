@@ -12,21 +12,27 @@ const productUrls: { knitting: string; crocheting: string } = {
 };
 
 function ProductSlug(props) {
-  const name = 'Link do produktu';
-  console.log(props);
   const { renderDefault, value } = props;
   const basisValue = useFormValue([`basis`]) as string;
-  console.log(basisValue);
-  console.log(value);
   return (
     <>
       <div style={{ flex: 1 }}>{renderDefault(props)}</div>
       {basisValue && value && (
         <a
+          target='_blank'
           href={`https://kierunekdzierganie.pl${productUrls[basisValue]}/${value.current}`}
           style={styles}
         >
-          {name}
+          Link do produktu
+        </a>
+      )}
+      {basisValue && value && (
+        <a
+          target='_blank'
+          href={`https://kierunek-dzierganie-git-beta-kryptonum.vercel.app${productUrls[basisValue]}/${value.current}`}
+          style={styles}
+        >
+          Link do podglądu produktu
         </a>
       )}
     </>
