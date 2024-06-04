@@ -10,7 +10,7 @@ export default {
   name: 'bundle',
   title: 'Pakiety kursów',
   type: 'document',
-  icon: () => '',
+  icon: () => '🎁',
   fields: [
     {
       name: 'visible',

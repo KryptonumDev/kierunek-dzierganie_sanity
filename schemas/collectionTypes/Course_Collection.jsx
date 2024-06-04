@@ -12,7 +12,7 @@ export default {
   name: 'course',
   title: 'Kursy',
   type: 'document',
-  icon: () => '',
+  icon: () => '📚',
   fields: [
     {
       name: 'visible',

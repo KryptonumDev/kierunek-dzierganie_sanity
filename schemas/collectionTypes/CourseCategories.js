@@ -2,7 +2,7 @@ export default {
   name: 'courseCategory',
   title: 'Kategorie kursów',
   type: 'document',
-  icon: () => '',
+  icon: () => '📝',
   fields: [
     {
       name: 'visibleInKnitting',

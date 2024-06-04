@@ -26,15 +26,6 @@ function CourseSlug(props) {
           Link do kursu
         </a>
       )}
-      {basisValue && value && (
-        <a
-          target='_blank'
-          href={`https://kierunek-dzierganie-git-beta-kryptonum.vercel.app${courseUrls[basisValue]}/${value.current}`}
-          style={styles}
-        >
-          Link do podglądu kursu
-        </a>
-      )}
     </>
   );
 }

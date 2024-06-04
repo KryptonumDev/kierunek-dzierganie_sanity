@@ -12,7 +12,7 @@ export default {
   name: 'product',
   title: 'Produkty fizyczne',
   type: 'document',
-  icon: () => '',
+  icon: () => '🧶',
   fields: [
     {
       name: 'visible',
@@ -226,30 +226,28 @@ export default {
       category: 'category.name',
       discount: 'discount',
     },
-    prepare({ visible, type, title, gallery, variants, countInStock, price, category, discount }) {
+    prepare({ visible, type, title, gallery, variants, countInStock, price, discount }) {
       return {
         title,
         subtitle:
-          (type === 'physical' ? 'Produkt fizyczny' : 'Produkt z wariantami') +
-          ' | ' +
           (visible ? 'Widoczny' : 'Ukryty') +
           ' | ' +
-          (countInStock || variants?.filter(variant => variant.countInStock > 0).length > 0
-            ? 'Na stanie'
-            : 'Brak na stanie') +
+          (type === 'variable' ? variants?.reduce(
+            (acc, variant) => acc + variant.countInStock,
+            0,
+          ) : countInStock > 0 ? countInStock : 'Brak') + ' na stanie' +
           ' | ' +
           (price
             ? `${parseInt(price) / 100} zł`
             : `${Math.min(...variants.map(variant => parseInt(variant.price / 100)))} zł -
-              ${Math.max(...variants.map(variant => parseInt(variant.price / 100)))} zł`) +
-          ' | ' +
+              ${Math.max(...variants.map(variant => parseInt(variant.price / 100)))} zł`) 
+          +
           (discount
             ? discount
-              ? `rabat: ${parseInt(discount) / 100} zł | `
-              : `rabaty: ${Math.min(...variants.map(variant => parseInt(variant.discount / 100)))} zł -
-              ${Math.max(...variants.map(variant => parseInt(variant.discount / 100)))} zł | `
-            : '') +
-          category,
+              ? ` | rabat: ${parseInt(discount) / 100} zł`
+              : ` | rabaty: ${Math.min(...variants.map(variant => parseInt(variant.discount / 100)))} zł -
+              ${Math.max(...variants.map(variant => parseInt(variant.discount / 100)))} zł`
+            : ''),
         media: gallery ? gallery[0] : variants[0].gallery[0],
       };
     },

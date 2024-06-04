@@ -2,7 +2,7 @@ export default {
   name: 'productCategory',
   title: 'Kategorie produktów',
   type: 'document',
-  icon: () => '',
+  icon: () => '📝',
   fields: [
     {
       name: 'visibleInKnitting',

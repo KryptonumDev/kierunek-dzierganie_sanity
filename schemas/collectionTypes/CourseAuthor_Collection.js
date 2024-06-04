@@ -1,5 +1,5 @@
 const title = 'Zbiór autorów kursu';
-const icon = () => '';
+const icon = () => '👤';
 
 export default {
   name: 'CourseAuthor_Collection',

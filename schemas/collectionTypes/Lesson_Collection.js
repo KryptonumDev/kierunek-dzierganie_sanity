@@ -2,7 +2,7 @@ export default {
   name: 'lesson',
   title: 'Lekcje',
   type: 'document',
-  icon: () => '',
+  icon: () => '🎥',
   fields: [
     // Unique name to identify the lesson
     {
