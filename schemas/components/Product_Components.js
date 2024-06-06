@@ -106,23 +106,16 @@ export const UnorderedList = {
       type: 'markdown',
       title: 'Paragraf (opcjonalnie)',
     },
-    {
-      name: 'list',
-      type: 'array',
-      of: [{ type: 'markdown' }],
-      title: 'Lista',
-      validation: Rule => Rule.required(),
-    },
   ],
   preview: {
     select: {
       heading: 'heading',
-      list: 'list',
+      paragraph: 'paragraph',
     },
-    prepare({ heading, list }) {
+    prepare({ heading, paragraph }) {
       return {
         title: removeMarkdown(heading),
-        subtitle: countItems(list.length),
+        subtitle: removeMarkdown(paragraph),
       };
     },
   },
