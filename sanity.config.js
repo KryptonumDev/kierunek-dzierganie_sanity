@@ -95,6 +95,7 @@ export default defineConfig({
                     createDocumentTypeListItem(S, 'product'),
                     createDocumentTypeListItem(S, 'course'),
                     createDocumentTypeListItem(S, 'bundle'),
+                    createDocumentTypeListItem(S, 'voucher'),
                     S.divider(),
                     createDocumentTypeListItem(S, 'lesson'),
                     S.divider(),

@@ -89,6 +89,7 @@ export const collectionTypes = [
   CourseReviews_Collection,
   CourseAuthor_Collection,
   bundle,
+  voucher
 ];
 
 // Components
@@ -162,6 +163,7 @@ import ColorPicker, { ColorPicker_List } from './components/BlogPosts/ColorPicke
 import CompaniesShowcase, { CompaniesShowcase_Item } from './components/CompaniesShowcase';
 import TeamShowcase, { TeamShowcase_Item } from './components/TeamShowcase';
 import LogoSection from './components/LogoSection';
+import voucher from './collectionTypes/Voucher_Collection';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
