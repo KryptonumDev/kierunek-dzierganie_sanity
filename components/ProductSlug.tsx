@@ -26,15 +26,6 @@ function ProductSlug(props) {
           Link do produktu
         </a>
       )}
-      {basisValue && value && (
-        <a
-          target='_blank'
-          href={`https://kierunek-dzierganie-git-beta-kryptonum.vercel.app${productUrls[basisValue]}/${value.current}`}
-          style={styles}
-        >
-          Link do podglądu produktu
-        </a>
-      )}
     </>
   );
 }

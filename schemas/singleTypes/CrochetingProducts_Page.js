@@ -46,6 +46,7 @@ export default {
       name: 'listing_HighlightedCourse_Badge',
       type: 'string',
       title: 'Odznaka dla wyróżnionego produktu',
+      fieldset: 'listing',
       validation: Rule => Rule.required(),
     },
     {
@@ -53,6 +54,7 @@ export default {
       type: 'reference',
       title: 'Wyróżniony produkt',
       to: [{ type: 'product' }],
+      fieldset: 'listing',
       options: {
         filter: '_type == "product" && basis == "crocheting" && visible == true',
       },
@@ -73,12 +75,12 @@ export default {
     {
       name: 'content',
       title: 'Zawartość podstrony',
-      options: { collapsible: true },
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: 'listing',
       title: 'Lista wszystkich kursów',
-      options: { collapsible: true },
+      options: { collapsible: true, collapsed: true },
     },
   ],
 };

@@ -2,7 +2,7 @@ export default {
   name: 'productReviewCollection',
   title: 'Zbiór opinii',
   type: 'document',
-  icon: () => '',
+  icon: () => '📝',
   fields: [
     {
       name: 'visible',
