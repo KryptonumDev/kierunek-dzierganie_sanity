@@ -12,7 +12,7 @@ export default {
   name: 'voucher',
   title: 'Vouchery',
   type: 'document',
-  icon: () => '',
+  icon: () => '🎁',
   fields: [
     {
       name: 'visible',
@@ -92,12 +92,6 @@ export default {
       type: 'array',
       title: 'Galeria',
       of: [{ type: 'image', validation: Rule => Rule.required() }],
-      validation: Rule =>
-        Rule.custom((currentValue, { document }) => {
-          if (document.type === 'physical' && currentValue === undefined) return 'To pole jest wymagane';
-          return true;
-        }),
-      hidden: ({ document }) => document.type !== 'physical',
       group: 'description',
     },
     {
@@ -112,7 +106,6 @@ export default {
       type: 'string',
       title: 'Link do filmu wyróżniającego',
       description: 'Link do iframe',
-      hidden: ({ document }) => document.type !== 'physical',
       group: 'description',
     },
     {

@@ -138,14 +138,6 @@ export default {
       group: 'description',
     },
     {
-      name: 'additionalInformation',
-      type: 'array',
-      title: 'Dodatkowe informacje o produkcie',
-      of: [{ type: 'string' }],
-      initialValue: ['Darmowy zwrot do 14 dni', 'Dostawa w ciągu 3 dni'],
-      group: 'description',
-    },
-    {
       name: 'variants',
       type: 'array',
       title: 'Warianty',
