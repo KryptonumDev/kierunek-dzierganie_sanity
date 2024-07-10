@@ -137,11 +137,6 @@ import AffiliateDashboard_Page, {
   AffiliateDashboardPage_AffiliateCode,
   AffiliateDashboardPage_TextSection,
 } from './singleTypes/dashboard/AffiliateDashboard_Page';
-import CookieConsent, {
-  CookieConsent_Details,
-  CookieConsent_Details_List,
-  CookieConsent_Details_List_Cookies,
-} from './components/CookieConsent';
 import PortableText from '../components/PortableText';
 import ProcessComponent, { ProcessComponent_List } from './components/BlogPosts/ProcessComponent';
 import HighlightedImage from './components/BlogPosts/HighlightedImage';
@@ -187,10 +182,6 @@ export const schemaTypes = [
   global_Seo,
   nav_Link,
   nav_Links,
-  CookieConsent,
-  CookieConsent_Details,
-  CookieConsent_Details_List,
-  CookieConsent_Details_List_Cookies,
 
   cta,
   seo,

@@ -137,11 +137,6 @@ export default {
       ),
       options: { collapsible: true, collapsed: true },
     },
-    {
-      name: 'CookieConsent',
-      type: 'CookieConsent',
-      title: 'Baner z informacją o ciasteczkach',
-    },
   ],
   fieldsets: [
     {
