@@ -1,6 +1,6 @@
 import { singleTypes, collectionTypes, schemaTypes } from './schemas';
 
-const url = 'https://kierunek-dzierganie-git-preview-kryptonum.vercel.app'
+const url = 'https://kierunek-dzierganie-git-dev-kryptonum.vercel.app'
 const WebPreview = ({ document }) => {
   const { displayed: { _type, basis, slug } } = document
 
