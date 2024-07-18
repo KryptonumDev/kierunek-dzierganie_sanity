@@ -30,6 +30,7 @@ import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
 import Cart from './singleTypes/Cart';
 // import AboutUs_Page from './singleTypes/AboutUs_Page';
 import OurBrands_Page from './singleTypes/OurBrands_Page';
+import StanVouchera_Page from './singleTypes/StanVoucher_Page'
 import Team_Page from './singleTypes/Team_Page';
 
 export const singleTypes = [
@@ -52,6 +53,7 @@ export const singleTypes = [
   Statute_Page,
   Blog_Page,
   Cart,
+  StanVouchera_Page,
 ];
 
 // Collection Types

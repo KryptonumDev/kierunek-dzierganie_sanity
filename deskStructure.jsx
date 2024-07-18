@@ -33,6 +33,7 @@ const WebPreview = ({ document }) => {
     NotFound_Page: '/not-found',
     PrivacyPolicy_Page: '/polityka-prywatnosci',
     Statute_Page: '/regulamin',
+    StanVouchera_Page: '/stanvouchera',
     Blog_Page: '/blog',
   };
 
