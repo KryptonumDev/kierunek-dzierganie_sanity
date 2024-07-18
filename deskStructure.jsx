@@ -13,6 +13,8 @@ const WebPreview = ({ document }) => {
     course_knitting: '/kurs-dziergania-na-drutach/',
     bundle_crocheting: '/kurs-szydelkowania/',
     bundle_knitting: '/kurs-dziergania-na-drutach/',
+    voucher_crocheting: '/produkty-do-szydelkowania/',
+    voucher_knitting: '/produkty-do-dziergania/',
     landingPage: '/landing/',
     CustomerCaseStudy_Collection: '/historia-kursantek/',
     BlogPost_Collection: '/blog/',
