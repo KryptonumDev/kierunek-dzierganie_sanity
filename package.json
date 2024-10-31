@@ -9,11 +9,7 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy",
-    "dev:prod": "SANITY_STUDIO_DATASET=production sanity dev",
-    "dev:develop": "SANITY_STUDIO_DATASET=development sanity dev",
-    "deploy:prod": "SANITY_STUDIO_DATASET=production sanity deploy --config sanity.production.json",
-    "deploy:develop": "SANITY_STUDIO_DATASET=development sanity deploy --config sanity.development.json"
+    "deploy-graphql": "sanity graphql deploy"
   },
   "keywords": [
     "sanity"

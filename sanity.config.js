@@ -18,7 +18,7 @@ export default defineConfig({
   title: 'Kierunek Dzierganie',
 
   projectId: '5q82mab3',
-  dataset: process.env.SANITY_STUDIO_DATASET || 'production',
+  dataset: 'development',
 
   plugins: [
     structureTool({

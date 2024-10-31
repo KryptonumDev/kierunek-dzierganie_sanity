@@ -5,4 +5,5 @@ export default defineCliConfig({
     projectId: '5q82mab3',
     dataset: 'development',
   },
+  studioHost: 'kierunek-dzierganie-dev',
 });
