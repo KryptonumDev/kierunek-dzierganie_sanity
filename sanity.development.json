@@ -1,0 +1,10 @@
+{
+  "project": {
+    "name": "my-project-development"
+  },
+  "env": {
+    "production": {
+      "dataset": "development"
+    }
+  }
+}
