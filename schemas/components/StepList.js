@@ -1,11 +1,18 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 
+const icon = () => '✅';
+
 export default {
   name: 'StepList',
   title: 'Sekcja z listą elementów',
   type: 'object',
-  icon: () => '✅',
+  icon,
   fields: [
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Zdjęcie (opcjonalne)',
+    },
     {
       name: 'heading',
       type: 'markdown',
@@ -35,12 +42,13 @@ export default {
       title: 'heading',
       subtitle: 'paragraph',
       list: 'list',
+      image: 'image',
     },
-    prepare({ title, subtitle, list }) {
+    prepare({ title, subtitle, list, image }) {
       return {
         title: `[Sekcja z listą elementów] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(subtitle),
-        media: () => list?.length || '',
+        media: image || icon,
       };
     },
   },

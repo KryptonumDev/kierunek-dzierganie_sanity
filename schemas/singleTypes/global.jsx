@@ -14,6 +14,208 @@ export default {
       fieldset: 'nav',
     },
     {
+      name: 'nav_courses',
+      type: 'object',
+      title: 'Nawigacja - kursy',
+      fieldset: 'nav',
+      fields: [
+        {
+          name: 'knitting',
+          title: 'Dzierganie na drutach',
+          type: 'object',
+          fields: [
+            {
+              name: 'href',
+              type: 'string',
+              title: 'Link relatywny',
+              validation: Rule =>
+                Rule.custom(value => {
+                  if (value && !value.startsWith('/')) {
+                    return 'Link musi być relatywny (zaczynający się od "/").';
+                  }
+                  if (!value) {
+                    return 'Link jest wymagany';
+                  }
+                  return true;
+                }),
+            },
+            {
+              name: 'highlighted_courses',
+              type: 'array',
+              of: [
+                {
+                  type: 'reference',
+                  to: [{ type: 'course' }],
+                  options: {
+                    filter: 'basis == "knitting" && visible == true',
+                  },
+                },
+              ],
+              title: 'Wyróżnione kursy',
+              validation: Rule => Rule.max(6),
+            },
+          ],
+          options: {
+            collapsible: true,
+            collapsed: false,
+          },
+        },
+        {
+          name: 'crocheting',
+          title: 'Szydełkowanie',
+          type: 'object',
+          fields: [
+            {
+              name: 'href',
+              type: 'string',
+              title: 'Link relatywny',
+              validation: Rule =>
+                Rule.custom(value => {
+                  if (value && !value.startsWith('/')) {
+                    return 'Link musi być relatywny (zaczynający się od "/").';
+                  }
+                  if (!value) {
+                    return 'Link jest wymagany';
+                  }
+                  return true;
+                }).required(),
+            },
+            {
+              name: 'highlighted_courses',
+              type: 'array',
+              of: [
+                {
+                  type: 'reference',
+                  to: [{ type: 'course' }],
+                  options: {
+                    filter: 'basis == "crocheting" && visible == true',
+                  },
+                },
+              ],
+              title: 'Wyróżnione kursy',
+              validation: Rule => Rule.max(6),
+            },
+          ],
+          options: {
+            collapsible: true,
+            collapsed: false,
+          },
+        },
+        {
+          name: 'additional_links',
+          title: 'Dodatkowe linki',
+          type: 'array',
+          of: [
+            {
+              type: 'nav_Link',
+            },
+          ],
+          validation: Rule => Rule.max(4),
+        },
+      ],
+    },
+    {
+      name: 'nav_products',
+      type: 'object',
+      title: 'Nawigacja - produkty',
+      fieldset: 'nav',
+      fields: [
+        {
+          name: 'knitting',
+          title: 'Dzierganie na drutach',
+          type: 'object',
+          fields: [
+            {
+              name: 'href',
+              type: 'string',
+              title: 'Link relatywny',
+              validation: Rule =>
+                Rule.custom(value => {
+                  if (value && !value.startsWith('/')) {
+                    return 'Link musi być relatywny (zaczynający się od "/").';
+                  }
+                  if (!value) {
+                    return 'Link jest wymagany';
+                  }
+                  return true;
+                }),
+            },
+            {
+              name: 'highlighted_products',
+              type: 'array',
+              of: [
+                {
+                  type: 'reference',
+                  to: [{ type: 'product' }],
+                  options: {
+                    filter: 'basis == "knitting" && visible == true',
+                  },
+                },
+              ],
+              title: 'Wyróżnione produkty',
+              validation: Rule => Rule.max(6),
+            },
+          ],
+          options: {
+            collapsible: true,
+            collapsed: false,
+          },
+        },
+        {
+          name: 'crocheting',
+          title: 'Szydełkowanie',
+          type: 'object',
+          fields: [
+            {
+              name: 'href',
+              type: 'string',
+              title: 'Link relatywny',
+              validation: Rule =>
+                Rule.custom(value => {
+                  if (value && !value.startsWith('/')) {
+                    return 'Link musi być relatywny (zaczynający się od "/").';
+                  }
+                  if (!value) {
+                    return 'Link jest wymagany';
+                  }
+                  return true;
+                }).required(),
+            },
+            {
+              name: 'highlighted_products',
+              type: 'array',
+              of: [
+                {
+                  type: 'reference',
+                  to: [{ type: 'product' }],
+                  options: {
+                    filter: 'basis == "crocheting" && visible == true',
+                  },
+                },
+              ],
+              title: 'Wyróżnione produkty',
+              validation: Rule => Rule.max(6),
+            },
+          ],
+          options: {
+            collapsible: true,
+            collapsed: false,
+          },
+        },
+        {
+          name: 'additional_links',
+          title: 'Dodatkowe linki',
+          type: 'array',
+          of: [
+            {
+              type: 'nav_Link',
+            },
+          ],
+          validation: Rule => Rule.max(4),
+        },
+      ],
+    },
+    {
       name: 'nav_Links',
       type: 'array',
       of: [
@@ -22,22 +224,8 @@ export default {
         },
       ],
       title: 'Linki w nawigacji',
-      validation: Rule => Rule.required().max(6),
+      validation: Rule => Rule.required().max(3),
       fieldset: 'nav',
-    },
-    {
-      name: 'image_crochet',
-      type: 'image',
-      title: 'Zdjęcie szydełkowania',
-      validation: Rule => Rule.required(),
-      fieldset: 'products',
-    },
-    {
-      name: 'image_knitting',
-      type: 'image',
-      title: 'Zdjęcie dziergania na drutach',
-      validation: Rule => Rule.required(),
-      fieldset: 'products',
     },
     {
       name: 'email',
@@ -242,11 +430,6 @@ export const nav_Link = {
   title: 'Linki w nawigacji',
   type: 'object',
   fields: [
-    {
-      name: 'img',
-      type: 'image',
-      title: 'Miniaturka (opcjonalne)',
-    },
     {
       name: 'name',
       type: 'string',

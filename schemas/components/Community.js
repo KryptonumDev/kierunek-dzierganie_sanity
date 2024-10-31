@@ -6,26 +6,23 @@ export default {
   type: 'object',
   fields: [
     {
-      name: 'isHighlighted',
-      type: 'boolean',
-      title: 'Czy sekcja ma być wyróżniona (subtelne tło)?',
-      initialValue: false,
-      validation: Rule => Rule.required(),
+      name: 'backgroundImage',
+      type: 'image',
+      title: 'Zdjęcie tła (opcjonalne)',
     },
     {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
       validation: Rule => Rule.required(),
-      initialValue: 'Dołącz do Naszej **Twórczej Społeczności**',
+      initialValue: 'Zostań w świecie dziergania i szydełka na dłużej',
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
       validation: Rule => Rule.required(),
-      initialValue:
-        'To miejsce, gdzie znajdziesz przede wszystkim wsparcie cudownych kreatywnych dziewczyn oraz możesz też pochwalić się swoimi pracami wykonanymi w ramach kursów.',
+      initialValue: 'Dołącz do grupy – bądź na bieżąco i twórz piękno razem z nami!',
     },
     {
       name: 'cta',
@@ -37,12 +34,14 @@ export default {
     select: {
       heading: 'heading',
       paragraph: 'paragraph',
+      backgroundImage: 'backgroundImage',
     },
-    prepare({ heading, paragraph }) {
+    prepare({ heading, paragraph, backgroundImage }) {
       return {
         title: `[Sekcja społeczność] ${removeMarkdown(heading)}`,
         subtitle: `${removeMarkdown(paragraph)}`,
         icon: () => '👥',
+        media: backgroundImage,
       };
     },
   },

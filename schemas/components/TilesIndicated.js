@@ -1,9 +1,12 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 
+const icon = () => '🔗';
+
 export default {
   name: 'TilesIndicated',
   title: 'Dwa kafelki ze wsazującymi strzałkami',
   type: 'object',
+  icon,
   fields: [
     {
       name: 'heading',
@@ -32,6 +35,7 @@ export default {
       return {
         title: `[Dwa kafelki ze wsazującymi strzałkami] ${removeMarkdown(title)}`,
         subtitle: `${list.length} elementy`,
+        media: icon,
       };
     },
   },
@@ -42,6 +46,11 @@ export const TilesIndicated_Item = {
   title: 'Element',
   type: 'object',
   fields: [
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Zdjęcie (opcjonalnie)',
+    },
     {
       name: 'title',
       type: 'markdown',
@@ -65,11 +74,13 @@ export const TilesIndicated_Item = {
     select: {
       title: 'title',
       paragraph: 'paragraph',
+      image: 'image',
     },
-    prepare({ title, paragraph }) {
+    prepare({ title, paragraph, image }) {
       return {
         title,
         paragraph: removeMarkdown(paragraph),
+        media: image,
       };
     },
   },

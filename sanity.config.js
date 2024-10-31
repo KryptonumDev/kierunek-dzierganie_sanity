@@ -1,13 +1,13 @@
-import { defineConfig } from 'sanity';
 import { visionTool } from '@sanity/vision';
+import { defineConfig } from 'sanity';
 import { media } from 'sanity-plugin-media';
-import { structureTool } from 'sanity/structure'
-import { deskStructure } from './deskStructure'
-import { singleTypes, schemaTypes } from './schemas';
+import { structureTool } from 'sanity/structure';
+import { deskStructure } from './deskStructure';
+import { schemaTypes, singleTypes } from './schemas';
 
+import { colorInput } from '@sanity/color-input';
 import { markdownSchema } from 'sanity-plugin-markdown';
 import { CustomMarkdownInput } from './components/Markdown';
-import { colorInput } from '@sanity/color-input';
 import './styles.css';
 
 const singletonTypes = new Set(singleTypes.map(type => type.name));
@@ -18,7 +18,7 @@ export default defineConfig({
   title: 'Kierunek Dzierganie',
 
   projectId: '5q82mab3',
-  dataset: 'production',
+  dataset: 'development',
 
   plugins: [
     structureTool({

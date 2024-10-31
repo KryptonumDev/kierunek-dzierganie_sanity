@@ -1,11 +1,19 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 
+const icon = () => '☁️';
+
 export default {
   name: 'WordsCollection',
   title: 'Sekcja z kolekcją słów',
   type: 'object',
-  icon: () => '☁️',
+  icon,
   fields: [
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Zdjęcie (opcjonalnie)',
+      description: 'Zdjęcie pojawi się po środku sekcji, zmieniając jej wygląd.',
+    },
     {
       name: 'heading',
       type: 'markdown',
@@ -30,11 +38,13 @@ export default {
       title: 'heading',
       list: 'list',
       cta: 'cta',
+      image: 'image',
     },
-    prepare({ title, list, cta }) {
+    prepare({ title, list, cta, image }) {
       return {
         title: `[Sekcja z kolekcją słów${cta ? ' - wraz z CTA' : ''}] ${removeMarkdown(title)}`,
         subtitle: list.join(', '),
+        media: image || icon,
       };
     },
   },
