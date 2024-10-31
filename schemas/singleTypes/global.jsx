@@ -228,6 +228,20 @@ export default {
       fieldset: 'nav',
     },
     {
+      name: 'image_crochet',
+      type: 'image',
+      title: 'Zdjęcie szydełkowania',
+      validation: Rule => Rule.required(),
+      fieldset: 'products',
+    },
+    {
+      name: 'image_knitting',
+      type: 'image',
+      title: 'Zdjęcie dziergania na drutach',
+      validation: Rule => Rule.required(),
+      fieldset: 'products',
+    },
+    {
       name: 'email',
       type: 'string',
       title: 'Adres e-mail',
