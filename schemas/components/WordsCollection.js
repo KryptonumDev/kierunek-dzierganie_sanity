@@ -23,7 +23,31 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'name',
+              type: 'string',
+              title: 'Nazwa',
+              validation: Rule => Rule.required(),
+            },
+            {
+              name: 'href',
+              type: 'string',
+              title: 'Link relatywny (opcjonalny)',
+              validation: Rule =>
+                Rule.custom(value => {
+                  if (value && !value.startsWith('/')) {
+                    return 'Link musi być relatywny (zaczynający się od "/").';
+                  }
+                  return true;
+                }),
+            },
+          ],
+        },
+      ],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
