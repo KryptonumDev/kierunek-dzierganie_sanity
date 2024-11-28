@@ -254,6 +254,37 @@ export default {
       title: 'Pakiet materiałów',
       of: [
         {
+          name: 'materialsHeading',
+          title: 'Nagłówek',
+          type: 'object',
+          fields: [
+            {
+              name: 'heading',
+              title: 'Nagłówek',
+              type: 'markdown',
+              validation: Rule => Rule.required(),
+              initialValue: 'Pakiet materiałów',
+            },
+            {
+              name: 'paragraph',
+              title: 'Paragraf (opcjonalny)',
+              type: 'markdown',
+              initialValue: 'Wszystkie materiały do tego kursu znajdziesz w jednym miejscu.',
+            },
+          ],
+          preview: {
+            select: {
+              heading: 'heading',
+            },
+            prepare({ heading }) {
+              return {
+                title: 'Nagłówek',
+                subtitle: removeMarkdown(heading),
+              };
+            },
+          },
+        },
+        {
           name: 'materialsGroups',
           title: 'Grupy Materiałów',
           type: 'object',
@@ -301,9 +332,19 @@ export default {
                                 }),
                               },
                             },
+                            {
+                              name: 'additionalInfo',
+                              title: 'Dodatkowa informacja (opcjonalna)',
+                              type: 'markdown',
+                            },
                           ],
                         },
                       ],
+                    },
+                    {
+                      name: 'additionalInfo',
+                      title: 'Dodatkowa informacja (opcjonalna)',
+                      type: 'markdown',
                     },
                   ],
                 },
