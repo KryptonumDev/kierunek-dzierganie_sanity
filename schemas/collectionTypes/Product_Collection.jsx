@@ -49,6 +49,18 @@ export default {
       options: {
         list: [
           {
+            title: 'Instrukcja',
+            value: 'instruction',
+          },
+          {
+            title: 'Pakiet materiałów',
+            value: 'materials',
+          },
+          {
+            title: 'Inne',
+            value: 'other',
+          },
+          {
             title: 'Produkt dla szydełkowania',
             value: 'crocheting',
           },
@@ -91,6 +103,7 @@ export default {
       ],
       validation: Rule => Rule.required(),
       group: 'configuration',
+      hidden: ({ document }) => document.basis !== 'crocheting' && document.basis !== 'knitting',
     },
     {
       name: 'countInStock',
@@ -224,16 +237,17 @@ export default {
         subtitle:
           (visible ? 'Widoczny' : 'Ukryty') +
           ' | ' +
-          (type === 'variable' ? variants?.reduce(
-            (acc, variant) => acc + variant.countInStock,
-            0,
-          ) : countInStock > 0 ? countInStock : 'Brak') + ' na stanie' +
+          (type === 'variable'
+            ? variants?.reduce((acc, variant) => acc + variant.countInStock, 0)
+            : countInStock > 0
+              ? countInStock
+              : 'Brak') +
+          ' na stanie' +
           ' | ' +
           (price
             ? `${parseInt(price) / 100} zł`
             : `${Math.min(...variants.map(variant => parseInt(variant.price / 100)))} zł -
-              ${Math.max(...variants.map(variant => parseInt(variant.price / 100)))} zł`) 
-          +
+              ${Math.max(...variants.map(variant => parseInt(variant.price / 100)))} zł`) +
           (discount
             ? discount
               ? ` | rabat: ${parseInt(discount) / 100} zł`

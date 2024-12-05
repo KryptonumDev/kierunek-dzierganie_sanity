@@ -32,6 +32,9 @@ import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
 import OurBrands_Page from './singleTypes/OurBrands_Page';
 import StanVouchera_Page from './singleTypes/StanVoucher_Page';
 import Team_Page from './singleTypes/Team_Page';
+import MaterialsPackages_Page from './singleTypes/MaterialsPackages_Page';
+import Instructions_Page from './singleTypes/Instructions_Page';
+import OtherProducts_Page from './singleTypes/OtherProducts_Page';
 
 export const singleTypes = [
   homepage,
@@ -39,6 +42,9 @@ export const singleTypes = [
   KnittingProducts_Page,
   Crocheting_Page,
   CrochetingProducts_Page,
+  MaterialsPackages_Page,
+  Instructions_Page,
+  OtherProducts_Page,
   // AboutUs_Page,
   Team_Page,
   Contact_Page,

@@ -146,13 +146,13 @@ export default {
               of: [
                 {
                   type: 'reference',
-                  to: [{ type: 'product' }],
+                  to: [{ type: 'productCategory' }],
                   options: {
-                    filter: 'basis == "knitting" && visible == true',
+                    filter: 'visibleInKnitting == true',
                   },
                 },
               ],
-              title: 'Wyróżnione produkty',
+              title: 'Wyróżnione kategorie',
               validation: Rule => Rule.max(6),
             },
           ],
@@ -187,13 +187,13 @@ export default {
               of: [
                 {
                   type: 'reference',
-                  to: [{ type: 'product' }],
+                  to: [{ type: 'productCategory' }],
                   options: {
-                    filter: 'basis == "crocheting" && visible == true',
+                    filter: 'visibleInCrocheting == true',
                   },
                 },
               ],
-              title: 'Wyróżnione produkty',
+              title: 'Wyróżnione kategorie',
               validation: Rule => Rule.max(6),
             },
           ],
