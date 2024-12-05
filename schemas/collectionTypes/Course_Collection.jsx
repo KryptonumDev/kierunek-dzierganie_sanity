@@ -116,6 +116,7 @@ export default {
           type: 'file',
         },
       ],
+      hidden: ({ document }) => document.type === 'program',
     },
     {
       name: 'files_alter',
@@ -126,6 +127,7 @@ export default {
           type: 'file',
         },
       ],
+      hidden: ({ document }) => document.type === 'program',
     },
     {
       name: 'complexity',
