@@ -1,8 +1,8 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 
 export default {
-  name: 'TilesIcon',
-  title: 'Sekcja z kolumną kafelków z ikoną',
+  name: 'TilesGallery',
+  title: 'Sekcja z kafelkami ze zdjęciami',
   type: 'object',
   fields: [
     {
@@ -18,9 +18,14 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'cta',
+      type: 'cta',
+      title: 'Wezwanie do działania',
+    },
+    {
       name: 'list',
       type: 'array',
-      of: [{ type: 'TilesIcon_Item' }],
+      of: [{ type: 'TilesGallery_Item' }],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
@@ -31,57 +36,51 @@ export default {
       paragraph: 'paragraph',
       list: 'list',
     },
-    prepare({ title, paragraph, list, image }) {
+    prepare({ title, paragraph, list }) {
       return {
-        title: `[Sekcja z kolumną kafelków z ikoną] ${removeMarkdown(title)}`,
+        title: `[Sekcja z kafelkami ze zdjęciami] ${removeMarkdown(title)}`,
         subtitle: removeMarkdown(paragraph),
-        media: list[0].image || list[0].icon,
+        media: list[0].img,
       };
     },
   },
 };
 
-export const TilesIcon_Item = {
-  name: 'TilesIcon_Item',
+export const TilesGallery_Item = {
+  name: 'TilesGallery_Item',
   title: 'Element',
   type: 'object',
   fields: [
     {
-      name: 'icon',
+      name: 'img',
       type: 'image',
-      title: 'Ikona',
-      description: 'Ikona w formacie SVG.',
+      title: 'Zdjęcie',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'title',
+      name: 'heading',
       type: 'markdown',
-      title: 'Tytuł',
+      title: 'Nagłówek',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'description',
+      name: 'paragraph',
       type: 'markdown',
-      title: 'Opis',
+      title: 'Paragraf',
       validation: Rule => Rule.required(),
-    },
-    {
-      name: 'image',
-      type: 'image',
-      title: 'Zdjęcie (opcjonalnie)',
     },
   ],
   preview: {
     select: {
-      title: 'title',
-      description: 'description',
-      icon: 'icon',
+      heading: 'heading',
+      paragraph: 'paragraph',
+      img: 'img',
     },
-    prepare({ icon, title, description }) {
+    prepare({ heading, paragraph, img }) {
       return {
-        title: removeMarkdown(title),
-        subtitle: removeMarkdown(description),
-        media: icon,
+        title: `${removeMarkdown(heading)}`,
+        subtitle: `${removeMarkdown(paragraph)}`,
+        media: img,
       };
     },
   },

@@ -1,11 +1,12 @@
 import CourseSlug from '../../components/CourseSlug';
+import { removeMarkdown } from '../../utils/remove-markdown';
 
 import {
   ColumnImageSection,
   OrderedList,
   Standout,
-  UnorderedList,
   TextSection,
+  UnorderedList,
 } from '../components/Product_Components';
 
 export default {
@@ -107,11 +108,26 @@ export default {
       group: 'configuration',
     },
     {
-      name: 'printed_manual',
-      title: 'Instrukcja drukowana',
-      type: 'reference',
-      to: [{ type: 'product' }],
-      group: 'configuration',
+      name: 'files',
+      type: 'array',
+      title: 'Pliki do pobrania',
+      of: [
+        {
+          type: 'file',
+        },
+      ],
+      hidden: ({ document }) => document.type === 'program',
+    },
+    {
+      name: 'files_alter',
+      type: 'array',
+      title: 'Pliki do pobrania dla leworęcznych',
+      of: [
+        {
+          type: 'file',
+        },
+      ],
+      hidden: ({ document }) => document.type === 'program',
     },
     {
       name: 'complexity',
@@ -233,6 +249,286 @@ export default {
       group: 'preview',
       description:
         'Grupa do której dodawane są osoby, które skorzystały z podglądu kursu, po kupieniu kursu automatycznie są usuwane z tej grupy',
+    },
+    {
+      name: 'materialsPackage',
+      type: 'array',
+      title: 'Pakiet materiałów',
+      of: [
+        {
+          name: 'materialsHeading',
+          title: 'Nagłówek',
+          type: 'object',
+          fields: [
+            {
+              name: 'heading',
+              title: 'Nagłówek',
+              type: 'markdown',
+              validation: Rule => Rule.required(),
+              initialValue: 'Pakiet materiałów',
+            },
+            {
+              name: 'paragraph',
+              title: 'Paragraf (opcjonalny)',
+              type: 'markdown',
+              initialValue: 'Wszystkie materiały do tego kursu znajdziesz w jednym miejscu.',
+            },
+          ],
+          preview: {
+            select: {
+              heading: 'heading',
+            },
+            prepare({ heading }) {
+              return {
+                title: 'Nagłówek',
+                subtitle: removeMarkdown(heading),
+              };
+            },
+          },
+        },
+        {
+          name: 'materialsGroups',
+          title: 'Grupy Materiałów',
+          type: 'object',
+          fields: [
+            {
+              name: 'heading',
+              title: 'Nagłówek',
+              type: 'markdown',
+              validation: Rule => Rule.required(),
+              initialValue: 'Zobacz, jakie materiały będą Ci potrzebne',
+            },
+            {
+              name: 'materialsGroupsList',
+              title: 'Lista grup materiałów',
+              validation: Rule => Rule.required(),
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  name: 'materialsGroup',
+                  title: 'Grupa Materiałów',
+                  fields: [
+                    { name: 'title', title: 'Nazwa Grupy', type: 'string' },
+                    {
+                      name: 'materialsList',
+                      title: 'Lista Materiałów',
+                      type: 'array',
+                      validation: Rule => Rule.required(),
+                      of: [
+                        {
+                          name: 'material',
+                          title: 'Materiał',
+                          type: 'object',
+                          fields: [
+                            { name: 'name', title: 'Nazwa Materiału', type: 'string' },
+                            {
+                              name: 'materialRef',
+                              title: 'Referencja do produktu (opcjonalne)',
+                              type: 'reference',
+                              to: [{ type: 'product' }],
+                              options: {
+                                filter: ({ document }) => ({
+                                  filter: 'basis == $basis',
+                                  params: { basis: document.basis },
+                                }),
+                              },
+                            },
+                            {
+                              name: 'additionalInfo',
+                              title: 'Dodatkowa informacja (opcjonalna)',
+                              type: 'markdown',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      name: 'additionalInfo',
+                      title: 'Dodatkowa informacja (opcjonalna)',
+                      type: 'markdown',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              name: 'listParagraph',
+              title: 'Paragraf pod listą',
+              type: 'markdown',
+              initialValue: 'Materiały możesz skompletować samodzielnie lub zamówić pakiet bezpośrednio u mnie ;)',
+              validation: Rule => Rule.required(),
+            },
+          ],
+          preview: {
+            select: {
+              heading: 'heading',
+            },
+            prepare({ heading }) {
+              return {
+                title: 'Grupy Materiałów',
+                subtitle: removeMarkdown(heading),
+              };
+            },
+          },
+        },
+
+        {
+          name: 'dedicatedPackage',
+          title: 'Dedykowany pakiet',
+          type: 'object',
+          fields: [
+            {
+              name: 'heading',
+              title: 'Nagłówek',
+              type: 'markdown',
+              validation: Rule => Rule.required(),
+              initialValue: 'Kup pakiet materiałów do tego kursu',
+            },
+            {
+              name: 'paragraph',
+              title: 'Paragraf',
+              type: 'markdown',
+              initialValue:
+                'Nie chcesz kompletować materiałów samodzielnie? Wystarczy jeden klik, a w Twoim koszyku znajdzie się pakiet wszystkich potrzebnych materiałów do tego kursu.',
+            },
+            {
+              name: 'materialRef',
+              title: 'Referencja do materiału dedykowanego',
+              type: 'reference',
+              to: [{ type: 'product' }],
+              validation: Rule => Rule.required(),
+              options: {
+                filter: ({ document }) => ({
+                  filter: 'basis == $basis',
+                  params: { basis: document.basis },
+                }),
+              },
+            },
+          ],
+          preview: {
+            select: {
+              title: 'heading',
+            },
+            prepare({ title }) {
+              return {
+                title: 'Dedykowany pakiet',
+                subtitle: removeMarkdown(title),
+              };
+            },
+          },
+        },
+        {
+          name: 'partnerSales',
+          title: 'Rabaty partnerskie',
+          type: 'object',
+          fields: [
+            {
+              name: 'imageList',
+              type: 'array',
+              title: 'Lista zdjęć',
+              of: [{ type: 'image' }],
+              validation: Rule => Rule.max(3).required(),
+            },
+            {
+              name: 'heading',
+              title: 'Nagłówek',
+              type: 'markdown',
+              validation: Rule => Rule.required(),
+              initialValue: 'Skorzystaj z rabatów partnerskich',
+            },
+            {
+              name: 'paragraph',
+              title: 'Paragraf',
+              type: 'markdown',
+              validation: Rule => Rule.required(),
+              initialValue: 'Kupując kurs dostaniesz ode mnie kody rabatowe do sklepów:',
+            },
+            {
+              name: 'salesList',
+              title: 'Lista rabatów',
+              type: 'array',
+              validation: Rule => Rule.required().min(1),
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    { name: 'shopName', title: 'Nazwa sklepu', type: 'string', validation: Rule => Rule.required() },
+                    {
+                      name: 'shopLink',
+                      title: 'Link do sklepu (opcjonalny)',
+                      type: 'url',
+                    },
+                    {
+                      name: 'salePercentage',
+                      title: 'Procent rabatu',
+                      type: 'number',
+                      validation: Rule => Rule.required().positive(),
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+          preview: {
+            select: {
+              title: 'heading',
+              subtitle: 'paragraph',
+              imageList: 'imageList',
+            },
+            prepare({ title, subtitle, imageList }) {
+              return {
+                title: removeMarkdown(title) || 'Rabaty partnerskie',
+                subtitle: removeMarkdown(subtitle),
+                media: imageList && imageList.length > 0 ? imageList[0] : null,
+              };
+            },
+          },
+        },
+        {
+          name: 'additionalMaterials',
+          title: 'Dodatkowe materiały',
+          type: 'object',
+          fields: [
+            {
+              name: 'heading',
+              title: 'Nagłówek',
+              type: 'markdown',
+              validation: Rule => Rule.required(),
+              initialValue: 'Te materiały mogą Cię zainteresować',
+            },
+            {
+              name: 'additionalMaterialsList',
+              title: 'Lista',
+              type: 'array',
+              of: [
+                {
+                  type: 'reference',
+                  to: [{ type: 'product' }],
+                  options: {
+                    filter: ({ document }) => ({
+                      filter: 'basis == $basis && visible == true',
+                      params: { basis: document.basis },
+                    }),
+                  },
+                },
+              ],
+              validation: Rule => Rule.max(3).required(),
+            },
+          ],
+          preview: {
+            select: {
+              title: 'heading',
+            },
+            prepare({ title }) {
+              return {
+                title: 'Dodatkowe materiały',
+                subtitle: removeMarkdown(title),
+              };
+            },
+          },
+        },
+      ],
     },
     {
       name: 'seo',
