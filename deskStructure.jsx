@@ -1,10 +1,12 @@
-import { singleTypes, collectionTypes, schemaTypes } from './schemas';
+import { collectionTypes, schemaTypes, singleTypes } from './schemas';
 
-const url = 'https://kierunek-dzierganie-git-dev-kryptonum.vercel.app'
+const url = 'https://kierunek-dzierganie-git-dev-kryptonum.vercel.app';
 const WebPreview = ({ document }) => {
-  const { displayed: { _type, basis, slug } } = document
+  const {
+    displayed: { _type, basis, slug },
+  } = document;
 
-  const type = _type + (basis ? `_${basis}` : '')
+  const type = _type + (basis ? `_${basis}` : '');
 
   const typeArray = {
     product_crocheting: '/produkty-do-szydelkowania/',
@@ -37,20 +39,20 @@ const WebPreview = ({ document }) => {
     Blog_Page: '/blog',
   };
 
-
   return (
     <iframe
       src={url + typeArray[type] + (slug?.current ?? '')}
       style={{ width: '100%', height: '100%' }}
       frameBorder={0}
     />
-  )
-}
+  );
+};
 
 const createListItem = (S, typeName) => {
   const { title, name, icon } = schemaTypes.find(item => item.name === typeName);
   const withoutPreview = [
-    'global', 'Cart',
+    'global',
+    'Cart',
     'Courses_Page',
     'Orders_Page',
     'Data_Page',
@@ -64,7 +66,7 @@ const createListItem = (S, typeName) => {
     'SetPassword_Page',
     'Logout_Page',
     'Delete_Page',
-  ]
+  ];
   return S.listItem()
     .title(title)
     .id(name)
@@ -76,19 +78,23 @@ const createListItem = (S, typeName) => {
         .title(title)
         .views([
           S.view.form().title('Edycja'),
-          (!withoutPreview.includes(name) && S.view
-            .component(WebPreview)
-            .title('Podgląd'))
+          !withoutPreview.includes(name) && S.view.component(WebPreview).title('Podgląd'),
         ])
     );
 };
 
 const createDocumentTypeListItem = (S, name) => {
   const withoutPreview = [
-    'lesson', 'productReviewCollection', 'ReviewCollection', 'FaqCollection',
-    'courseCategory', 'productCategory', 'Author_Collection', 'Partner_Collection',
-    'BlogCategory_Collection'
-  ]
+    'lesson',
+    'productReviewCollection',
+    'ReviewCollection',
+    'FaqCollection',
+    'courseCategory',
+    'productCategory',
+    'Author_Collection',
+    'Partner_Collection',
+    'BlogCategory_Collection',
+  ];
 
   return S.listItem()
     .title(collectionTypes.find(type => type.name === name).title)
@@ -102,16 +108,13 @@ const createDocumentTypeListItem = (S, name) => {
             .schemaType(name)
             .views([
               S.view.form().title('Edycja'),
-              (!withoutPreview.includes(name) && S.view
-                .component(WebPreview)
-                .title('Podgląd'))
+              !withoutPreview.includes(name) && S.view.component(WebPreview).title('Podgląd'),
             ])
-        ),
-    )
-}
+        )
+    );
+};
 
-
-export const deskStructure = (S) =>
+export const deskStructure = S =>
   S.list()
     .title('Struktura')
     .items([
@@ -164,6 +167,8 @@ export const deskStructure = (S) =>
       S.divider(),
       createDocumentTypeListItem(S, 'landingPage'),
       S.divider(),
+      createDocumentTypeListItem(S, 'thankYouPage'),
+      S.divider(),
       S.listItem()
         .title('Sklep')
         .icon(() => '🛒')
@@ -186,4 +191,4 @@ export const deskStructure = (S) =>
               createDocumentTypeListItem(S, 'CourseAuthor_Collection'),
             ])
         ),
-    ])
+    ]);

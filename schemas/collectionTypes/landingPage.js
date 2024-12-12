@@ -24,6 +24,12 @@ export default {
       title: 'Komponenty podstrony',
     },
     {
+      name: 'dedicatedThankYouPage',
+      title: 'Dedykowana strona podziękowania (opcjonalna)',
+      type: 'reference',
+      to: [{ type: 'thankYouPage' }],
+    },
+    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
