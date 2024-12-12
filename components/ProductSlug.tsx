@@ -6,9 +6,12 @@ const styles = {
   padding: '10px',
 };
 
-const productUrls: { knitting: string; crocheting: string } = {
-  knitting: '/produkty-do-dziergania',
-  crocheting: '/produkty-do-szydelkowania',
+const productUrls: { knitting: string; crocheting: string; other: string; instruction: string; materials: string } = {
+  knitting: '/produkty/dzierganie',
+  crocheting: '/produkty/szydelkowanie',
+  other: '/produkty/inne',
+  instruction: '/produkty/instrukcje',
+  materials: '/produkty/pakiety-materialow',
 };
 
 function ProductSlug(props) {
