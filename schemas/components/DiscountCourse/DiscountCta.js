@@ -13,6 +13,14 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'showDiscount',
+      type: 'boolean',
+      title: 'Pokaż zniżkę na obrazku',
+      description: 'Jeśli zaznaczone, w lewyn górnym rogu obrazka pojawi się informacja o zniżce',
+      initialValue: true,
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'heading',
       type: 'string',
       title: 'Nagłówek',
