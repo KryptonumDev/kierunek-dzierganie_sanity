@@ -22,6 +22,7 @@ export default {
       name: 'ctaText',
       type: 'string',
       title: 'Tekst wezwania do działania',
+      description: 'Po kliknięciu przycisku użytkownik zostanie przekierowany do podstrony z kursem',
       validation: Rule => Rule.required(),
     },
     {

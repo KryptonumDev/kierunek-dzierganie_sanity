@@ -57,10 +57,26 @@ export default {
           name: 'discount',
           type: 'number',
           title: 'Wielkość rabatu',
-          description: 'Wielkość wyrażona w postaci liczby',
+          description: 'Wielkość wyrażona w postaci groszach',
           validation: Rule =>
-            Rule.custom((value, context) => {
+            Rule.custom(async (value, context) => {
               if (context.parent && !value) return 'Required';
+
+              const courseRef = context.parent.course;
+              if (courseRef && value) {
+                // Fetch both price and discount from the course
+                const course = await context
+                  .getClient({ apiVersion: '2023-01-01' })
+                  .fetch('*[_id == $id][0]{price, discount}', { id: courseRef._ref });
+
+                // Use course's discount price if it exists, otherwise use regular price
+                const referencePrice = course.discount || course.price;
+
+                if (referencePrice && value >= referencePrice) {
+                  return 'Rabat nie może być większy lub równy cenie kursu (z uwzględnieniem aktualnego rabatu kursu)';
+                }
+              }
+
               return true;
             }),
         },
@@ -72,6 +88,9 @@ export default {
           validation: Rule =>
             Rule.custom((value, context) => {
               if (context.parent && !value) return 'Required';
+              if (value && (!Number.isInteger(value) || value <= 1)) {
+                return 'Wartość musi być liczbą całkowitą większą od 1';
+              }
               return true;
             }),
         },
