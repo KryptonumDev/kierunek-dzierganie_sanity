@@ -4,7 +4,7 @@ export default {
   name: 'timerBox',
   type: 'object',
   icon: () => '🕒',
-  title: 'Sekcja z kursem i licznikiem',
+  title: '[Strona Podziękowania] Sekcja z kursem i licznikiem',
   fields: [
     {
       name: 'heading',

@@ -4,7 +4,7 @@ export default {
   name: 'imageHeading',
   type: 'object',
   icon: () => '🖼️',
-  title: 'Sekcja z obrazkiem i nagłówkiem',
+  title: '[Strona Podziękowania] Sekcja z obrazkiem i nagłówkiem',
   fields: [
     {
       name: 'image',

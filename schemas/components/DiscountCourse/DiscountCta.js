@@ -3,7 +3,7 @@ import { removeMarkdown } from '../../../utils/remove-markdown';
 export default {
   name: 'discountCta',
   type: 'object',
-  title: 'Sekcja z ceną i CTA',
+  title: '[Strona Podziękowania] Sekcja z ceną i CTA',
   icon: () => '💰',
   fields: [
     {

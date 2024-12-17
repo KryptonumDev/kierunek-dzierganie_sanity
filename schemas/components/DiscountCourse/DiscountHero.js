@@ -3,7 +3,7 @@ import { removeMarkdown } from '../../../utils/remove-markdown';
 export default {
   name: 'discountHero',
   type: 'object',
-  title: 'Sekcja Hero',
+  title: '[Strona Podziękowania] Sekcja Hero',
   icon: () => '🎇',
   options: {
     collapsible: true,
@@ -15,6 +15,14 @@ export default {
       type: 'image',
       title: 'Obrazek w tle',
       validation: Rule => Rule.required(),
+      description: 'Dla optymalnego doświadczenia zalecamy nie zmieniać bazowego obrazka',
+      initialValue: {
+        _type: 'image',
+        asset: {
+          _type: 'reference',
+          _ref: 'image-832b337c71fccb644fa0e70197c9de1d9420e859-2996x2952-webp',
+        },
+      },
     },
     {
       name: 'heading',
@@ -26,18 +34,16 @@ export default {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf (opcjonalnie)',
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'ctaText',
-      type: 'string',
-      title: 'Tekst wezwania do działania',
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'additionalText',
-      type: 'markdown',
-      title: 'Dodatkowy tekst do CTA (opcjonalnie)',
+      validation: Rule =>
+        Rule.custom(text => {
+          if (!text) return true; // Allow empty field
+          const length = text.length;
+          if (length > 650) {
+            return 'Paragraf powinien zawierać od maximum 650 znaków. Aktualna długość: ' + length;
+          }
+          return true;
+        }),
+      description: 'Zalecana długość tekstu: 550-650 znaków',
     },
   ],
   preview: {

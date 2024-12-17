@@ -1,3 +1,5 @@
+import { contentArray } from '../../components/Content';
+
 export default {
   name: 'thankYouPage',
   title: 'Strony podziękowania',
@@ -100,8 +102,10 @@ export default {
       name: 'discountComponents',
       type: 'array',
       title: 'Komponenty sekcji z rabatem',
+      description: 'Komponenty podstrony + komponenty sekcji z rabatem',
       hidden: ({ parent }) => !parent?.hasDiscount,
       of: [
+        ...contentArray,
         { type: 'discountHero' },
         { type: 'timerBox' },
         { type: 'imageHeading' },

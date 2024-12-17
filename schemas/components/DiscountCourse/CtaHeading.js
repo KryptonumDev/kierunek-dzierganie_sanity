@@ -4,7 +4,7 @@ export default {
   name: 'ctaHeading',
   type: 'object',
   icon: () => '🔗',
-  title: 'Sekcja z nagłówkiem i CTA',
+  title: '[Strona Podziękowania] Sekcja z nagłówkiem i CTA',
   fields: [
     {
       name: 'heading',
