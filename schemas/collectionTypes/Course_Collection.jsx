@@ -400,7 +400,7 @@ export default {
               validation: Rule => Rule.required(),
               options: {
                 filter: ({ document }) => ({
-                  filter: 'basis == $basis',
+                  filter: 'basis == $basis || basis == "materials"',
                   params: { basis: document.basis },
                 }),
               },
