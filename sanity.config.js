@@ -16,9 +16,9 @@ const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 export default defineConfig({
   name: 'default',
   title: 'Kierunek Dzierganie',
-
   projectId: '5q82mab3',
   dataset: 'production',
+  studioUrl: 'https://kierunek-dzierganie-dev.sanity.studio', // Update this line
 
   plugins: [
     structureTool({

@@ -23,7 +23,17 @@ export default {
       name: 'groupId',
       type: 'string',
       title: 'ID grupy z MailerLite (opcjonalne)',
-      description: 'Domyślnie grupa Newsletter (ID: 112582388). Po uzupełnieniu tego pola, użytkownik, który wypełni formularz zostanie dodany do tej grupy.',
+      description:
+        'Domyślnie grupa Newsletter (ID: 112582388). Po uzupełnieniu tego pola, użytkownik, który wypełni formularz zostanie dodany do tej grupy.',
+    },
+    {
+      name: 'dedicatedThankYouPage',
+      title: 'Dedykowana strona podziękowania (opcjonalna)',
+      type: 'reference',
+      to: [{ type: 'thankYouPage' }],
+      hidden: ({ document }) => {
+        return document._type !== 'landingPage';
+      },
     },
   ],
   preview: {

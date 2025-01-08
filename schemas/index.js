@@ -29,12 +29,12 @@ import RegisterSuccess_Page from './singleTypes/dashboard/RegisterSuccess_Page';
 import ResetPassword_Page from './singleTypes/dashboard/ResetPassword_Page';
 import SetPassword_Page from './singleTypes/dashboard/SetPassword_Page';
 // import AboutUs_Page from './singleTypes/AboutUs_Page';
+import Instructions_Page from './singleTypes/Instructions_Page';
+import MaterialsPackages_Page from './singleTypes/MaterialsPackages_Page';
+import OtherProducts_Page from './singleTypes/OtherProducts_Page';
 import OurBrands_Page from './singleTypes/OurBrands_Page';
 import StanVouchera_Page from './singleTypes/StanVoucher_Page';
 import Team_Page from './singleTypes/Team_Page';
-import MaterialsPackages_Page from './singleTypes/MaterialsPackages_Page';
-import Instructions_Page from './singleTypes/Instructions_Page';
-import OtherProducts_Page from './singleTypes/OtherProducts_Page';
 
 export const singleTypes = [
   homepage,
@@ -82,6 +82,7 @@ import CourseReviews_Collection from './collectionTypes/Reviews_Collection';
 
 export const collectionTypes = [
   landingPage,
+  thankYouPage,
   product,
   lesson,
   course,
@@ -103,6 +104,7 @@ export const collectionTypes = [
 // Components
 import Content from '../components/Content';
 import PortableText from '../components/PortableText';
+import thankYouPage from './collectionTypes/thankYouPage';
 import voucher from './collectionTypes/Voucher_Collection';
 import Benefits from './components/Benefits';
 import ArticleGreetings from './components/BlogPosts/ArticleGreetings';
@@ -168,6 +170,11 @@ import AffiliateDashboard_Page, {
   AffiliateDashboardPage_TextSection,
 } from './singleTypes/dashboard/AffiliateDashboard_Page';
 import Support_Page, { Support_Page_Tabs } from './singleTypes/dashboard/Support_Page';
+import DiscountHero from './components/DiscountCourse/DiscountHero';
+import TimerBox from './components/DiscountCourse/TimerBox';
+import ImageHeading from './components/DiscountCourse/ImageHeading';
+import CtaHeading from './components/DiscountCourse/CtaHeading';
+import DiscountCta from './components/DiscountCourse/DiscountCta';
 export const schemaTypes = [
   ...singleTypes,
   ...collectionTypes,
@@ -276,4 +283,9 @@ export const schemaTypes = [
   TeamShowcase_Item,
   TeamShowcase,
   LogoSection,
+  DiscountHero,
+  TimerBox,
+  ImageHeading,
+  CtaHeading,
+  DiscountCta,
 ];
