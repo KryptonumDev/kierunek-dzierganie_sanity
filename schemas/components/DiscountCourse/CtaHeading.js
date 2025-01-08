@@ -21,14 +21,14 @@ export default {
     {
       name: 'ctaText',
       type: 'string',
-      title: 'Tekst wezwania do działania',
+      title: 'Tekst wezwania do działania (opcjonalnie)',
       description: 'Po kliknięciu przycisku użytkownik zostanie przekierowany do podstrony z kursem',
-      validation: Rule => Rule.required(),
     },
     {
       name: 'additionalText',
       type: 'markdown',
       title: 'Dodatkowy tekst do CTA (opcjonalnie)',
+      hidden: ({ parent }) => !parent?.ctaText,
     },
   ],
   preview: {

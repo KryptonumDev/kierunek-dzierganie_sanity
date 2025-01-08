@@ -38,12 +38,12 @@ export default {
         Rule.custom(text => {
           if (!text) return true; // Allow empty field
           const length = text.length;
-          if (length > 650) {
-            return 'Paragraf powinien zawierać od maximum 650 znaków. Aktualna długość: ' + length;
+          if (length > 750) {
+            return 'Paragraf powinien zawierać od maximum 750 znaków. Aktualna długość: ' + length;
           }
           return true;
         }),
-      description: 'Zalecana długość tekstu: 550-650 znaków',
+      description: 'Zalecana długość tekstu: 550-750 znaków',
     },
   ],
   preview: {
