@@ -232,6 +232,8 @@ export default {
       discount: 'discount',
     },
     prepare({ visible, type, title, gallery, variants, countInStock, price, discount }) {
+      const variantsPrice = variants?.map(variant => variant.price);
+      const arePricesEqual = variantsPrice?.every(price => price === variantsPrice[0]);
       return {
         title,
         subtitle:
@@ -244,9 +246,11 @@ export default {
               : 'Brak') +
           ' na stanie' +
           ' | ' +
-          (price
+          (!variants?.length > 0
             ? `${parseInt(price) / 100} zł`
-            : `${Math.min(...variants.map(variant => parseInt(variant.price / 100)))} zł -
+            : arePricesEqual
+              ? `${parseInt(variantsPrice[0]) / 100} zł`
+              : `${Math.min(...variants.map(variant => parseInt(variant.price / 100)))} zł -
               ${Math.max(...variants.map(variant => parseInt(variant.price / 100)))} zł`) +
           (discount
             ? discount
