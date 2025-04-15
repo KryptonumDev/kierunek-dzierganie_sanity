@@ -28,6 +28,21 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'videoProvider',
+      type: 'string',
+      title: 'Dostawca wideo',
+      description: 'Wybierz platformę hostingową dla tego filmu (brak wyboru oznacza Vimeo)',
+      options: {
+        list: [
+          { title: 'Vimeo', value: 'vimeo' },
+          { title: 'YouTube', value: 'youtube' },
+          { title: 'Bunny.net', value: 'bunnyNet' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'vimeo',
+    },
+    {
       name: 'video',
       type: 'string',
       title: 'Link do filmiku',
@@ -37,7 +52,7 @@ export default {
       name: 'video_alter',
       type: 'string',
       title: 'Link do filmiku dla leworęcznych',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'lengthInMinutes',

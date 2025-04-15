@@ -68,6 +68,21 @@ export default {
       ],
     },
     {
+      name: 'videoProvider',
+      type: 'string',
+      title: 'Dostawca wideo',
+      description: 'Wybierz platformę hostingową dla tego filmu (brak wyboru oznacza Vimeo)',
+      options: {
+        list: [
+          { title: 'Vimeo', value: 'vimeo' },
+          { title: 'YouTube', value: 'youtube' },
+          { title: 'Bunny.net', value: 'bunnyNet' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'vimeo',
+    },
+    {
       name: 'featuredVideo',
       type: 'string',
       title: 'Link do filmu wyróżniającego',

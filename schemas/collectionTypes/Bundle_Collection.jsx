@@ -40,6 +40,21 @@ export default {
       title: 'Krótki opis na karcie wyróżnionego produktu',
     },
     {
+      name: 'videoProvider',
+      type: 'string',
+      title: 'Dostawca wideo',
+      description: 'Wybierz platformę hostingową dla tego filmu (brak wyboru oznacza Vimeo)',
+      options: {
+        list: [
+          { title: 'Vimeo', value: 'vimeo' },
+          { title: 'YouTube', value: 'youtube' },
+          { title: 'Bunny.net', value: 'bunnyNet' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'vimeo',
+    },
+    {
       name: 'basis',
       type: 'string',
       title: 'Rodzaj pakietu',
