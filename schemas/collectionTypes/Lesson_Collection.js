@@ -28,6 +28,21 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'videoProvider',
+      type: 'string',
+      title: 'Dostawca wideo',
+      description: 'Wybierz platformę hostingową dla tego filmu (brak wyboru oznacza Vimeo)',
+      options: {
+        list: [
+          { title: 'Vimeo', value: 'vimeo' },
+          { title: 'YouTube', value: 'youtube' },
+          { title: 'Bunny.net', value: 'bunnyNet' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'vimeo',
+    },
+    {
       name: 'video',
       type: 'string',
       title: 'Link do filmiku',
@@ -37,7 +52,22 @@ export default {
       name: 'video_alter',
       type: 'string',
       title: 'Link do filmiku dla leworęcznych',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'libraryId',
+      type: 'string',
+      title: 'ID biblioteki',
+      description: 'ID biblioteki bunny.net pojedynczego filmu. UWAGA: ID nadpisuje ID biblioteki w kursie',
+      hidden: ({ parent }) => parent?.videoProvider !== 'bunnyNet',
+    },
+    {
+      name: 'libraryApiKey',
+      type: 'string',
+      title: 'Klucz API biblioteki',
+      description:
+        'Klucz API biblioteki bunny.net pojedynczego filmu. UWAGA: Klucz nadpisuje klucz biblioteki w kursie',
+      hidden: ({ parent }) => parent?.videoProvider !== 'bunnyNet',
     },
     {
       name: 'lengthInMinutes',

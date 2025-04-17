@@ -223,6 +223,22 @@ export default {
       group: 'description',
     },
     {
+      name: 'videoProvider',
+      type: 'string',
+      title: 'Dostawca wideo',
+      description: 'Wybierz platformę hostingową dla tego filmu (brak wyboru oznacza Vimeo)',
+      options: {
+        list: [
+          { title: 'Vimeo', value: 'vimeo' },
+          { title: 'YouTube', value: 'youtube' },
+          { title: 'Bunny.net', value: 'bunnyNet' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'vimeo',
+      group: 'description',
+    },
+    {
       name: 'featuredVideo',
       type: 'string',
       title: 'Link do filmu wyróżniającego',
@@ -241,6 +257,19 @@ export default {
         },
       ],
       group: 'preview',
+    },
+    {
+      name: 'libraryId',
+      type: 'string',
+      title: 'ID biblioteki (Bunny.net)',
+      description: 'ID biblioteki bunny.net, Jeśli id nie zostanie wybrane, filmy będą pobierane z bilbioteki testowej',
+    },
+    {
+      name: 'libraryApiKey',
+      type: 'string',
+      title: 'Klucz API biblioteki (Bunny.net)',
+      description:
+        'Klucz API biblioteki bunny.net, Jeśli klucz nie zostanie wybrany, filmy będą pobierane z bilbioteki testowej',
     },
     {
       name: 'previewGroupMailerLite',
