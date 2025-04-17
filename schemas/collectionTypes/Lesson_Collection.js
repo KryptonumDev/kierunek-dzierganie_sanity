@@ -55,6 +55,21 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'libraryId',
+      type: 'string',
+      title: 'ID biblioteki',
+      description: 'ID biblioteki bunny.net pojedynczego filmu. UWAGA: ID nadpisuje ID biblioteki w kursie',
+      hidden: ({ parent }) => parent?.videoProvider !== 'bunnyNet',
+    },
+    {
+      name: 'libraryApiKey',
+      type: 'string',
+      title: 'Klucz API biblioteki',
+      description:
+        'Klucz API biblioteki bunny.net pojedynczego filmu. UWAGA: Klucz nadpisuje klucz biblioteki w kursie',
+      hidden: ({ parent }) => parent?.videoProvider !== 'bunnyNet',
+    },
+    {
       name: 'lengthInMinutes',
       type: 'number',
       title: 'Długość w minutach',
