@@ -51,9 +51,6 @@ export default {
               if (context.parent && !value) return 'Required';
               return true;
             }),
-          options: {
-            filter: 'visible == true',
-          },
         },
         {
           name: 'discount',
